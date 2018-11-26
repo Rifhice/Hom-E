@@ -12,8 +12,6 @@ env:
   - FOLDER=api
   - FOLDER=socket
   - FOLDER=hub
-before_script:
-  - cd api
 script: 
-  - cd .. && cd $FOLDER && npm install && npm run test
+  - cd $FOLDER && npm install && npm run test
   - sonar-scanner
