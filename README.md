@@ -1,4 +1,4 @@
-# Prello ![](https://travis-ci.org/HmFlashy/Prello.svg?branch=master)
+# Prello [![Build Status](https://travis-ci.com/Rifhice/Hom-E.svg?branch=master)](https://travis-ci.com/Rifhice/Hom-E)
 Project manager based on boards, list and cards
 
 ## Requirements
