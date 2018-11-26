@@ -1,0 +1,19 @@
+language: node_js
+services:
+  - mongodb
+  - redis-server
+node_js:
+  - '8'
+addons:
+  sonarcloud:
+    organization: "rifhice-github"
+env:
+  - FOLDER=client
+  - FOLDER=api
+  - FOLDER=socket
+  - FOLDER=hub
+before_script:
+  - cd api && npm install && npm run init:db
+script: 
+  - cd .. && cd $FOLDER && npm install && npm run test
+  - sonar-scanner

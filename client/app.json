@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "dokku": {
+      "predeploy": "npm run build:production"
+    },
+    "postdeploy": "npm run build:production"
+  }
+}
