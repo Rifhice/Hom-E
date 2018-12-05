@@ -1,8 +1,29 @@
 {
-  "scripts": {
-    "dokku": {
-      "predeploy": "npm run build:production"
+  "expo": {
+    "name": "Hom-E-Mobile",
+    "slug": "Hom-E-Mobile",
+    "privacy": "public",
+    "sdkVersion": "31.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
     },
-    "postdeploy": "npm run build:production"
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    }
   }
 }

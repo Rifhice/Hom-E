@@ -20,5 +20,5 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerJSDoc));
 
 app.use('/api', require("./api"));
 
-const server = app.listen(port, () => logger.info(`Listening on port ${port}`));
+const server = app.listen(port, () => logger.info(`Api is listening on port ${port} ...`));
 module.exports = app;
