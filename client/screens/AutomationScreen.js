@@ -8,13 +8,21 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { WebBrowser } from 'expo';
+import { WebBrowser, Icon } from 'expo';
 
 import { MonoText } from '../components/StyledText';
+import Colors from '../constants/Colors';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    header: null,
+    title: "Automations",
+    headerStyle: {
+      backgroundColor: Colors.headerBackgroundDefault,
+    },
+    headerTintColor: Colors.headerTextBackground,
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    }
   };
 
   render() {

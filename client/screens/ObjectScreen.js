@@ -1,10 +1,18 @@
 import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
+import Colors from '../constants/Colors';
 
 export default class LinksScreen extends React.Component {
   static navigationOptions = {
-    title: 'Links',
+    title: 'Objects',
+    headerStyle: {
+      backgroundColor: Colors.headerBackgroundDefault,
+    },
+    headerTintColor: Colors.headerTextBackground,
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    }
   };
 
   render() {
