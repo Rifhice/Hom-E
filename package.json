@@ -25,5 +25,7 @@
   "bugs": {
     "url": "https://github.com/Rifhice/Hom-E/issues"
   },
-  "homepage": "https://github.com/Rifhice/Hom-E#readme"
+  "homepage": "https://github.com/Rifhice/Hom-E#readme",
+  "dependencies": {
+  }
 }

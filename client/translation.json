@@ -1,0 +1,14 @@
+{
+    "en": {
+        "translation": {
+            "title": "yo",
+            "people": "Peoples"
+        }
+    },
+    "fr": {
+        "translation": {
+            "title": "salut",
+            "people": "Proches"
+        }
+    }
+}

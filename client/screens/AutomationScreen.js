@@ -6,14 +6,15 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
+  TouchableHighlight,
   View,
 } from 'react-native';
 import { WebBrowser, Icon } from 'expo';
-
 import { MonoText } from '../components/StyledText';
 import Colors from '../constants/Colors';
 
-export default class HomeScreen extends React.Component {
+
+class HomeScreen extends React.Component {
   static navigationOptions = {
     title: "Automations",
     headerStyle: {
@@ -194,3 +195,5 @@ const styles = StyleSheet.create({
     color: '#2e78b7',
   },
 });
+
+export default HomeScreen
