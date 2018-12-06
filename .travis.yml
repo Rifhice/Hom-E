@@ -10,7 +10,6 @@ addons:
 env:
   - FOLDER=client
   - FOLDER=api
-  - FOLDER=socket
   - FOLDER=hub
 script: 
   - npm install --prefix $FOLDER && npm run test --prefix $FOLDER
