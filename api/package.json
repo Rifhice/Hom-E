@@ -5,7 +5,8 @@
   "scripts": {
     "start": "npm run init:db && node server.js",
     "init:db": "node config/initDB.js",
-    "test": "nyc mocha api/test/*.js --timeout 10000 --recursive --exit"
+    "test": "nyc mocha api/test/*.js --timeout 10000 --recursive --exit",
+    "dev": "nodemon server"
   },
   "dependencies": {
     "bcrypt": "^3.0.2",

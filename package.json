@@ -6,12 +6,11 @@
     "concurrently": "^4.0.1"
   },
   "scripts": {
-    "test": "cd client && npm test && cd ../api && npm test && cd ../hub && npm test && cd ../socket && npm test",
+    "test": "cd client && npm test && cd ../api && npm test && cd ../hub && npm test",
     "client": "cd client && npm run dev",
     "api": "cd api && nodemon server.js",
     "hub": "cd hub && npm run dev",
-    "socket": "cd socket && npm run dev",
-    "dev": "concurrently --kill-others-on-fail \"npm run api\" \"npm run socket\" \"npm run hub\" \"npm run client\"",
+    "dev": "concurrently --kill-others-on-fail \"npm run api\" \"npm run hub\" \"npm run client\"",
     "init:db": "cd api && npm run init:db",
     "install:all:prod": "concurrently --kill-others-on-fail \"cd api && npm install --production\" \" cd client && npm install --production\"",
     "install:all:dev": "cd api && npm install && cd ../client && npm install && cd ../socket && npm install && cd ../hub && npm install",
