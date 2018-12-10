@@ -3,14 +3,13 @@ import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import { createSwitchNavigator } from 'react-navigation';
 import { withNamespaces } from 'react-i18next'
-import { withColors, withThemeChanger } from '../colorTheme'
+import { withTheme, withChangeTheme } from '../ThemeProvider'
 import TabBarIcon from '../components/TabBarIcon'
 import PeopleScreen from '../containers/PeopleScreen.container';
 import FastAccessScreen from '../screens/FastAccessScreen';
 import AutomationScreen from '../screens/AutomationScreen';
 import ObjectScreen from '../screens/ObjectScreen';
 import SettingsScreen from '../containers/SettingsScreen.container';
-import Colors from '../constants/Colors';
 
 class Component extends React.Component {
 
@@ -19,16 +18,17 @@ class Component extends React.Component {
   }
 
   render() {
-    const { t } = this.props
+    const { t, theme } = this.props
     const PeopleStack = createStackNavigator({
       People: PeopleScreen,
     });
 
     PeopleStack.navigationOptions = {
-      tabBarLabel: this.props.t('people'),
+      tabBarLabel: t('peoples'),
       tabBarIcon: ({ focused }) => (
         <TabBarIcon
           focused={focused}
+          theme={theme}
           name={
             Platform.OS === 'ios'
               ? `ios-people`
@@ -37,7 +37,7 @@ class Component extends React.Component {
         />
       ),
       tabBarOptions: {
-        activeTintColor: Colors.c('tintColor'),
+        activeTintColor: theme.current['tintColor'],
       },
     };
 
@@ -46,10 +46,11 @@ class Component extends React.Component {
     });
 
     ObjectStack.navigationOptions = {
-      tabBarLabel: 'Objects',
+      tabBarLabel: t('objects'),
       tabBarIcon: ({ focused }) => (
         <TabBarIcon
           focused={focused}
+          theme={theme}
           name={
             Platform.OS === 'ios'
               ? `ios-bulb`
@@ -58,7 +59,7 @@ class Component extends React.Component {
         />
       ),
       tabBarOptions: {
-        activeTintColor: Colors.tintColor,
+        activeTintColor: theme.current['tintColor'],
       },
     };
 
@@ -67,15 +68,16 @@ class Component extends React.Component {
     });
 
     FastAccessStack.navigationOptions = {
-      tabBarLabel: 'Favourites',
+      tabBarLabel: t('favourites'),
       tabBarIcon: ({ focused }) => (
         <TabBarIcon
           focused={focused}
+          theme={theme}
           name={Platform.OS === 'ios' ? 'ios-star-outline' : 'md-star-outline'}
         />
       ),
       tabBarOptions: {
-        activeTintColor: Colors.tintColor,
+        activeTintColor: theme.current['tintColor'],
       },
     };
 
@@ -84,15 +86,16 @@ class Component extends React.Component {
     });
 
     AutomationStack.navigationOptions = {
-      tabBarLabel: 'Automations',
+      tabBarLabel: t('automations'),
       tabBarIcon: ({ focused }) => (
         <TabBarIcon
           focused={focused}
+          theme={theme}
           name={Platform.OS === 'ios' ? 'ios-cog' : 'md-cog'}
         />
       ),
       tabBarOptions: {
-        activeTintColor: Colors.tintColor,
+        activeTintColor: theme.current['tintColor'],
       },
     };
 
@@ -101,15 +104,16 @@ class Component extends React.Component {
     });
 
     SettingsStack.navigationOptions = {
-      tabBarLabel: 'Settings',
+      tabBarLabel: t('settings'),
       tabBarIcon: ({ focused }) => (
         <TabBarIcon
           focused={focused}
+          theme={theme}
           name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
         />
       ),
       tabBarOptions: {
-        activeTintColor: Colors.tintColor,
+        activeTintColor: theme.current['tintColor'],
       },
     };
     const Navigator = createSwitchNavigator({
@@ -130,4 +134,4 @@ class Component extends React.Component {
   }
 }
 
-export default withColors(withNamespaces()(Component))
+export default withTheme(withNamespaces()(Component))

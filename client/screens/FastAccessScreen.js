@@ -6,9 +6,9 @@ export default class SettingsScreen extends React.Component {
     static navigationOptions = {
         title: 'Favourites',
         headerStyle: {
-            backgroundColor: Colors.c('headerBackgroundDefault'),
+            backgroundColor: 'red',
         },
-        headerTintColor: Colors.headerTextBackground,
+        headerTintColor: 'blue',
         headerTitleStyle: {
             fontWeight: 'bold',
         }

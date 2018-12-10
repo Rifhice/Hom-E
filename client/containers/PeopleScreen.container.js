@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import peoples from '../screens/PeopleScreen';
 import { withNamespaces } from 'react-i18next';
 import { withInAppNotification } from 'react-native-in-app-notification';
-import { withColors, withThemeChanger } from '../colorTheme'
+import { withTheme, withChangeTheme } from '../ThemeProvider'
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -15,7 +15,7 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-const component = withColors(withNamespaces()(withInAppNotification(connect(
+const component = withNamespaces()(withTheme(withInAppNotification(connect(
     mapStateToProps,
     mapDispatchToProps
 )(peoples))))

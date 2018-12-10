@@ -2,8 +2,7 @@ import { connect } from 'react-redux';
 import settings from '../screens/SettingsScreen';
 import { withNamespaces } from 'react-i18next';
 import { withInAppNotification } from 'react-native-in-app-notification';
-import { withColors, withThemeChanger } from '../colorTheme'
-import Colors from '../constants/Colors';
+import { withTheme, withChangeTheme } from '../ThemeProvider'
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -16,10 +15,10 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-const component = withColors(withNamespaces()(withInAppNotification(connect(
+const component = withChangeTheme(withTheme(withNamespaces()(withInAppNotification(connect(
     mapStateToProps,
     mapDispatchToProps
-)(settings))))
+)(settings)))))
 
 component.navigationOptions = ({ navigation }) => {
     return {
@@ -33,5 +32,6 @@ component.navigationOptions = ({ navigation }) => {
         }
     }
 };
+
 
 export default component;

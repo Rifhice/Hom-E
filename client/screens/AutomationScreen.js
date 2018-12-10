@@ -11,10 +11,9 @@ import {
 } from 'react-native';
 import { WebBrowser, Icon } from 'expo';
 import { MonoText } from '../components/StyledText';
-import Colors from '../constants/Colors';
 
 
-class HomeScreen extends React.Component {
+class HomeScreen extends React.Component {/*
   static navigationOptions = {
     title: "Automations",
     headerStyle: {
@@ -25,7 +24,7 @@ class HomeScreen extends React.Component {
       fontWeight: 'bold',
     }
   };
-
+*/
   render() {
     return (
       <View style={styles.container}>

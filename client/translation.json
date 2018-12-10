@@ -1,14 +1,20 @@
 {
     "en": {
         "translation": {
-            "title": "yo",
-            "people": "Peoples"
+            "peoples": "Peoples",
+            "objects": "Objects",
+            "favourites": "Favourites",
+            "automations": "Automations",
+            "settings": "Settings"
         }
     },
     "fr": {
         "translation": {
-            "title": "salut",
-            "people": "Proches"
+            "peoples": "Proches",
+            "objects": "Objets",
+            "favourites": "Favoris",
+            "automations": "Comportements",
+            "settings": "Paramètres"
         }
     }
 }

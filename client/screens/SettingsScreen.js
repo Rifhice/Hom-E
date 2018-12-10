@@ -10,23 +10,25 @@ export default class SettingsScreen extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      theme: ""
+      theme: {
+        current: {}
+      }
     }
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.theme.current !== prevState.theme) {
+    if (JSON.stringify(nextProps.theme.current) !== JSON.stringify(prevState.theme.current) && nextProps.navigation) {
       nextProps.navigation.setParams({
-        title: "Settings",
-        backgroundColor: nextProps.c('headerBackgroundDefault'),
-        headerTintColor: nextProps.c('headerTextBackground')
+        title: nextProps.t('settings'),
+        backgroundColor: nextProps.theme.current['headerBackgroundDefault'],
+        headerTintColor: nextProps.theme.current['headerTextBackground']
       })
     }
-    return { theme: nextProps.theme.current }
+    return { theme: nextProps.theme }
   }
 
   render() {
-    const { t, i18n, c } = this.props;
+    const { t, i18n, theme, changeTheme } = this.props;
     return (
       <View>
         <TouchableHighlight
@@ -39,7 +41,7 @@ export default class SettingsScreen extends React.Component {
             i18n.changeLanguage('fr')
           }}
         >
-          <Text>{t('title')}{c('headerTextBackground')}</Text>
+          <Text>{'yo'}</Text>
         </TouchableHighlight>
       </View>)
   }

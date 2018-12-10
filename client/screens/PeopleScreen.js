@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, TouchableHighlight } from 'react-native';
 import Colors from '../constants/Colors';
 
 export default class SettingsScreen extends React.Component {
@@ -7,37 +7,25 @@ export default class SettingsScreen extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            theme: ""
+            theme: {
+                current: {}
+            }
         }
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
-        if (nextProps.theme.current !== prevState.theme) {
+        if (JSON.stringify(nextProps.theme.current) !== JSON.stringify(prevState.theme.current) && nextProps.navigation) {
             nextProps.navigation.setParams({
-                title: "Peoples",
-                backgroundColor: nextProps.c('headerBackgroundDefault'),
-                headerTintColor: nextProps.c('headerTextBackground'),
-                tabBarLabel: 'Peoples',
-                tabBarIcon: ({ focused }) => (
-                    <TabBarIcon
-                        focused={focused}
-                        name={
-                            Platform.OS === 'ios'
-                                ? `ios-people`
-                                : 'md-people'
-                        }
-                    />
-                ),
-                tabBarOptions: {
-                    activeTintColor: nextProps.c('tintColor'),
-                },
+                title: nextProps.t('peoples'),
+                backgroundColor: nextProps.theme.current['headerBackgroundDefault'],
+                headerTintColor: nextProps.theme.current['headerTextBackground'],
             })
         }
-        return { theme: nextProps.theme.current }
+        return { theme: nextProps.theme }
     }
 
     render() {
-        const { t, i18n, c } = this.props;
-        return <Text>{t('title')}</Text>;
+        const { t, i18n, theme } = this.props;
+        return <TouchableHighlight onPress={() => theme.changeTheme('dark')} style={{ backgroundColor: theme.current['tintColor'] }}><Text>{t('title')}</Text></TouchableHighlight>;
     }
 }

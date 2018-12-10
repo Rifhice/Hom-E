@@ -1,0 +1,30 @@
+{
+  "regular": {
+    "tintColor": "red",
+    "tabIconDefault": "#ccc",
+    "tabIconSelected": "red",
+    "headerBackgroundDefault": "red",
+    "headerTextBackground": "#fff",
+    "tabBar": "#fefefe",
+    "errorBackground": "red",
+    "errorText": "#fff",
+    "warningBackground": "#EAEB5E",
+    "warningText": "#666804",
+    "noticeBackground": "red",
+    "noticeText": "#fff"
+  },
+  "dark": {
+    "tintColor": "yellow",
+    "tabIconDefault": "#ccc",
+    "tabIconSelected": "yellow",
+    "headerBackgroundDefault": "yellow",
+    "headerTextBackground": "#fff",
+    "tabBar": "#fefefe",
+    "errorBackground": "red",
+    "errorText": "#fff",
+    "warningBackground": "#EAEB5E",
+    "warningText": "#666804",
+    "noticeBackground": "yellow",
+    "noticeText": "#fff"
+  }
+}
