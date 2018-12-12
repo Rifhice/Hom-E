@@ -6,10 +6,12 @@ import { withNamespaces } from 'react-i18next'
 import { withTheme, withChangeTheme } from '../ThemeProvider'
 import TabBarIcon from '../components/TabBarIcon'
 import PeopleScreen from '../containers/PeopleScreen.container';
-import FastAccessScreen from '../screens/FastAccessScreen';
-import AutomationScreen from '../screens/AutomationScreen';
-import ObjectScreen from '../screens/ObjectScreen';
+import FastAccessScreen from '../containers/FastAccessScreen.container';
+import AutomationScreen from '../containers/AutomationScreen.container';
+import ObjectScreen from '../containers/ObjectScreens/ObjectScreen.container';
 import SettingsScreen from '../containers/SettingsScreen.container';
+import DetailObjectScreen from '../containers/ObjectScreens/DetailObjectScreen.container'
+import Icons from '../constants/Icons'
 
 class Component extends React.Component {
 
@@ -29,11 +31,8 @@ class Component extends React.Component {
         <TabBarIcon
           focused={focused}
           theme={theme}
-          name={
-            Platform.OS === 'ios'
-              ? `ios-people`
-              : 'md-people'
-          }
+          name={Icons.peoples.name}
+          type={Icons.peoples.type}
         />
       ),
       tabBarOptions: {
@@ -43,6 +42,7 @@ class Component extends React.Component {
 
     const ObjectStack = createStackNavigator({
       Object: ObjectScreen,
+      DetailObject: DetailObjectScreen
     });
 
     ObjectStack.navigationOptions = {
@@ -51,11 +51,8 @@ class Component extends React.Component {
         <TabBarIcon
           focused={focused}
           theme={theme}
-          name={
-            Platform.OS === 'ios'
-              ? `ios-bulb`
-              : 'md-bulb'
-          }
+          name={Icons.lightbulb_off.name}
+          type={Icons.lightbulb_off.type}
         />
       ),
       tabBarOptions: {
@@ -73,7 +70,8 @@ class Component extends React.Component {
         <TabBarIcon
           focused={focused}
           theme={theme}
-          name={Platform.OS === 'ios' ? 'ios-star-outline' : 'md-star-outline'}
+          name={Icons.star.name}
+          type={Icons.star.type}
         />
       ),
       tabBarOptions: {
@@ -91,7 +89,8 @@ class Component extends React.Component {
         <TabBarIcon
           focused={focused}
           theme={theme}
-          name={Platform.OS === 'ios' ? 'ios-cog' : 'md-cog'}
+          name={Icons.cogs.name}
+          type={Icons.cogs.type}
         />
       ),
       tabBarOptions: {
@@ -109,7 +108,8 @@ class Component extends React.Component {
         <TabBarIcon
           focused={focused}
           theme={theme}
-          name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+          name={Icons.settings.name}
+          type={Icons.settings.type}
         />
       ),
       tabBarOptions: {

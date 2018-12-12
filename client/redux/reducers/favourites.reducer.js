@@ -25,6 +25,16 @@ const defaultState = {
                     "command_arguments": [
                         { "type": "discrete", "possible_values": ["on", "off"] }
                     ]
+                },
+                {
+                    "_id": "000003",
+                    "name": "Set light",
+                    "type": "switch",
+                    "key": "set",
+                    "description": "....",
+                    "command_arguments": [
+                        { "type": "discrete", "possible_values": ["on", "off"] }
+                    ]
                 }
             ],
             "communication": {
@@ -71,10 +81,6 @@ const defaultState = {
 export default (state = defaultState, action = { type: null, payload: null }) => {
     console.log(action)
     switch (action.type) {
-        case "ADD_ACTUATOR":
-            return {
-                all: [...state.all, action.payload]
-            }
         default:
             return state
     }

@@ -13,18 +13,28 @@ import { WebBrowser, Icon } from 'expo';
 import { MonoText } from '../components/StyledText';
 
 
-class HomeScreen extends React.Component {/*
-  static navigationOptions = {
-    title: "Automations",
-    headerStyle: {
-      backgroundColor: Colors.headerBackgroundDefault,
-    },
-    headerTintColor: Colors.headerTextBackground,
-    headerTitleStyle: {
-      fontWeight: 'bold',
+class HomeScreen extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      theme: {
+        current: {}
+      }
     }
-  };
-*/
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (JSON.stringify(nextProps.theme.current) !== JSON.stringify(prevState.theme.current) && nextProps.navigation) {
+      nextProps.navigation.setParams({
+        title: nextProps.t('automations'),
+        backgroundColor: nextProps.theme.current['headerBackgroundDefault'],
+        headerTintColor: nextProps.theme.current['headerTextBackground'],
+      })
+    }
+    return { theme: nextProps.theme }
+  }
+
   render() {
     return (
       <View style={styles.container}>
