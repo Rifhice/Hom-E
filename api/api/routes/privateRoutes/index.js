@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-router.use('/cards', require('./cards'));
+router.use('/device', require('./device'));
 
 module.exports = router;
