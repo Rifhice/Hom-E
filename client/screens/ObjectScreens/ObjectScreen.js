@@ -1,6 +1,6 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import { View, ScrollView, StyleSheet } from 'react-native';
+import { View, ScrollView, StyleSheet, RefreshControl } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
 import { Divider, Text, Icon } from 'react-native-elements'
 import Switch from '../../components/Switch'
@@ -14,8 +14,20 @@ export default class LinksScreen extends React.Component {
     this.state = {
       theme: {
         current: {}
-      }
+      },
+      refreshing: false
     }
+  }
+
+  async componentDidMount() {
+    //await this.props.fetchActuators("5bf6962756d95f001c853c1a")
+  }
+
+  _onRefresh = () => {
+    this.setState({ refreshing: true }, async () => {
+      await this.props.fetchActuators("5bf6962756d95f001c853c1a")
+      this.setState({ refreshing: false })
+    })
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -33,11 +45,15 @@ export default class LinksScreen extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
+        <RefreshControl
+          refreshing={this.state.refreshing}
+          onRefresh={this._onRefresh}
+        />
         {this.props.actuators.map(actuator =>
           <ObjectOverview
             key={actuator._id}
             object={actuator}
-            onPress={() => console.log("press") || navigate('DetailObject', { object: actuator })}
+            onPress={() => navigate('DetailObject', { object: actuator })}
           ></ObjectOverview>
         )}
         <ExpoLinksView />

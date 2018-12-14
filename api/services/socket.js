@@ -63,7 +63,7 @@ module.exports = {
             const sockets = io.sockets.adapter.rooms[`${deviceId}/Device`].sockets
             let wasDeviceContacted = false
             let hasTimeout = false
-            Object.keys(sockets).map(key => {
+            Object.keys(sockets).forEach(key => {
                 if (sockets[key] && io.sockets.connected[key].deviceId === deviceId) {
                     let handle = setTimeout(() => { hasTimeout = true; callback({ result: "timeout" }) }, 5000)
                     io.sockets.connected[key].emit(event, data,

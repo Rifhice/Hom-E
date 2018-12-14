@@ -1,3 +1,5 @@
+import actions from '../actions/actuator.actions'
+
 const defaultState = {
     all: [
         {
@@ -69,9 +71,12 @@ const defaultState = {
 };
 
 export default (state = defaultState, action = { type: null, payload: null }) => {
-    console.log(action)
     switch (action.type) {
-        case "ADD_ACTUATOR":
+        case actions.FETCHED_ACTUATORS:
+            return {
+                all: action.payload
+            }
+        case actions.ADD_ACTUATOR:
             return {
                 all: [...state.all, action.payload]
             }

@@ -38,10 +38,10 @@ export default class ObjectOverview extends React.Component {
                                             ? <Slider
                                                 style={{ flex: 1, width: "90%", height: "90%" }}
                                                 onChange={(val) => console.log(val)}
-                                                originalValue={0}
-                                                minimumValue={0}
-                                                maximumValue={100}
-                                                step={1}
+                                                originalValue={object.quick_command.command_arguments[0].current}
+                                                minimumValue={object.quick_command.command_arguments[0].min}
+                                                maximumValue={object.quick_command.command_arguments[0].max}
+                                                step={object.quick_command.command_arguments[0].precision}
                                                 displayValueUnder={false}></Slider>
                                             : ""
                                 }

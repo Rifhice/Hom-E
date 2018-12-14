@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "nodemon index.js",
+    "init:db": "node config/initDB.js",
     "test": "jest"
   },
   "repository": {
@@ -17,6 +18,7 @@
   "dependencies": {
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
+    "mongoose": "^5.3.16",
     "socket.io-client": "^2.1.1",
     "winston": "^3.1.0"
   }

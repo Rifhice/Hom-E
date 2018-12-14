@@ -3,6 +3,7 @@ import object from '../../screens/ObjectScreens/ObjectScreen';
 import { withNamespaces } from 'react-i18next';
 import { withInAppNotification } from 'react-native-in-app-notification';
 import { withTheme, withChangeTheme } from '../../ThemeProvider'
+import ActuatorServices from '../../InternalServices/ActuatorServices'
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -12,7 +13,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-
+        async fetchActuators(deviceId) {
+            ActuatorServices.getActuators(deviceId, dispatch)
+        }
     }
 }
 

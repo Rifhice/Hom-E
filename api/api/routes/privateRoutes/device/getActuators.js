@@ -1,5 +1,3 @@
-const CardController = require('../../../controllers/CardsController')
-const logger = require('../../../../logger')
 /**
   * @swagger
   *
@@ -27,5 +25,5 @@ const logger = require('../../../../logger')
   *           description: The device response has timeout
   */
 module.exports = async (req, res) => {
-    res.status(200).send(req.deviceResponse)
+  res.status(200).send(req.deviceResponse)
 }

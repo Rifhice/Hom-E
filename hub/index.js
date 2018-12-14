@@ -1,6 +1,7 @@
 require("dotenv").config();
 const requestDispatcher = require("./requests/requestDispatcher")
 global.logger = require("./logger")
+require("./config/db");
 let socket = require('socket.io-client')(process.env.SOCKET_SERVER_URL);
 
 const router = require('./router')
