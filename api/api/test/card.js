@@ -3,6 +3,7 @@ require("../../config/db");
 
 const chai = require("chai");
 const chaiHttp = require("chai-http");
+global.logger = require('../../logger')
 const server = require("../../api");
 
 chai.use(chaiHttp);
