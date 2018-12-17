@@ -9,7 +9,7 @@ const main = async () => {
         await storage.setItem('isRegistered', false)
     }
 
-    let currentValue = 'true'
+    let currentValue = ''
     let isRegistered = !(await storage.getItem('sensorId') == undefined)
     let sensor_mac = "5c17-d2b9-192f-9f64-f483-64e9"
 
@@ -70,8 +70,12 @@ const main = async () => {
         await connectOrRegister()
     })
 
-    socket.on('err', data => {
+    socket.on('err', async data => {
         console.log(data)
+        if (data.type === "NOT_REGISTERED") {
+            isRegistered = false
+            await connectOrRegister()
+        }
     })
 
     socket.on('disconnect', () => { console.log("It seems the hub disconnected or crashed !") });

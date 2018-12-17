@@ -33,7 +33,6 @@ io.on('connection', socket => {
                     }
                 }
                 catch (error) {
-                    console.log(error)
                     logger.error(error.message)
                 }
             })
@@ -43,21 +42,21 @@ io.on('connection', socket => {
     socket.on('sensor_connect', async data => {
         logger.info(`The sensor ${data._id} is trying to connect to the HUB !`)
         const sensor = await SensorController.getSensorById(data._id)
-        if (sensor) {
+        if (sensor.length !== 0) {
             if (!sensor.isConnected) {
                 socket.sensorId = data._id
                 await SensorController.updateIsConnected(socket.sensorId, true)
-                logger.info(`The sensor ${data._id} is now connected !`)
                 socket.emit('sensor_connected', { type: "SENSOR_SUCCESSFULLY_CONNECTED", payload: {} })
+                logger.info(`The sensor ${data._id} is now connected !`)
             }
             else {
-                logger.error(`The sensor ${data._id} tried to connect while being already connected !`)
                 socket.emit('err', { type: "ALREADY_CONNECTED", payload: {} })
+                logger.error(`The sensor ${data._id} tried to connect while being already connected !`)
             }
         }
         else {
-            logger.error(`The sensor ${data._id} tried to connect but isn't registered !`)
             socket.emit('err', { type: "NOT_REGISTERED", payload: {} })
+            logger.error(`The sensor ${data._id} tried to connect but isn't registered !`)
         }
     });
 
