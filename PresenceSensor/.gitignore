@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+.node-persist/
 api/node_modules
 client/node_modules
 api/.nyc_output
