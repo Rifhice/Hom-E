@@ -34,13 +34,16 @@ const main = async () => {
 
     connectOrRegister = async () => {
         if (!isRegistered) {
-            console.log('Registering...')
-            socket.emit("registration", { mac_id: sensor_mac })
+            const registeringInterval = setInterval(() => {
+                !isRegistered
+                    ? console.log('Registering...') || socket.emit("registration", { mac_id: sensor_mac })
+                    : clearInterval(registeringInterval)
+            }
+                , 10000)
         }
         else {
             console.log('Connecting...')
             let sensorId = await storage.getItem('sensorId')
-            let env_var_1 = "5c17d2b9192f9f14f48364e9"
             socket.emit('sensor_connect', { _id: sensorId })
         }
     }
@@ -49,16 +52,26 @@ const main = async () => {
     socket.on('connect', async () => {
         console.log(`Connected to the sensor server !`)
         await connectOrRegister()
+    });
+
+    socket.on('sensor_connected', async () => {
+        console.log(`Successfully authenticate to the hub !`)
         recursivelyReadValue()
     });
 
     socket.on('registered', async data => {
+        console.log(`Successfully registered to the hub !`)
         await storage.setItem('sensorId', data.sensorId)
+        await storage.setItem('isRegistered', true)
         data.environment_variables.forEach(async value => {
             await storage.setItem(value.name, value._id)
         })
         isRegistered = true
         await connectOrRegister()
+    })
+
+    socket.on('err', data => {
+        console.log(data)
     })
 
     socket.on('disconnect', () => { console.log("It seems the hub disconnected or crashed !") });
