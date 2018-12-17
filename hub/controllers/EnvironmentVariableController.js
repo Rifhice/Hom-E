@@ -10,6 +10,18 @@ const getEnvironmentVariables = async () => {
     }
 };
 
+const updateEnvironmentValue = async (environmentVariableId, newValue) => {
+    try {
+        return await EnvironmentVariable.findOneAndUpdate({ _id: environmentVariableId },
+            { $set: { 'value.current': newValue } }, { "new": true })
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+}
+
 module.exports = {
-    getEnvironmentVariables
+    getEnvironmentVariables,
+    updateEnvironmentValue
 };

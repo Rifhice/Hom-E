@@ -58,6 +58,7 @@ const initDB = async () => {
     const living_room_light = new Actuator({
         name: "Living Room",
         description: "Main light of the living room",
+        isConnected: false,
         category: category_light._id,
         quick_command: command_light2._id,
         commands: [command_light._id, command_light2._id]
@@ -78,7 +79,7 @@ const initDB = async () => {
         description: "The distance of the person to the sensor",
         unit: "cm",
         value: {
-            type: "number",
+            value_type: "number",
             max: 100,
             min: 0,
             current: 50
@@ -88,6 +89,7 @@ const initDB = async () => {
     const presence_sensor = new Sensor({
         name: "Presence sensor",
         description: "Sense the presence of people",
+        isConnected: false,
         category: category_presence._id,
         environment_variables: [
             environment_variable_presence_sensor_1._id,

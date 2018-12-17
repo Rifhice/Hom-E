@@ -42,6 +42,38 @@ module.exports = {
                         logger.info(`Device ${socket.id} succesfully unsubscribed`)
                     })
                 });
+                socket.on('sensor_data_mac_id', (mac_id, callback) => {
+                    callback({
+                        sensor: {
+                            name: "Presence sensor",
+                            description: "Sense the presence of people",
+                            isConnected: false,
+                            category: null,
+                        },
+                        environment_variables: [
+                            {
+                                name: "Distance",
+                                description: "The distance of the person to the sensor",
+                                unit: "cm",
+                                value: {
+                                    value_type: "number",
+                                    max: 100,
+                                    min: 0,
+                                    current: 50
+                                }
+                            },
+                            {
+                                name: "Presence",
+                                description: "Is someone in the room",
+                                unit: "N/A",
+                                value: {
+                                    value_type: "boolean",
+                                    current: true
+                                }
+                            }
+                        ]
+                    })
+                });
                 socket.on("disconnect", () => {
                     logger.info(`${socket.deviceId ? "Device" : "Client"} ${socket.id} disconnected`)
                 })

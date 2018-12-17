@@ -19,6 +19,18 @@ const getActuators = async () => {
     }
 };
 
+const updateIsConnected = async (actuatorId, isConnected) => {
+    try {
+        return await Sensor.findOneAndUpdate({ _id: actuatorId },
+            { $set: { isConnected } }, { "new": true })
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+}
+
 module.exports = {
-    getActuators
+    getActuators,
+    updateIsConnected
 };
