@@ -1,8 +1,8 @@
-const Actuator = require('../../controllers').ActuatorController
+const Sensor = require('../../controllers').SensorController
 
 module.exports = async req => {
     try {
-        return { code: 200, data: await Actuator.getActuators() }
+        return { code: 200, data: await Sensor.getSensors() }
     }
     catch (error) {
         logger.error(error)

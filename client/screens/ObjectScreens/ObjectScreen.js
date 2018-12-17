@@ -20,7 +20,7 @@ export default class LinksScreen extends React.Component {
   }
 
   async componentDidMount() {
-    //await this.props.fetchActuators("5bf6962756d95f001c853c1a")
+    await this.props.fetchActuators("5bf6962756d95f001c853c1a")
   }
 
   _onRefresh = () => {

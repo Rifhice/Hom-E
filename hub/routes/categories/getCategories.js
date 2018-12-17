@@ -1,8 +1,8 @@
-const Actuator = require('../../controllers').ActuatorController
+const Categories = require('../../controllers').CategoryController
 
 module.exports = async req => {
     try {
-        return { code: 200, data: await Actuator.getActuators() }
+        return { code: 200, data: await Categories.getCategories() }
     }
     catch (error) {
         logger.error(error)

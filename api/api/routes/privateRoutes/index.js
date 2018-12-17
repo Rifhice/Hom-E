@@ -1,6 +1,8 @@
 const express = require('express');
-const router = express.Router();
+const router = express.Router({ mergeParams: true });
+const checkRequest = require('../../middlewares/CheckRequest')
+const { deviceValidator } = require('../../validations/privateRoutes');
 
-router.use('/device', require('./device'));
+router.use('/device/:deviceId', deviceValidator, checkRequest, require('./device'));
 
 module.exports = router;

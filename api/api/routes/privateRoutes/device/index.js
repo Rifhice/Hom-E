@@ -1,10 +1,13 @@
 const express = require('express');
-const router = express.Router();
-const checkRequest = require('../../../middlewares/CheckRequest')
-const { actuatorValidator } = require('../../../validations/privateRoutes');
-const requestTransferer = require('../../../middlewares/transferRequestToDevice')
+const router = express.Router({ mergeParams: true });
 
-
-router.get('/:deviceId/actuators', actuatorValidator.getActuators, checkRequest, requestTransferer, require('./getActuators'));
+router.use('/Actuators', require('./Actuator'));
+router.use('/Commands', require('./Command'));
+router.use('/Categories', require('./Category'));
+router.use('/Sensors', require('./Sensor'));
+router.use('/EnvironmentVariables', require('./EnvironmentVariable'));
+router.use('/Behaviors', require('./Behavior'));
+router.use('/ComplexCommands', require('./ComplexCommand'));
 
 module.exports = router;
+

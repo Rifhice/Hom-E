@@ -2,19 +2,19 @@
   * @swagger
   *
   * paths:
-  *   /device/:deviceId/actuators:
+  *   /device/:deviceId/Commands:
   *     get:
   *       tags:
-  *         - Actuators
-  *       description: Fetches all the actuators for a specifice device
-  *       summary: Fetches all the actuators for a specifice device
+  *         - Commands
+  *       description: Fetches all the commands for a specifice device
+  *       summary: Fetches all the commands for a specifice device
   *       responses:
   *         200:
-  *           description: The list of actuators
+  *           description: The list of commands
   *           content:
   *             application/json:
   *               schema:
-  *                 $ref: '#components/schemas/Actuators'
+  *                 $ref: '#components/schemas/Commands'
   *         500:
   *           description: Internal error
   *         501:

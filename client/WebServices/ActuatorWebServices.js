@@ -3,7 +3,7 @@ import config from '../config'
 
 export default {
     async getActuators(deviceId) {
-        const res = await axios.get(`${config.API_URL}/device/${deviceId}/actuators`)
+        const res = await axios.get(`${config.API_URL}/device/${deviceId}/Actuators`)
         return res.data
     }
 }
