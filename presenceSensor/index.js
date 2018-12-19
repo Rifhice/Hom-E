@@ -11,7 +11,7 @@ const main = async () => {
 
     let currentValue = ''
     let isRegistered = !(await storage.getItem('sensorId') == undefined)
-    let sensor_mac = "5c17-d2b9-192f-9f64-f483-64e9"
+    let sensor_mac = "5c1a9c2467f0664ecc30bdbc"
 
     const rl = readline.createInterface({
         input: process.stdin,

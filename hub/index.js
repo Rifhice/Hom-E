@@ -3,6 +3,8 @@ const requestDispatcher = require("./requests/requestDispatcher")
 global.logger = require("./logger")
 require("./config/db");
 require("./sensor_server")
+require("./actuator_server")
+require("./disconnect_all_devices")
 global.main_server_socket = require('socket.io-client')(process.env.SOCKET_SERVER_URL);
 global.isConnectedToMainServer = false
 const router = require('./router')

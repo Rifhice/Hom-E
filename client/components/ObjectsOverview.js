@@ -10,7 +10,7 @@ export default class ObjectOverview extends React.Component {
     render() {
         object = this.props.object
         return (
-            <View style={{ alignItems: "center" }}>
+            <View style={{ alignItems: "center", backgroundColor: object.isConnected ? "green" : "red" }}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", paddingBottom: 3, paddingTop: 10, alignContent: "center", alignItems: "center" }}>
                     <TouchableOpacity style={{ flex: 3.5 }} onPress={this.props.onPress}>
                         <View style={{ flex: 1, flexDirection: "row" }}>

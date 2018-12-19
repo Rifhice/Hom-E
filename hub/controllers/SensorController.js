@@ -1,5 +1,7 @@
 const Sensor = require("../models").Sensor;
 const EnvironmentVariable = require("../models").EnvironmentVariable;
+const Category = require("../models").Category;
+const CategoryController = require("../controllers").CategoryController;
 const database_event = require('../database_event')
 
 const getSensors = async () => {
@@ -13,15 +15,28 @@ const getSensors = async () => {
         }])
     }
     catch (error) {
-        logger.error(error.message)
+        logger.error(error)
         throw error
     }
 };
 
 const registerSensor = async (sensor, env_var) => {
     try {
-        let variables = env_var.map(current => new EnvironmentVariable(current))
+        delete sensor._id
+        let variables = env_var.map(current => { delete current._id; return new EnvironmentVariable(current) })
         sensor.environment_variables = variables
+        if (sensor.category) {
+            const category = await CategoryController.getCategoryById(sensor.category._id)
+            if (category) {
+                logger.info("CATEGORY ALREADY EXISTED " + sensor.category._id)
+                sensor.category = sensor.category._idg
+            }
+            else {
+                const newCategory = await Category.insertMany([new Category(sensor.category)])
+                logger.info("NEW CATEGORY CREATED " + newCategory[0]._id)
+                sensor.category = newCategory[0]._id
+            }
+        }
         const sensor_to_add = new Sensor(sensor)
         await Promise.all([EnvironmentVariable.insertMany(variables), Sensor.insertMany([sensor_to_add])])
         database_event.emit('event', { type: "REGISTERED_SENSOR", payload: { sensor: sensor_to_add } })
@@ -62,9 +77,15 @@ const updateIsConnected = async (sensorId, isConnected) => {
     }
 }
 
+const disconnectAll = async () => {
+    const sensors = await Sensor.find({})
+    sensors.forEach(async sensor => await updateIsConnected(sensor._id, false))
+}
+
 module.exports = {
     getSensors,
     updateIsConnected,
     getSensorById,
-    registerSensor
+    registerSensor,
+    disconnectAll
 };

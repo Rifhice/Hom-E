@@ -20,9 +20,10 @@ export default {
     init(store) {
         console.log("Init")
         this.subscribe("5bf6962756d95f001c853c1a")
-        socket.on("event", event =>
+        socket.on("event", event => {
+            console.log(event)
             store.dispatch(event)
-        )
+        })
     },
     emit(type, payload) {
         socket.emit(type, payload)

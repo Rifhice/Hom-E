@@ -5,7 +5,7 @@ const SensorController = require('./SensorController')
 const EnvironmentVariableController = require('./EnvironmentVariableController')
 const BehaviorController = require('./BehaviorController')
 const ComplexCommandsController = require('./ComplexCommandController')
-
+console.log(SensorController)
 module.exports = {
     ActuatorController,
     CommandController,

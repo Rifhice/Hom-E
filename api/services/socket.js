@@ -1,6 +1,7 @@
 const socketio = require('socket.io');
 const redisAdapter = require('socket.io-redis')(process.env.REDIS_URL);
-
+const SensorController = require('../api/controllers/SensorController')
+const ActuatorController = require('../api/controllers/ActuatorController')
 
 redisAdapter.pubClient.on('error', (error) => logger.info(error));
 redisAdapter.pubClient.on('connect', () => logger.info("Connected to Redis"));
@@ -42,55 +43,55 @@ module.exports = {
                         logger.info(`Device ${socket.id} succesfully unsubscribed`)
                     })
                 });
-                socket.on('sensor_data_mac_id', (mac_id, callback) => {
-                    /*callback({
-                        result: "MAC_ID_NOT_FOUND",
-                        payload: {}
-                    })*/
-                    callback({
-                        result: "success",
-                        payload: {
-                            sensor: {
-                                name: "Presence sensor",
-                                description: "Sense the presence of people",
-                                isConnected: false,
-                                category: null,
-                            },
-                            environment_variables: [
-                                {
-                                    name: "Distance",
-                                    description: "The distance of the person to the sensor",
-                                    unit: "cm",
-                                    value: {
-                                        value_type: "number",
-                                        max: 100,
-                                        min: 0,
-                                        current: 50
-                                    }
-                                },
-                                {
-                                    name: "Presence",
-                                    description: "Is someone in the room",
-                                    unit: "N/A",
-                                    value: {
-                                        value_type: "boolean",
-                                        current: true
-                                    }
-                                }
-                            ]
-                        }
-                    })
+                socket.on('sensor_data_mac_id', async (mac_id, callback) => {
+                    try {
+                        const sensor = await SensorController.getSensorById(mac_id)
+                        sensor
+                            ? callback({
+                                result: "success",
+                                payload: sensor
+                            })
+                            : callback({
+                                result: "MAC_ID_NOT_FOUND",
+                                payload: {}
+                            })
+                    }
+                    catch (error) {
+                        callback({
+                            result: "INTERNAL_ERROR",
+                            payload: {}
+                        })
+                    }
+                });
+                socket.on('actuator_data_mac_id', async (mac_id, callback) => {
+                    try {
+                        const actuator = await ActuatorController.getActuatorById(mac_id)
+                        actuator
+                            ? callback({
+                                result: "success",
+                                payload: actuator
+                            })
+                            : callback({
+                                result: "MAC_ID_NOT_FOUND",
+                                payload: {}
+                            })
+                    }
+                    catch (error) {
+                        callback({
+                            result: "INTERNAL_ERROR",
+                            payload: {}
+                        })
+                    }
                 });
                 socket.on("hub_event", event => {
-                    logger.info(JSON.stringify(event))
-                    console.log(socket.deviceId)
+                    console.log(event)
                     io.to(`${socket.deviceId}/Client`).emit('event', event)
                 })
                 socket.on("disconnect", () => {
                     logger.info(`${socket.deviceId ? "Device" : "Client"} ${socket.id} disconnected`)
                 })
                 socket.on("error", (error) => {
-                    socketLog(error)
+                    logger.error(error)
                 })
             });
             return Promise.resolve()

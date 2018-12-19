@@ -10,6 +10,17 @@ const getCategories = async () => {
     }
 };
 
+const getCategoryById = async (id) => {
+    try {
+        return await Category.findOne({ _id: id })
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+};
+
 module.exports = {
-    getCategories
+    getCategories,
+    getCategoryById
 };

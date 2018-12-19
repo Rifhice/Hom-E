@@ -76,9 +76,13 @@ export default (state = defaultState, action = { type: null, payload: null }) =>
             return {
                 all: action.payload
             }
-        case actions.ADD_ACTUATOR:
+        case actions.REGISTERED_ACTUATOR:
             return {
-                all: [...state.all, action.payload]
+                all: [...state.all, action.payload.actuator]
+            }
+        case actions.UPDATE_ACTUATOR_ISCONNECTED:
+            return {
+                all: state.all.map(actuator => actuator._id === action.payload._id ? { ...actuator, isConnected: action.payload.isConnected } : actuator)
             }
         default:
             return state
