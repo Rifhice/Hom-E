@@ -13,7 +13,7 @@ module.exports = {
             io.adapter(redisAdapter);
             io.on('connection', (socket) => {
                 logger.info("A client is connected ( id: " + socket.id + " )")
-                socket.on('subscribeClientTODevice', (deviceId) => {
+                socket.on('subscribeClientToDevice', (deviceId) => {
                     io.of('/').adapter.remoteJoin(socket.id, `${deviceId}/Client`, (error) => {
                         if (error)
                             return socket.log("An error occured: " + error)
@@ -81,6 +81,11 @@ module.exports = {
                         }
                     })
                 });
+                socket.on("hub_event", event => {
+                    logger.info(JSON.stringify(event))
+                    console.log(socket.deviceId)
+                    io.to(`${socket.deviceId}/Client`).emit('event', event)
+                })
                 socket.on("disconnect", () => {
                     logger.info(`${socket.deviceId ? "Device" : "Client"} ${socket.id} disconnected`)
                 })

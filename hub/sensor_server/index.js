@@ -1,7 +1,5 @@
 const SensorController = require('../controllers/SensorController')
 const EnvironmentVariableController = require('../controllers/EnvironmentVariableController')
-const Sensor = require("../models").Sensor;
-const EnvironmentVariable = require("../models").EnvironmentVariable;
 const http = require('http')
 const app = http.createServer()
 const io = require('socket.io').listen(app);
@@ -17,16 +15,17 @@ io.on('connection', socket => {
             main_server_socket.emit('sensor_data_mac_id', data.mac_id, async data => {
                 try {
                     if (data.result === "success") {
-                        const env_var = data.payload.environment_variables.map(current => new EnvironmentVariable(current))
-                        const sensor = data.payload.sensor
-                        sensor.environment_variables = env_var
-                        const sensor_to_add = new Sensor(sensor)
-                        await Promise.all([EnvironmentVariable.insertMany(env_var), Sensor.insertMany([sensor_to_add])])
-                        logger.info("A new sensor has been registered to the hub !");
-                        socket.emit('registered', {
-                            sensorId: sensor_to_add._id,
-                            environment_variables: env_var.map(val => ({ name: val.name, _id: val._id }))
-                        })
+                        const sensor = await SensorController.registerSensor(data.payload.sensor, data.payload.environment_variables)
+                        if (sensor) {
+                            logger.info("A new sensor has been registered to the hub !");
+                            socket.emit('registered', {
+                                sensorId: sensor._id,
+                                environment_variables: sensor.environment_variables.map(val => ({ name: val.name, _id: val._id }))
+                            })
+                        }
+                        else {
+                            socket.emit('err', { type: "FAILED_TO_SAVE_INSTANCE", payload: {} })
+                        }
                     }
                     else {
                         socket.emit('err', { type: "MAC_ADDRESS_NOT_FOUND", payload: {} })
@@ -61,13 +60,15 @@ io.on('connection', socket => {
     });
 
     socket.on('update', async data => {
-        logger.info(`A sensor is updating a variable !`)
+        logger.info(`The sensor ${socket.sensorId} is updating a variable !`)
         await EnvironmentVariableController.updateEnvironmentValue(data._id, data.newValue)
     });
 
     socket.on('disconnect', async data => {
-        logger.info(`A sensor just disconnected !`)
-        await SensorController.updateIsConnected(socket.sensorId, false)
+        if (data && socket.sensorId) {
+            logger.info(`The sensor ${socket.sensorId} just disconnected !`)
+            await SensorController.updateIsConnected(socket.sensorId, false)
+        }
     });
 });
 

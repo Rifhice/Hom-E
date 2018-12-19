@@ -20,12 +20,13 @@ export default class LinksScreen extends React.Component {
   }
 
   async componentDidMount() {
-    await this.props.fetchActuators("5bf6962756d95f001c853c1a")
+    this._onRefresh()
   }
 
   _onRefresh = () => {
     this.setState({ refreshing: true }, async () => {
       await this.props.fetchActuators("5bf6962756d95f001c853c1a")
+      await this.props.fetchSensors("5bf6962756d95f001c853c1a")
       this.setState({ refreshing: false })
     })
   }
@@ -55,6 +56,13 @@ export default class LinksScreen extends React.Component {
             object={actuator}
             onPress={() => navigate('DetailObject', { object: actuator })}
           ></ObjectOverview>
+        )}
+        {this.props.sensors.map(sensor => {
+          return sensor.environment_variables.map(env =>
+            <Text
+              style={{ backgroundColor: sensor.isConnected ? "green" : "red" }}
+            >{env.value.current}</Text>)
+        }
         )}
         <ExpoLinksView />
       </ScrollView>

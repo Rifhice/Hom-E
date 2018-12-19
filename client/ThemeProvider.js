@@ -1,23 +1,26 @@
 import React from 'react';
 
 const themes = require('./constants/Colors.json')
+const availableTheme = Object.keys(themes)
 
 const ThemeContext = React.createContext({
     theme: themes.regular,
     changeTheme: () => { },
+    availableTheme,
+    selected: "regular"
 });
 
 export const withTheme = (Component) => {
     return (props) => <ThemeContext.Consumer {...props}>
-        {({ theme, changeTheme }) => (
-            <Component {...props} theme={{ current: theme, changeTheme }} ></Component>
+        {({ theme, changeTheme, availableTheme, selected }) => (
+            <Component {...props} theme={{ current: theme, availableTheme, selected }} ></Component>
         )}
     </ThemeContext.Consumer>
 }
 
 export const withChangeTheme = (Component) => {
     return (props) => <ThemeContext.Consumer {...props}>
-        {({ theme, changeTheme }) => {
+        {({ theme, changeTheme, available_theme }) => {
             return <Component {...props} changeTheme={(theme) => changeTheme(theme)} ></Component>
         }}
     </ThemeContext.Consumer>
@@ -28,15 +31,19 @@ export class ThemeProvider extends React.Component {
         super(props);
         this.changeTheme = (theme) => {
             this.setState({
-                theme:
-                    themes[theme]
-                        ? themes[theme]
-                        : state.theme
+                theme: themes[theme]
+                    ? themes[theme]
+                    : state.theme,
+                selected: themes[theme]
+                    ? theme
+                    : state.selected,
             });
         };
         this.state = {
             theme: themes.regular,
             changeTheme: this.changeTheme,
+            availableTheme: Object.keys(themes),
+            selected: "regular"
         };
     }
 

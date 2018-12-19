@@ -1,4 +1,5 @@
 const EnvironmentVariable = require("../models").EnvironmentVariable;
+const database_event = require('../database_event')
 
 const getEnvironmentVariables = async () => {
     try {
@@ -12,8 +13,10 @@ const getEnvironmentVariables = async () => {
 
 const updateEnvironmentValue = async (environmentVariableId, newValue) => {
     try {
-        return await EnvironmentVariable.findOneAndUpdate({ _id: environmentVariableId },
+        const updatedEnvironmenVariable = await EnvironmentVariable.findOneAndUpdate({ _id: environmentVariableId },
             { $set: { 'value.current': newValue } }, { "new": true })
+        database_event.emit('event', { type: "UPDATE_ENVIRONMENT_VARIABLE_VALUE", payload: { _id: updatedEnvironmenVariable._id, newValue } })
+        return updatedEnvironmenVariable
     }
     catch (error) {
         logger.error(error.message)

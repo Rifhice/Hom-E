@@ -74,7 +74,8 @@ const main = async () => {
         console.log(data)
         if (data.type === "NOT_REGISTERED") {
             isRegistered = false
-            await connectOrRegister()
+            await storage.clear()
+            process.exit(0)
         }
     })
 

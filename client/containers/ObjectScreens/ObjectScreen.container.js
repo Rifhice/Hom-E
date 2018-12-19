@@ -4,10 +4,12 @@ import { withNamespaces } from 'react-i18next';
 import { withInAppNotification } from 'react-native-in-app-notification';
 import { withTheme, withChangeTheme } from '../../ThemeProvider'
 import ActuatorServices from '../../InternalServices/ActuatorServices'
+import SensorServices from '../../InternalServices/SensorServices'
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        actuators: state.actuators.all
+        actuators: state.actuators.all,
+        sensors: state.sensor.all
     }
 }
 
@@ -15,6 +17,9 @@ const mapDispatchToProps = dispatch => {
     return {
         async fetchActuators(deviceId) {
             ActuatorServices.getActuators(deviceId, dispatch)
+        },
+        async fetchSensors(deviceId) {
+            SensorServices.getSensors(deviceId, dispatch)
         }
     }
 }
