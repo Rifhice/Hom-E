@@ -4,6 +4,7 @@ import { Divider, Text, Icon } from 'react-native-elements'
 import Switch from '../components/Switch'
 import Slider from '../components/Slider'
 import Icons from '../constants/Icons.js'
+import ActuatorServices from '../InternalServices/ActuatorServices'
 
 export default class ObjectOverview extends React.Component {
 
@@ -33,15 +34,17 @@ export default class ObjectOverview extends React.Component {
                                     object.quick_command.type === "switch"
                                         ? <Switch
                                             style={{ flex: 1 }}
-                                            onChange={(val) => console.log(val)}></Switch>
+                                            onChange={(val) => ActuatorServices.executeOrder(this.props.deviceId, object.quick_command.key, val, object._id, object.quick_command._id)}
+                                            isActive={object.quick_command.command_argument.current}
+                                        ></Switch>
                                         : object.quick_command.type === "slider"
                                             ? <Slider
                                                 style={{ flex: 1, width: "90%", height: "90%" }}
                                                 onChange={(val) => console.log(val)}
-                                                originalValue={object.quick_command.command_arguments[0].current}
-                                                minimumValue={object.quick_command.command_arguments[0].min}
-                                                maximumValue={object.quick_command.command_arguments[0].max}
-                                                step={object.quick_command.command_arguments[0].precision}
+                                                originalValue={object.quick_command.command_argument.current}
+                                                minimumValue={object.quick_command.command_argument.min}
+                                                maximumValue={object.quick_command.command_argument.max}
+                                                step={object.quick_command.command_argument.precision}
                                                 displayValueUnder={false}></Slider>
                                             : ""
                                 }

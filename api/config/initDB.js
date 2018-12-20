@@ -75,9 +75,7 @@ async function initDB() {
             description: "Turn on or off",
             type: "switch",
             key: "set",
-            command_arguments: [
-                { "type": "discrete", "possible_values": ["on", "off"], "current": "on" }
-            ]
+            command_argument: { "type": "boolean", "current": true }
         },
         commands: [
             {
@@ -85,9 +83,7 @@ async function initDB() {
                 description: "Change the brightness",
                 type: "slider",
                 key: "brigth",
-                command_arguments: [
-                    { "type": "continuous", "min": 0, "max": 100, "precision": 1, "current": 50 }
-                ]
+                command_argument: { "type": "continuous", "min": 0, "max": 100, "precision": 1, "current": 50 }
             }]
     })
 

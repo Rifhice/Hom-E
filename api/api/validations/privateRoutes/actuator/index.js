@@ -1,3 +1,4 @@
 module.exports = {
-    getActuators: require('./getActuators')
+    getActuators: require('./getActuators'),
+    executeOrder: require('./executeOrder')
 };

@@ -5,7 +5,7 @@ const CommandSchema = new mongoose.Schema({
     description: String,
     type: String,
     key: String,
-    command_arguments: [{}]
+    command_argument: {}
 }, { timestamps: true });
 
 const Command = mongoose.model("Command", CommandSchema);

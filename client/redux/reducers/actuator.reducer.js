@@ -13,9 +13,7 @@ const defaultState = {
                 "type": "slider",
                 "key": "set",
                 "description": "....",
-                "command_arguments": [
-                    { "type": "discrete", "possible_values": ["on", "off"] }
-                ]
+                "command_argument": { "type": "discrete", "possible_values": ["on", "off"] }
             },
             "commands": [
                 {
@@ -24,9 +22,7 @@ const defaultState = {
                     "type": "slider",
                     "key": "set",
                     "description": "....",
-                    "command_arguments": [
-                        { "type": "discrete", "possible_values": ["on", "off"] }
-                    ]
+                    "command_argument": { "type": "discrete", "possible_values": ["on", "off"] }
                 }
             ],
             "communication": {
@@ -45,9 +41,7 @@ const defaultState = {
                 "type": "switch",
                 "key": "set",
                 "description": "....",
-                "command_arguments": [
-                    { "type": "discrete", "possible_values": ["on", "off"] }
-                ]
+                "command_argument": { "type": "discrete", "possible_values": ["on", "off"] }
             },
             "commands": [
                 {
@@ -56,9 +50,7 @@ const defaultState = {
                     "type": "switch",
                     "key": "set",
                     "description": "....",
-                    "command_arguments": [
-                        { "type": "discrete", "possible_values": ["on", "off"] }
-                    ]
+                    "command_argument": { "type": "discrete", "possible_values": ["on", "off"] }
                 }
             ],
             "communication": {
@@ -83,6 +75,10 @@ export default (state = defaultState, action = { type: null, payload: null }) =>
         case actions.UPDATE_ACTUATOR_ISCONNECTED:
             return {
                 all: state.all.map(actuator => actuator._id === action.payload._id ? { ...actuator, isConnected: action.payload.isConnected } : actuator)
+            }
+        case actions.UPDATE_COMMAND_VALUE:
+            return {
+                all: state.all.map(actuator => ({ ...actuator, quick_command: actuator.quick_command._id === action.payload._id ? { ...actuator.quick_command, command_argument: { ...actuator.quick_command.command_argument, current: action.payload.newValue } } : quick_command, commands: actuator.commands.map(command => command._id === action.payload._id ? { ...command, command_argument: { ...command.command_argument, current: action.payload.newValue } } : command) }))
             }
         default:
             return state

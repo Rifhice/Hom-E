@@ -53,6 +53,7 @@ export default class LinksScreen extends React.Component {
         {this.props.actuators.map(actuator =>
           <ObjectOverview
             key={actuator._id}
+            deviceId={"5bf6962756d95f001c853c1a"}
             object={actuator}
             onPress={() => navigate('DetailObject', { object: actuator })}
           ></ObjectOverview>

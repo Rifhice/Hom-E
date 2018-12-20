@@ -46,7 +46,7 @@ const registerActuator = async (actuator, quick_command, commands) => {
         delete actuator._id
         let newCommands = commands.map(current => { delete current._id; return new Command(current) })
         let newQuick_command = new Command(quick_command)
-        actuator.command = [newQuick_command, ...newCommands]
+        actuator.commands = [newQuick_command, ...newCommands]
         actuator.quick_command = newQuick_command
         if (actuator.category) {
             const category = await CategoryController.getCategoryById(actuator.category._id)
@@ -89,6 +89,8 @@ const getActuatorById = async (sensorId) => {
         throw error
     }
 };
+
+
 
 module.exports = {
     getActuators,

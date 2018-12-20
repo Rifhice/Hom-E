@@ -12,18 +12,14 @@ const ActuatorSchema = new mongoose.Schema({
         description: String,
         type: { type: String },
         key: String,
-        command_arguments: [
-            {}
-        ]
+        command_argument: {}
     },
     commands: [{
         name: String,
         description: String,
         type: { type: String },
         key: String,
-        command_arguments: [
-            {}
-        ]
+        command_argument: {}
     }]
 }, { timestamps: true });
 

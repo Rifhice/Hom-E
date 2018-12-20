@@ -1,4 +1,5 @@
 const ActuatorController = require('../controllers/ActuatorController')
+const CommandController = require('../controllers/CommandController')
 const http = require('http')
 const app = http.createServer()
 const io = require('socket.io').listen(app);
@@ -6,6 +7,8 @@ const io = require('socket.io').listen(app);
 const checkConnection = (func, socket) => {
     global.isConnectedToMainServer ? func() : socket.emit('err', { type: "HUB_NOT_CONNECTED_TO_MAIN_SERVER", payload: {} })
 }
+
+let actuatorConnected = []
 
 io.on('connection', socket => {
     socket.on('registration', async data => {
@@ -44,6 +47,7 @@ io.on('connection', socket => {
             if (!actuator.isConnected) {
                 socket.actuatorId = data._id
                 await ActuatorController.updateIsConnected(socket.actuatorId, true)
+                actuatorConnected.push(socket)
                 socket.emit('actuator_connected', { type: "SENSOR_SUCCESSFULLY_CONNECTED", payload: {} })
                 logger.info(`The actuator ${data._id} is now connected !`)
             }
@@ -60,6 +64,7 @@ io.on('connection', socket => {
 
     socket.on('disconnect', async data => {
         if (data && socket.actuatorId) {
+            actuatorConnected.splice(actuatorConnected.indexOf(socket), 1)
             logger.info(`The actuator ${socket.actuatorId} just disconnected !`)
             await ActuatorController.updateIsConnected(socket.actuatorId, false)
         }
@@ -68,3 +73,23 @@ io.on('connection', socket => {
 
 app.listen(process.env.ACTUATOR_SERVER_PORT);
 logger.info(`Actuator server is listening on port ${process.env.ACTUATOR_SERVER_PORT} !`)
+
+module.exports = {
+    emitOrderToActuator: async (key, argument, actuatorId, commandId) => {
+        let pending = []
+        let socketActuator
+        actuatorConnected.forEach(actuator => {
+            if (actuator.actuatorId === actuatorId) {
+                socketActuator = actuator
+            }
+        })
+        if (socketActuator) {
+            socketActuator.emit('order', `${key} ${argument}`)
+            const newCommand = await CommandController.updateCommandValue(commandId, argument)
+            return newCommand
+        }
+        let error = new Error('Actuator not connected')
+        error.code = 502
+        throw error
+    }
+}

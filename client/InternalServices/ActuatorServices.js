@@ -10,5 +10,13 @@ export default {
         catch (error) {
             console.log(error)
         }
+    },
+    async executeOrder(deviceId, key, argument, actuatorId, commandId, dispatch) {
+        try {
+            const result = await ActuatorWebServices.executeOrder(deviceId, key, argument, actuatorId, commandId)
+        }
+        catch (error) {
+            console.log(error)
+        }
     }
 }
