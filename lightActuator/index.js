@@ -28,7 +28,7 @@ const main = async () => {
         }
     }
 
-    const socket = require('socket.io-client')('http://localhost:1666');
+    const socket = require('socket.io-client')('http://192.168.1.74:1666');
     socket.on('connect', async () => {
         console.log(`Connected to the actuator server !`)
         await connectOrRegister()

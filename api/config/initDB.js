@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Sensor = require("../api/models/index").Sensor;
 const Actuator = require("../api/models/index").Actuator;
 const Category = require("../api/models/index").Category;
+const User = require("../api/models/index").User;
 const logger = require('../logger')
 
 require("dotenv").config({});
@@ -91,6 +92,10 @@ async function initDB() {
     array.push(Category.insertMany([category_light, category_presence]));
     array.push(Sensor.insertMany([presence_sensor]));
     array.push(Actuator.insertMany([light_actuator]))
+    array.push(User.insertMany([new User({
+        username: "Kevin",
+        hash: 'zeoljgfhzohgzhgozfz'
+    })]))
     Promise.all(array).then(() => {
         logger.info("Init DB successful");
         logger.info("Closing the connection to the database");

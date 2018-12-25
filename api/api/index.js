@@ -7,6 +7,7 @@ const bearerToken = require('express-bearer-token')
 router.use(bearerToken())
 
 router.use(require('./routes/privateRoutes/index'));
+router.use(require('./routes/publicRoutes/index'));
 
 router.all('*', (req, res) => {
   res.sendStatus(404);

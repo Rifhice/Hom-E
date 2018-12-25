@@ -2,6 +2,8 @@ const socketio = require('socket.io');
 const redisAdapter = require('socket.io-redis')(process.env.REDIS_URL);
 const SensorController = require('../api/controllers/SensorController')
 const ActuatorController = require('../api/controllers/ActuatorController')
+const DeviceController = require('../api/controllers/DeviceController')
+const WaitingForPairingController = require('../api/controllers/WaitingForPairingController')
 
 redisAdapter.pubClient.on('error', (error) => logger.info(error));
 redisAdapter.pubClient.on('connect', () => logger.info("Connected to Redis"));
@@ -28,6 +30,26 @@ module.exports = {
                         logger.info(`User ${socket.id} succesfully unsubscribed to device ${deviceId}`)
                     })
                 });
+                socket.on('pairDevice', async (deviceId, callback) => {
+                    logger.info(`The device ${deviceId} is trying to pair!`)
+                    const pair = await WaitingForPairingController.findWithDeviceId(deviceId)
+                    if (!pair) {
+                        callback({
+                            result: "COULD_NOT_PAIR",
+                            payload: {}
+                        })
+                    }
+                    else {
+                        const realPair = await DeviceController.addDevice(pair.deviceId, pair.masterId)
+                        if (realPair) {
+                            await WaitingForPairingController.removeWithDeviceId(deviceId)
+                            callback({
+                                result: "success",
+                                payload: {}
+                            })
+                        }
+                    }
+                })
                 socket.on('subscribeDevice', (deviceId) => {
                     io.of('/').adapter.remoteJoin(socket.id, `${deviceId}/Device`, (error) => {
                         if (error)
