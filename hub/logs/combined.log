@@ -4976,3 +4976,2012 @@
 {"message":"Starts the hub (online mode)","level":"info"}
 {"message":"Sensor server is listening on port 1555 !","level":"info"}
 {"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"The sensor 5c1bb71c619f1c5632698a27 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c1bb71c619f1c5632698a27 tried to connect but isn't registered !","level":"error"}
+{"message":"A sensor is trying to register to the HUB !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"A sensor is trying to register to the HUB !","level":"info"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"A sensor is trying to register to the HUB !","level":"info"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"A sensor is trying to register to the HUB !","level":"info"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"A sensor is trying to register to the HUB !","level":"info"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"A sensor is trying to register to the HUB !","level":"info"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"A sensor is trying to register to the HUB !","level":"info"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"A sensor is trying to register to the HUB !","level":"info"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"A sensor is trying to register to the HUB !","level":"info"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"A sensor is trying to register to the HUB !","level":"info"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"A sensor is trying to register to the HUB !","level":"info"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"A sensor is trying to register to the HUB !","level":"info"}
+{"message":"NEW CATEGORY CREATED 5c202ecfb8e48e04712294e3","level":"info"}
+{"message":"A new sensor has been registered to the hub !","level":"info"}
+{"message":"The sensor 5c217de1804bf53cd6a74755 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c217de1804bf53cd6a74755 is now connected !","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c217de1804bf53cd6a74755 is updating a variable !","level":"info"}
+{"message":"An actuator is trying to register to the HUB !","level":"info"}
+{"message":"NEW CATEGORY CREATED 5c202ecfb8e48e04712294e2","level":"info"}
+{"message":"A new actuator has been registered to the hub !","level":"info"}
+{"message":"The actuator 5c217e49804bf53cd6a74759 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c217e49804bf53cd6a74759 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c217de1804bf53cd6a74755 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c217de1804bf53cd6a74755 is now connected !","level":"info"}
+{"message":"The actuator 5c217e49804bf53cd6a74759 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c217e49804bf53cd6a74759 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c217de1804bf53cd6a74755 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c217de1804bf53cd6a74755 is now connected !","level":"info"}
+{"message":"The actuator 5c217e49804bf53cd6a74759 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c217e49804bf53cd6a74759 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c217e49804bf53cd6a74759 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c217de1804bf53cd6a74755 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c217e49804bf53cd6a74759 is now connected !","level":"info"}
+{"message":"The sensor 5c217de1804bf53cd6a74755 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c217de1804bf53cd6a74755 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c217de1804bf53cd6a74755 is now connected !","level":"info"}
+{"message":"The actuator 5c217e49804bf53cd6a74759 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c217e49804bf53cd6a74759 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c217de1804bf53cd6a74755 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c217e49804bf53cd6a74759 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c217de1804bf53cd6a74755 is now connected !","level":"info"}
+{"message":"The actuator 5c217e49804bf53cd6a74759 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c217de1804bf53cd6a74755 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c217de1804bf53cd6a74755 is now connected !","level":"info"}
+{"message":"The actuator 5c217e49804bf53cd6a74759 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c217e49804bf53cd6a74759 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c217e49804bf53cd6a74759 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c217e49804bf53cd6a74759 is now connected !","level":"info"}
+{"message":"The sensor 5c217de1804bf53cd6a74755 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c217de1804bf53cd6a74755 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c217de1804bf53cd6a74755 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c217de1804bf53cd6a74755 is now connected !","level":"info"}
+{"message":"The actuator 5c217e49804bf53cd6a74759 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c217e49804bf53cd6a74759 is now connected !","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"Cannot read property '_id' of null","level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"environmentVariableId is not defined","level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"Cannot read property '_id' of null","level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"message":"EnvironmentVariable.getEnvironmentVariables is not a function","level":"error"}
+{"level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"Cannot read property '_id' of null","level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"Cannot read property '_id' of null","level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"Cannot read property '_id' of null","level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"Cannot read property '_id' of null","level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"topology was destroyed","level":"error"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"topology was destroyed","level":"error"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"level":"error"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"The actuator 5c217e49804bf53cd6a74759 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c217e49804bf53cd6a74759 tried to connect but isn't registered !","level":"error"}
+{"message":"The sensor 5c217de1804bf53cd6a74755 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c217de1804bf53cd6a74755 tried to connect but isn't registered !","level":"error"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"An actuator is trying to register to the HUB !","level":"info"}
+{"message":"NEW CATEGORY CREATED 5c202ecfb8e48e04712294e2","level":"info"}
+{"message":"A new actuator has been registered to the hub !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"A sensor is trying to register to the HUB !","level":"info"}
+{"message":"NEW CATEGORY CREATED 5c202ecfb8e48e04712294e3","level":"info"}
+{"message":"A new sensor has been registered to the hub !","level":"info"}
+{"message":"The sensor 5c2186aea1ba1349146af962 is trying to connect to the HUB !","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"The sensor 5c2186aea1ba1349146af962 is now connected !","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c2186aea1ba1349146af962 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c2186aea1ba1349146af962 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c2186aea1ba1349146af962 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c2186aea1ba1349146af962 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c2186aea1ba1349146af962 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c2186aea1ba1349146af962 is now connected !","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c218667d20a1948b7f5c25a/Actuators\",\"method\":\"GET\",\"body\":{\"deviceId\":\"5c218667d20a1948b7f5c25a\"},\"params\":{\"deviceId\":\"5c218667d20a1948b7f5c25a\"}}","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c2186aea1ba1349146af962 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c2186aea1ba1349146af962 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c218667d20a1948b7f5c25a/Actuators\",\"method\":\"GET\",\"body\":{\"deviceId\":\"5c218667d20a1948b7f5c25a\"},\"params\":{\"deviceId\":\"5c218667d20a1948b7f5c25a\"}}","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c2186aea1ba1349146af962 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c2186aea1ba1349146af962 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c218667d20a1948b7f5c25a/Actuators\",\"method\":\"GET\",\"body\":{\"deviceId\":\"5c218667d20a1948b7f5c25a\"},\"params\":{\"deviceId\":\"5c218667d20a1948b7f5c25a\"}}","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c2186aea1ba1349146af962 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c2186aea1ba1349146af962 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c2186aea1ba1349146af962 just disconnected !","level":"info"}
+{"message":"A sensor is trying to register to the HUB !","level":"info"}
+{"message":"CATEGORY ALREADY EXISTED 5c202ecfb8e48e04712294e3","level":"info"}
+{"message":"A new sensor has been registered to the hub !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"Cannot read property 'type' of undefined","level":"error"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"Cannot read property 'type' of undefined","level":"error"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is now connected !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is now connected !","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2186aba1ba1349146af95e tried to connect but isn't registered !","level":"error"}
+{"message":"Pairing ...","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 tried to connect but isn't registered !","level":"error"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"An actuator is trying to register to the HUB !","level":"info"}
+{"message":"NEW CATEGORY CREATED 5c202ecfb8e48e04712294e2","level":"info"}
+{"message":"A new actuator has been registered to the hub !","level":"info"}
+{"message":"The actuator 5c219119e0eea753d70a59e9 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c219119e0eea753d70a59e9 is now connected !","level":"info"}
+{"message":"A sensor is trying to register to the HUB !","level":"info"}
+{"message":"NEW CATEGORY CREATED 5c202ecfb8e48e04712294e3","level":"info"}
+{"message":"A new sensor has been registered to the hub !","level":"info"}
+{"message":"The sensor 5c219119e0eea753d70a59ed is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c219119e0eea753d70a59ed is now connected !","level":"info"}
+{"message":"The sensor 5c219119e0eea753d70a59ed is updating a variable !","level":"info"}
+{"message":"The sensor 5c219119e0eea753d70a59ed is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c219119e0eea753d70a59e9 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c219119e0eea753d70a59e9 is now connected !","level":"info"}
+{"message":"The sensor 5c219119e0eea753d70a59ed is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c219119e0eea753d70a59ed is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c219119e0eea753d70a59e9 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c219119e0eea753d70a59e9 is now connected !","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"The actuator 5c219119e0eea753d70a59e9 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c219119e0eea753d70a59e9 tried to connect but isn't registered !","level":"error"}
+{"message":"The sensor 5c219119e0eea753d70a59ed is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c219119e0eea753d70a59ed tried to connect but isn't registered !","level":"error"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c2191b049e07e547d0c9d70/Actuators\",\"method\":\"GET\",\"body\":{\"deviceId\":\"5c2190e7c5a51d53ac2b91bd\"},\"params\":{\"deviceId\":\"5c2191b049e07e547d0c9d70\"}}","level":"info"}
+{"message":"An actuator is trying to register to the HUB !","level":"info"}
+{"message":"NEW CATEGORY CREATED 5c202ecfb8e48e04712294e2","level":"info"}
+{"message":"A new actuator has been registered to the hub !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c2191b049e07e547d0c9d70/Actuators\",\"method\":\"GET\",\"body\":{\"deviceId\":\"5c2190e7c5a51d53ac2b91bd\"},\"params\":{\"deviceId\":\"5c2191b049e07e547d0c9d70\"}}","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"A sensor is trying to register to the HUB !","level":"info"}
+{"message":"NEW CATEGORY CREATED 5c202ecfb8e48e04712294e3","level":"info"}
+{"message":"A new sensor has been registered to the hub !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is now connected !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is updating a variable !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is now connected !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is updating a variable !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is now connected !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is updating a variable !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is updating a variable !","level":"info"}
+{"message":"Actuator not connected","level":"error"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c2191b049e07e547d0c9d70/Actuators\",\"method\":\"GET\",\"body\":{\"deviceId\":\"5c2190e7c5a51d53ac2b91bd\"},\"params\":{\"deviceId\":\"5c2191b049e07e547d0c9d70\"}}","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is now connected !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is now connected !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is updating a variable !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is updating a variable !","level":"info"}
+{"message":"Actuator undefined not connected","level":"error"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is now connected !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is updating a variable !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is updating a variable !","level":"info"}
+{"message":"Actuator undefined not connected","level":"error"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 is now connected !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"The sensor 5c219294b59dca55841d0707 just disconnected !","level":"info"}
+{"message":"A sensor is trying to register to the HUB !","level":"info"}
+{"message":"CATEGORY ALREADY EXISTED 5c202ecfb8e48e04712294e3","level":"info"}
+{"message":"A new sensor has been registered to the hub !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is now connected !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is updating a variable !","level":"info"}
+{"message":"Actuator undefined not connected","level":"error"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is now connected !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is updating a variable !","level":"info"}
+{"message":"Actuator undefined not connected","level":"error"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is updating a variable !","level":"info"}
+{"message":"Actuator undefined not connected","level":"error"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is now connected !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is updating a variable !","level":"info"}
+{"message":"Actuator undefined not connected","level":"error"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is now connected !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is updating a variable !","level":"info"}
+{"message":"Environment_variableController.getGetTriggeredBehavior is not a function","level":"error"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is now connected !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is updating a variable !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is updating a variable !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is now connected !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is updating a variable !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is updating a variable !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is updating a variable !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is updating a variable !","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c2191b049e07e547d0c9d70/Actuators\",\"method\":\"GET\",\"body\":{\"deviceId\":\"5c2190e7c5a51d53ac2b91bd\"},\"params\":{\"deviceId\":\"5c2191b049e07e547d0c9d70\"}}","level":"info"}
+{"message":"Disconnected","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is updating a variable !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is updating a variable !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is updating a variable !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is updating a variable !","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c2191b049e07e547d0c9d70/Sensors\",\"method\":\"GET\",\"body\":{},\"params\":{\"deviceId\":\"5c2191b049e07e547d0c9d70\"}}","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c2191b049e07e547d0c9d70/Sensors\",\"method\":\"GET\",\"body\":{},\"params\":{\"deviceId\":\"5c2191b049e07e547d0c9d70\"}}","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is now connected !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is now connected !","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is now connected !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c2191b049e07e547d0c9d70/Sensors\",\"method\":\"GET\",\"body\":{},\"params\":{\"deviceId\":\"5c2191b049e07e547d0c9d70\"}}","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c2191b049e07e547d0c9d70/Actuators\",\"method\":\"GET\",\"body\":{},\"params\":{\"deviceId\":\"5c2191b049e07e547d0c9d70\"}}","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c2191b049e07e547d0c9d70/Sensors\",\"method\":\"GET\",\"body\":{},\"params\":{\"deviceId\":\"5c2191b049e07e547d0c9d70\"}}","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c2191b049e07e547d0c9d70/Actuators\",\"method\":\"GET\",\"body\":{},\"params\":{\"deviceId\":\"5c2191b049e07e547d0c9d70\"}}","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c2191b049e07e547d0c9d70/Sensors\",\"method\":\"GET\",\"body\":{},\"params\":{\"deviceId\":\"5c2191b049e07e547d0c9d70\"}}","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is now connected !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is now connected !","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Creating new configuration","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => true","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => true","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => true","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => true","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => true","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => true","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => true","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => true","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => true","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => true","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => true","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => true","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa tried to connect but isn't registered !","level":"error"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 tried to connect but isn't registered !","level":"error"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Disconnected","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"Disconnected","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"Pairing ...","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"An actuator is trying to register to the HUB !","level":"info"}
+{"message":"NEW CATEGORY CREATED 5c202ecfb8e48e04712294e2","level":"info"}
+{"message":"A new actuator has been registered to the hub !","level":"info"}
+{"message":"The actuator 5c2199a90789dd5d8fbb078b is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2199a90789dd5d8fbb078b is now connected !","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c2199486788925d017dfbac/Actuators\",\"method\":\"GET\",\"body\":{\"deviceId\":\"5c2190e7c5a51d53ac2b91bd\"},\"params\":{\"deviceId\":\"5c2199486788925d017dfbac\"}}","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => true","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Connected to the main server !","level":"info"}
+{"message":"Subscribing to API!","level":"info"}
+{"message":"The actuator 5c2199a90789dd5d8fbb078b is trying to connect to the HUB !","level":"info"}
+{"message":"The actuator 5c2199a90789dd5d8fbb078b is now connected !","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c2199486788925d017dfbac/Actuators\",\"method\":\"GET\",\"body\":{},\"params\":{\"deviceId\":\"5c2199486788925d017dfbac\"}}","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c2199486788925d017dfbac/Sensors\",\"method\":\"GET\",\"body\":{},\"params\":{\"deviceId\":\"5c2199486788925d017dfbac\"}}","level":"info"}
+{"message":"A sensor is trying to register to the HUB !","level":"info"}
+{"message":"NEW CATEGORY CREATED 5c202ecfb8e48e04712294e3","level":"info"}
+{"message":"A new sensor has been registered to the hub !","level":"info"}
+{"message":"The sensor 5c2199f3fef5a65de192271c is trying to connect to the HUB !","level":"info"}
+{"message":"The sensor 5c2199f3fef5a65de192271c is now connected !","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c2199486788925d017dfbac/Actuators\",\"method\":\"GET\",\"body\":{},\"params\":{\"deviceId\":\"5c2199486788925d017dfbac\"}}","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c2199486788925d017dfbac/Sensors\",\"method\":\"GET\",\"body\":{},\"params\":{\"deviceId\":\"5c2199486788925d017dfbac\"}}","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c2199486788925d017dfbac/Actuators/5c2199a90789dd5d8fbb078b/Order\",\"method\":\"POST\",\"body\":{\"commandId\":\"5c2199a90789dd5d8fbb0789\",\"key\":\"set\",\"argument\":false},\"params\":{\"deviceId\":\"5c2199486788925d017dfbac\",\"actuatorId\":\"5c2199a90789dd5d8fbb078b\"}}","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c2199486788925d017dfbac/Actuators/5c2199a90789dd5d8fbb078b/Order\",\"method\":\"POST\",\"body\":{\"commandId\":\"5c2199a90789dd5d8fbb0789\",\"key\":\"set\",\"argument\":false},\"params\":{\"deviceId\":\"5c2199486788925d017dfbac\",\"actuatorId\":\"5c2199a90789dd5d8fbb078b\"}}","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c2199486788925d017dfbac/Actuators/5c2199a90789dd5d8fbb078b/Order\",\"method\":\"POST\",\"body\":{\"commandId\":\"5c2199a90789dd5d8fbb0789\",\"key\":\"set\",\"argument\":false},\"params\":{\"deviceId\":\"5c2199486788925d017dfbac\",\"actuatorId\":\"5c2199a90789dd5d8fbb078b\"}}","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c2199486788925d017dfbac/Actuators\",\"method\":\"GET\",\"body\":{},\"params\":{\"deviceId\":\"5c2199486788925d017dfbac\"}}","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c2199486788925d017dfbac/Sensors\",\"method\":\"GET\",\"body\":{},\"params\":{\"deviceId\":\"5c2199486788925d017dfbac\"}}","level":"info"}
+{"message":"The sensor 5c2199f3fef5a65de192271c is updating a variable !","level":"info"}
+{"message":"The sensor 5c2199f3fef5a65de192271c is updating a variable !","level":"info"}
+{"message":"The sensor 5c2199f3fef5a65de192271c is updating a variable !","level":"info"}
+{"message":"The sensor 5c2199f3fef5a65de192271c is updating a variable !","level":"info"}
+{"message":"{\"originalUrl\":\"/api/Devices/5c2199486788925d017dfbac/Actuators/5c2199a90789dd5d8fbb078b/Order\",\"method\":\"POST\",\"body\":{\"commandId\":\"5c2199a90789dd5d8fbb0789\",\"key\":\"set\",\"argument\":false},\"params\":{\"deviceId\":\"5c2199486788925d017dfbac\",\"actuatorId\":\"5c2199a90789dd5d8fbb078b\"}}","level":"info"}
+{"message":"The sensor 5c2199f3fef5a65de192271c is updating a variable !","level":"info"}
+{"message":"The actuator 5c2199a90789dd5d8fbb078b just disconnected !","level":"info"}

@@ -1,6 +1,6 @@
 import io from 'socket.io-client';
 
-const socket = io("http://192.168.0.18:5000")
+const socket = io("http://192.168.1.81:5000")
 
 socket.on("error", (error) => {
     console.log(error)
@@ -19,7 +19,7 @@ export default {
     },
     init(store) {
         console.log("Init")
-        this.subscribe("5bf6962756d95f001c853c1a")
+        this.subscribe("5c2199486788925d017dfbac")
         socket.on("event", event => {
             console.log(event)
             store.dispatch(event)

@@ -1,4 +1,6 @@
 const ConfigController = require('../Persistance/controllers/ConfigController')
+const BehaviorController = require('./controllers').BehaviorController
+const ActuatorServer = require('./actuator_server')
 
 module.exports = (communicationLayer, config) => {
     const requestDispatcher = require("./requests/requestDispatcher")
@@ -8,7 +10,7 @@ module.exports = (communicationLayer, config) => {
     global.main_server_socket = require('socket.io-client')(process.env.SOCKET_SERVER_URL);
     global.isConnectedToMainServer = false
     const router = require('./router')
-    const database_event = require('./database_event')
+    const database_event = require('../Persistance/database_event')
 
     router.use(require('./routes'))
 
@@ -23,8 +25,20 @@ module.exports = (communicationLayer, config) => {
                 const result = await requestDispatcher(data)
                 callback(result)
             });
-            database_event.on('event', data => {
+            database_event.on('event', async data => {
                 main_server_socket.emit('hub_event', data)
+                if (data.type === "UPDATE_ENVIRONMENT_VARIABLE_VALUE") {
+                    const behaviorsTriggered = await BehaviorController.getGetTriggeredBehavior(data.payload._id)
+                    behaviorsTriggered.map(async behaviorTriggered => {
+                        try {
+                            if (!behaviorTriggered.command.iscomplex)
+                                await ActuatorServer.emitOrderToActuator(behaviorTriggered.command.key, behaviorTriggered.command.argument, behaviorTriggered.command.actuatorId, behaviorTriggered.command.commandId)
+                        }
+                        catch (error) {
+                            logger.error(error.message)
+                        }
+                    })
+                }
             })
         }
         const pairDevice = async () => {

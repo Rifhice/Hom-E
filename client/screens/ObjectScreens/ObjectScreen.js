@@ -25,8 +25,8 @@ export default class LinksScreen extends React.Component {
 
   _onRefresh = () => {
     this.setState({ refreshing: true }, async () => {
-      await this.props.fetchActuators("5bf6962756d95f001c853c1a")
-      await this.props.fetchSensors("5bf6962756d95f001c853c1a")
+      await this.props.fetchActuators("5c2199486788925d017dfbac")
+      await this.props.fetchSensors("5c2199486788925d017dfbac")
       this.setState({ refreshing: false })
     })
   }
@@ -53,7 +53,7 @@ export default class LinksScreen extends React.Component {
         {this.props.actuators.map(actuator =>
           <ObjectOverview
             key={actuator._id}
-            deviceId={"5bf6962756d95f001c853c1a"}
+            deviceId={"5c2199486788925d017dfbac"}
             object={actuator}
             onPress={() => navigate('DetailObject', { object: actuator })}
           ></ObjectOverview>

@@ -1,7 +1,7 @@
 const Sensor = require("../models").Sensor;
 const EnvironmentVariable = require("../models").EnvironmentVariable;
 const Category = require("../models").Category;
-const CategoryController = require("../controllers").CategoryController;
+const CategoryController = require("./CategoryController");
 const database_event = require('../database_event')
 
 const getSensors = async () => {

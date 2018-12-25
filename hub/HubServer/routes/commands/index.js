@@ -1,5 +1,5 @@
 const router = require('../../router')
 
-router.add("GET", "/api/device/:deviceId/Commands", require('./getCommands'))
+router.add("GET", "/api/Devices/:deviceId/Commands", require('./getCommands'))
 
 module.exports = router

@@ -349,3 +349,76 @@
 {"level":"error"}
 {"message":"The sensor 5c1ad262bcbcb67fe0fe1083 tried to connect but isn't registered !","level":"error"}
 {"message":"The actuator 5c1b9cb83a508345081fd408 tried to connect but isn't registered !","level":"error"}
+{"message":"The sensor 5c1bb71c619f1c5632698a27 tried to connect but isn't registered !","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"message":"Cannot read property 'getCategoryById' of undefined","level":"error"}
+{"level":"error"}
+{"message":"Cannot read property '_id' of null","level":"error"}
+{"level":"error"}
+{"message":"environmentVariableId is not defined","level":"error"}
+{"level":"error"}
+{"message":"Cannot read property '_id' of null","level":"error"}
+{"message":"EnvironmentVariable.getEnvironmentVariables is not a function","level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"message":"Cannot read property '_id' of null","level":"error"}
+{"level":"error"}
+{"message":"Cannot read property '_id' of null","level":"error"}
+{"level":"error"}
+{"message":"Cannot read property '_id' of null","level":"error"}
+{"level":"error"}
+{"message":"Cannot read property '_id' of null","level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"message":"topology was destroyed","level":"error"}
+{"level":"error"}
+{"message":"topology was destroyed","level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"message":"The actuator 5c217e49804bf53cd6a74759 tried to connect but isn't registered !","level":"error"}
+{"message":"The sensor 5c217de1804bf53cd6a74755 tried to connect but isn't registered !","level":"error"}
+{"message":"Cannot read property 'type' of undefined","level":"error"}
+{"message":"Cannot read property 'type' of undefined","level":"error"}
+{"message":"The actuator 5c2186aba1ba1349146af95e tried to connect but isn't registered !","level":"error"}
+{"message":"The sensor 5c21891ee7001e4b67a09d25 tried to connect but isn't registered !","level":"error"}
+{"message":"The actuator 5c219119e0eea753d70a59e9 tried to connect but isn't registered !","level":"error"}
+{"message":"The sensor 5c219119e0eea753d70a59ed tried to connect but isn't registered !","level":"error"}
+{"message":"Actuator not connected","level":"error"}
+{"message":"Actuator undefined not connected","level":"error"}
+{"message":"Actuator undefined not connected","level":"error"}
+{"message":"Actuator undefined not connected","level":"error"}
+{"message":"Actuator undefined not connected","level":"error"}
+{"message":"Actuator undefined not connected","level":"error"}
+{"message":"Actuator undefined not connected","level":"error"}
+{"message":"Environment_variableController.getGetTriggeredBehavior is not a function","level":"error"}
+{"message":"The sensor 5c2193ab675f9456c1234bfa tried to connect but isn't registered !","level":"error"}
+{"message":"The actuator 5c2191e95d6a6454a8333418 tried to connect but isn't registered !","level":"error"}

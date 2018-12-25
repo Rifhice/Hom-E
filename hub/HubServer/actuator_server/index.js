@@ -88,7 +88,7 @@ module.exports = {
             const newCommand = await CommandController.updateCommandValue(commandId, argument)
             return newCommand
         }
-        let error = new Error('Actuator not connected')
+        let error = new Error(`Actuator ${actuatorId} not connected`)
         error.code = 502
         throw error
     }

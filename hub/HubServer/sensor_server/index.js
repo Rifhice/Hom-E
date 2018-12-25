@@ -1,5 +1,6 @@
 const SensorController = require('../controllers').SensorController
 const EnvironmentVariableController = require('../controllers').EnvironmentVariableController
+const BehaviorController = require('../controllers').BehaviorController
 const http = require('http')
 const app = http.createServer()
 const io = require('socket.io').listen(app);
@@ -16,6 +17,24 @@ io.on('connection', socket => {
                 try {
                     if (data.result === "success") {
                         const sensor = await SensorController.registerSensor(data.payload.sensor, data.payload.environment_variables)
+                        /*tmp code*/
+                        await BehaviorController.addBehavior({
+                            "evaluable": {
+                                "type": "block",
+                                "variable": sensor.environment_variables[1]._id,
+                                "value": true,
+                                "valueType": "Boolean",
+                                "operator": "=="
+                            },
+                            command: {
+                                iscomplex: false,
+                                actuatorId: "5c2199a90789dd5d8fbb078b",
+                                key: "set",
+                                argument: "on",
+                                commandId: "5c2199a90789dd5d8fbb0789"
+                            },
+                        })
+                        /**/
                         if (sensor) {
                             logger.info("A new sensor has been registered to the hub !");
                             socket.emit('registered', {
