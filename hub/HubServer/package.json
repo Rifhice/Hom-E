@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon index.js",
     "init:db": "node config/initDB.js",
-    "test": "jest"
+    "test": "./node_modules/.bin/jest"
   },
   "repository": {
     "type": "git",
