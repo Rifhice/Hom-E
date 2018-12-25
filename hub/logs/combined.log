@@ -4918,3 +4918,61 @@
 {"message":"Connected to the main server !","level":"info"}
 {"message":"Subscribing to API!","level":"info"}
 {"message":"Disconnected","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"Creating new configuration","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => true","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => true","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => true","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => true","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => true","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => true","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => true","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => true","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"Connected to MongoDB","level":"info"}
+{"message":"Init DB successful","level":"info"}
+{"message":"Closing the connection to the database","level":"info"}
+{"message":"previousState => access-point","level":"info"}
+{"message":"isAccessPointOn => false","level":"info"}
+{"message":"isConnectedToInternet => true","level":"info"}
+{"message":"isOnOfflineMode => false","level":"info"}
+{"message":"isPaired => false","level":"info"}
+{"message":"Starts the hub (online mode)","level":"info"}
+{"message":"Sensor server is listening on port 1555 !","level":"info"}
+{"message":"Actuator server is listening on port 1666 !","level":"info"}

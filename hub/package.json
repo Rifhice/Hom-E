@@ -4,18 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cd HubServer && npm test",
-    "dev": "sudo nodemon main.js"
+    "test": "./node_modules/.bin/jest",
+    "dev": "sudo nodemon main.js",
+    "init:db": "node Persistance/initDB.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "is-online": "^8.0.0",
     "mongoose": "^5.4.0",
-    "winston": "^3.1.0"
+    "winston": "^3.1.0",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.1.1"
   }
 }
