@@ -54,7 +54,7 @@ export default class SettingsScreen extends React.Component {
         sections={sections}
       >
       </SectionList>
-      <Text>Logout</Text>
+      <Text onPress={this.props.removeToken}>Logout</Text>
       <Dialog
         visible={this.state.themeModal}
         dialogTitle={<DialogTitle title="Dialog Title" />}

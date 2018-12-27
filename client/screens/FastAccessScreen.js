@@ -8,6 +8,8 @@ export default class SettingsScreen extends React.Component {
 
     constructor(props) {
         super(props)
+        //props.i18n.changeLanguage(props.user.language)
+        //props.changeTheme(props.user.theme)
         this.state = {
             theme: {
                 current: {}

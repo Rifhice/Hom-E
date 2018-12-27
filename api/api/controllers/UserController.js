@@ -29,13 +29,90 @@ const getUserByUsername = async (username) => {
     }
 }
 
-const addUser = async (username, hash) => {
+const getUserByEmail = async (email) => {
     try {
-        const user = new User({
-            username,
-            hash
-        })
+        return await User.findOne({ email })
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+}
+
+const addUser = async (data) => {
+    try {
+        const user = new User(data)
         return await user.save()
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+}
+
+const getInformation = async (userId) => {
+    try {
+        return await User.findOne({ _id: userId }).populate([{
+            path: "devices"
+        },
+        {
+            path: "currentDevice"
+        }])
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+}
+
+const updateLanguage = async (userId, data) => {
+    try {
+        return await User.findByIdAndUpdate({ _id: userId },
+            { $set: { language: data } }, { "new": true })
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+}
+const updateTheme = async (userId, data) => {
+    try {
+        return await User.findByIdAndUpdate({ _id: userId },
+            { $set: { theme: data } }, { "new": true })
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+}
+const updateCurrentDevice = async (userId, data) => {
+    try {
+        return await User.findByIdAndUpdate({ _id: userId },
+            { $set: { currentDevice: data } }, { "new": true })
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+}
+const addDevice = async (userId, data) => {
+    try {
+        const user = await getUserById(userId)
+        const doesntOwnDevices = user.devices.length === 0
+        const addDevice = await User.findByIdAndUpdate({ _id: userId },
+            { $push: { devices: data } }, { "new": true })
+        return doesntOwnDevices ? await User.findByIdAndUpdate({ _id: userId },
+            { $set: { currentDevice: data } }, { "new": true }) : addDevice
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+}
+const removeDevice = async (userId, data) => {
+    try {
+        return await User.findByIdAndUpdate({ _id: userId },
+            { $pull: { devices: data } }, { "new": true })
     }
     catch (error) {
         logger.error(error.message)
@@ -47,5 +124,12 @@ module.exports = {
     getUsers,
     getUserById,
     addUser,
-    getUserByUsername
+    getUserByUsername,
+    getUserByEmail,
+    getInformation,
+    updateLanguage,
+    updateTheme,
+    updateCurrentDevice,
+    addDevice,
+    removeDevice
 };

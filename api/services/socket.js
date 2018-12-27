@@ -50,19 +50,26 @@ module.exports = {
                         }
                     }
                 })
-                socket.on('subscribeDevice', (deviceId) => {
-                    io.of('/').adapter.remoteJoin(socket.id, `${deviceId}/Device`, (error) => {
-                        if (error)
-                            return socket.log("An error occured: " + error)
-                        socket.deviceId = deviceId
-                        logger.info(`Device ${socket.id} subscribed`)
-                    })
+                socket.on('subscribeDevice', async (deviceId, callback) => {
+                    const device = await DeviceController.getDeviceById(deviceId)
+                    if (device !== null) {
+                        io.of('/').adapter.remoteJoin(socket.id, `${deviceId}/Device`, (error) => {
+                            if (error)
+                                return socket.log("An error occured: " + error)
+                            socket.deviceId = deviceId
+                            logger.info(`Device ${deviceId} : ${socket.id} subscribed`)
+                        })
+                        callback({ result: "success", payload: {} })
+                    }
+                    else {
+                        callback({ result: "denied", payload: {} })
+                    }
                 });
                 socket.on('unsubscribeDevice', (deviceId) => {
                     io.of('/').adapter.remoteLeave(socket.id, `${deviceId}/Device`, (error) => {
                         if (error)
                             return socket.log("An error occured: " + error)
-                        logger.info(`Device ${socket.id} succesfully unsubscribed`)
+                        logger.info(`Device ${deviceId} : ${socket.id} succesfully unsubscribed`)
                     })
                 });
                 socket.on('sensor_data_mac_id', async (mac_id, callback) => {

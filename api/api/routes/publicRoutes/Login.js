@@ -23,7 +23,8 @@ const bcrypt = require('bcrypt')
   *           description: Login failed
   */
 module.exports = async (req, res) => {
-    const user = await UserController.getUserByUsername(req.body.username)
+    const user = req.body.username ? await UserController.getUserByUsername(req.body.username) :
+        req.body.email ? await UserController.getUserByEmail(req.body.email) : false
     if (user)
         return bcrypt.compare(req.body.password, user.hash, (err, isValid) => {
             if (isValid)

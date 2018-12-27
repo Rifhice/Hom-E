@@ -8,6 +8,7 @@ import SensorServices from '../../InternalServices/SensorServices'
 
 const mapStateToProps = (state, ownProps) => {
     return {
+        currentDevice: state.user.currentDevice,
         actuators: state.actuators.all,
         sensors: state.sensor.all
     }

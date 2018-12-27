@@ -1,6 +1,7 @@
 const UserController = require('../../controllers/UserController')
 const passwordHelper = require('../../helper/passwordHelper')
 const jwt = require('jsonwebtoken')
+
 /**
   * @swagger
   *
@@ -18,11 +19,21 @@ const jwt = require('jsonwebtoken')
   *             application/json:
   *               schema:
   *                 $ref: '#components/schemas/Commands'
+  *         401:
+  *           description: Register failed
   */
 module.exports = async (req, res) => {
+    const doesAlreadyExistsEmail = await UserController.getUserByEmail(req.body.email)
+    if (doesAlreadyExistsEmail)
+        return res.status(401).send("Email taken")
+    const doesAlreadyExistsUsername = await UserController.getUserByUsername(req.body.username)
+    if (doesAlreadyExistsUsername)
+        return res.status(401).send("Username taken")
     const hash = await passwordHelper.passwordHelper(req.body.password)
-    const user = await UserController.addUser(req.body.username, hash)
+    const user = await UserController.addUser({ email: req.body.email, username: req.body.username, hash, language: req.body.language })
     jwt.sign({ userId: user._id }, process.env.SECRET, (err, token) => {
-        res.status(201).send(token)
+        if (err)
+            return res.status(500).send("Internal error")
+        return res.status(201).send(token)
     })
 }

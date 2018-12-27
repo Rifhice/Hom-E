@@ -19,23 +19,32 @@ module.exports = (communicationLayer, config) => {
         logger.info("Connected to the main server !")
         const registerToServer = () => {
             logger.info(`Subscribing to API!`)
-            main_server_socket.emit("subscribeDevice", config.deviceId)
-            main_server_socket.on('request', async (data, callback) => {
-                logger.info(JSON.stringify(data))
-                const result = await requestDispatcher(data)
-                callback(result)
-            });
-            database_event.on('event', async data => {
-                main_server_socket.emit('hub_event', data)
-                if (data.type === "UPDATE_ENVIRONMENT_VARIABLE_VALUE") {
-                    const behaviorsTriggered = await BehaviorController.getGetTriggeredBehavior(data.payload._id)
-                    behaviorsTriggered.map(async behaviorTriggered => {
-                        try {
-                            if (!behaviorTriggered.command.iscomplex)
-                                await ActuatorServer.emitOrderToActuator(behaviorTriggered.command.key, behaviorTriggered.command.argument, behaviorTriggered.command.actuatorId, behaviorTriggered.command.commandId)
-                        }
-                        catch (error) {
-                            logger.error(error.message)
+            main_server_socket.emit("subscribeDevice", config.deviceId, async acknowledgment => {
+                if (acknowledgment.result === "denied") {
+                    await ConfigController.updateConfig({
+                        isPaired: false
+                    })
+                    pairDevice()
+                }
+                else {
+                    main_server_socket.on('request', async (data, callback) => {
+                        logger.info(JSON.stringify(data))
+                        const result = await requestDispatcher(data)
+                        callback(result)
+                    });
+                    database_event.on('event', async data => {
+                        main_server_socket.emit('hub_event', data)
+                        if (data.type === "UPDATE_ENVIRONMENT_VARIABLE_VALUE") {
+                            const behaviorsTriggered = await BehaviorController.getGetTriggeredBehavior(data.payload._id)
+                            behaviorsTriggered.map(async behaviorTriggered => {
+                                try {
+                                    if (!behaviorTriggered.command.iscomplex)
+                                        await ActuatorServer.emitOrderToActuator(behaviorTriggered.command.key, behaviorTriggered.command.argument, behaviorTriggered.command.actuatorId, behaviorTriggered.command.commandId)
+                                }
+                                catch (error) {
+                                    logger.error(error.message)
+                                }
+                            })
                         }
                     })
                 }
@@ -43,8 +52,8 @@ module.exports = (communicationLayer, config) => {
         }
         const pairDevice = async () => {
             logger.info("Pairing ...")
-            main_server_socket.emit('pairDevice', config.deviceId, async acknoledgment => {
-                if (acknoledgment.result === "success") {
+            main_server_socket.emit('pairDevice', config.deviceId, async acknowledgment => {
+                if (acknowledgment.result === "success") {
                     await ConfigController.updateConfig({
                         isPaired: true
                     })

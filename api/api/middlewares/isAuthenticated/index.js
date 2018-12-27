@@ -2,7 +2,6 @@ let jwt = require('jsonwebtoken');
 const UserController = require('../../controllers/UserController')
 
 module.exports = (req, res, next) => {
-    return next()
     if (!req.token)
         return res.status(401).send("Unauthorized")
     jwt.verify(req.token, process.env.SECRET, async (err, decoded) => {

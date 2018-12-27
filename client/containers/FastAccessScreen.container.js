@@ -6,7 +6,8 @@ import { withTheme, withChangeTheme } from '../ThemeProvider'
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        favourites: state.favourites.all
+        favourites: state.favourites.all,
+        user: state.user
     }
 }
 

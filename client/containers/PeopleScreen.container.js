@@ -15,10 +15,10 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-const component = withNamespaces()(withTheme(withInAppNotification(connect(
+const component = withChangeTheme(withNamespaces()(withTheme(withInAppNotification(connect(
     mapStateToProps,
     mapDispatchToProps
-)(peoples))))
+)(peoples)))))
 
 
 component.navigationOptions = ({ navigation }) => {

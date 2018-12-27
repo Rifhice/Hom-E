@@ -25,7 +25,7 @@ export default class SettingsScreen extends React.Component {
     }
 
     render() {
-        const { t, i18n, theme } = this.props;
-        return <TouchableHighlight onPress={() => theme.changeTheme('dark')} style={{ backgroundColor: theme.current['tintColor'] }}><Text>{t('title')}</Text></TouchableHighlight>;
+        const { t, i18n, theme, changeTheme } = this.props;
+        return <TouchableHighlight onPress={() => i18n.changeLanguage('en')} style={{ backgroundColor: theme.current['tintColor'] }}><Text>{t('title')}</Text></TouchableHighlight>;
     }
 }

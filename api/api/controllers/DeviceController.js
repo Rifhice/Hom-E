@@ -1,4 +1,5 @@
 const Device = require("../models").Device;
+const UserController = require('./UserController')
 
 const getDevices = async () => {
     try {
@@ -23,14 +24,17 @@ const addDevice = async (deviceId, masterId) => {
         let device = await Device.findOne({ _id: deviceId })
         if (device) {
             device.masterUser = masterId
+            device.users.push(masterId)
         }
         else {
             device = new Device({
                 _id: deviceId,
-                masterUser: masterId
+                masterUser: masterId,
+                users: [masterId]
             })
         }
         await device.save()
+        await UserController.addDevice(masterId, deviceId)
         return device
     }
     catch (error) {

@@ -10,5 +10,6 @@ router.get('/Devices', async (req, res) => {
 })
 router.use('/Devices/:deviceId', isAuthenticated, deviceValidator, checkRequest, require('./device'));
 router.use('/WaitingForPairing', isAuthenticated, require('./waitingForPairing'));
+router.use('/Me', isAuthenticated, require('./me'));
 
 module.exports = router;

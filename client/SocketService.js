@@ -19,7 +19,6 @@ export default {
     },
     init(store) {
         console.log("Init")
-        this.subscribe("5c2199486788925d017dfbac")
         socket.on("event", event => {
             console.log(event)
             store.dispatch(event)

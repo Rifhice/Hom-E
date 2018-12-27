@@ -1,0 +1,5 @@
+export default actions = {
+    "SAVE_TOKEN": "SAVE_TOKEN",
+    "REMOVE_TOKEN": "REMOVE_TOKEN",
+    "USER_INFORMATION": "USER_INFORMATION"
+}

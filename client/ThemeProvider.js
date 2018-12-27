@@ -21,7 +21,7 @@ export const withTheme = (Component) => {
 export const withChangeTheme = (Component) => {
     return (props) => <ThemeContext.Consumer {...props}>
         {({ theme, changeTheme, available_theme }) => {
-            return <Component {...props} changeTheme={(theme) => changeTheme(theme)} ></Component>
+            return <Component {...props} changeTheme={(theme, callback) => changeTheme(theme, callback)} ></Component>
         }}
     </ThemeContext.Consumer>
 }
@@ -29,7 +29,8 @@ export const withChangeTheme = (Component) => {
 export class ThemeProvider extends React.Component {
     constructor(props) {
         super(props);
-        this.changeTheme = (theme) => {
+        this.changeTheme = (theme, callback) => {
+            console.log(callback)
             this.setState({
                 theme: themes[theme]
                     ? themes[theme]
@@ -37,7 +38,7 @@ export class ThemeProvider extends React.Component {
                 selected: themes[theme]
                     ? theme
                     : state.selected,
-            });
+            }, () => callback ? callback() : 0);
         };
         this.state = {
             theme: themes.regular,

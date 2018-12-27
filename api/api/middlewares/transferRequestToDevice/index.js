@@ -14,6 +14,7 @@ const checkDeviceResult = (response) => {
 
 module.exports = async (req, res, next) => {
     const deviceId = req.params.deviceId
+    console.log(deviceId)
     let result = await new Promise((resolve, reject) =>
         socket.emitToDevice('request', deviceId, {
             originalUrl: req.originalUrl,
