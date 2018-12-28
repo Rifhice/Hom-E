@@ -25,5 +25,5 @@
   *           description: The device response has timeout
   */
 module.exports = async (req, res) => {
-    res.status(200).send(req.deviceResponse)
+  res.status(200).send(req.dataToSend)
 }

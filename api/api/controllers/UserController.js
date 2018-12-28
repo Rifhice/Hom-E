@@ -95,6 +95,7 @@ const updateCurrentDevice = async (userId, data) => {
         throw error
     }
 }
+
 const addDevice = async (userId, data) => {
     try {
         const user = await getUserById(userId)
@@ -111,8 +112,10 @@ const addDevice = async (userId, data) => {
 }
 const removeDevice = async (userId, data) => {
     try {
-        return await User.findByIdAndUpdate({ _id: userId },
+        const user = await User.findByIdAndUpdate({ _id: userId },
             { $pull: { devices: data } }, { "new": true })
+        return user.devices.length === 0 ? await User.findByIdAndUpdate({ _id: userId },
+            { $set: { currentDevice: undefined } }, { "new": true }) : user
     }
     catch (error) {
         logger.error(error.message)

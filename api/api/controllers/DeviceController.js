@@ -24,13 +24,21 @@ const addDevice = async (deviceId, masterId) => {
         let device = await Device.findOne({ _id: deviceId })
         if (device) {
             device.masterUser = masterId
-            device.users.push(masterId)
+            device.users.push({
+                user: masterId,
+                rank: "Admin",
+                rights: []
+            })
         }
         else {
             device = new Device({
                 _id: deviceId,
                 masterUser: masterId,
-                users: [masterId]
+                users: [{
+                    user: masterId,
+                    rank: "Admin",
+                    rights: []
+                }]
             })
         }
         await device.save()
@@ -43,8 +51,71 @@ const addDevice = async (deviceId, masterId) => {
     }
 }
 
+const getUsers = async (DeviceId) => {
+    try {
+        const device = await Device.findOne({ _id: DeviceId }, 'users.rank users.users').populate([
+            {
+                path: 'users.user',
+                select: ['email', 'username']
+            }
+        ])
+        return device.users
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+}
+
+const addUser = async (deviceId, userId) => {
+    try {
+        const newDevice = await Device.findByIdAndUpdate({ _id: deviceId },
+            {
+                $push: {
+                    users: {
+                        user: userId,
+                        rank: "Member",
+                        rights: []
+                    }
+                }
+            }, { "new": true })
+        await UserController.addDevice(userId, deviceId)
+        return newDevice
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+}
+const removeUser = async (deviceId, userId) => {
+    try {
+        const newDevice = await Device.findByIdAndUpdate({ _id: deviceId },
+            { $pull: { users: { user: userId } } }, { "new": true })
+        await UserController.removeDevice(userId, deviceId)
+        return newDevice
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+}
+
+const deleteDevice = async (deviceId) => {
+    try {
+        return await Device.findByIdAndDelete({ _id: deviceId })
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+}
+
 module.exports = {
     getDevices,
     getDeviceById,
-    addDevice
+    addDevice,
+    getUsers,
+    addUser,
+    removeUser,
+    deleteDevice
 };

@@ -25,6 +25,6 @@ module.exports = async (req, res, next) => {
     result = checkDeviceResult(result)
     if (result.code !== 200)
         return res.status(result.code).send(result.message)
-    req.deviceResponse = result.data
+    req.dataToSend = result.data
     next()
 }

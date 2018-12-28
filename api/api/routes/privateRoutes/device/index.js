@@ -8,6 +8,7 @@ router.use('/Sensors', require('./Sensor'));
 router.use('/EnvironmentVariables', require('./EnvironmentVariable'));
 router.use('/Behaviors', require('./Behavior'));
 router.use('/ComplexCommands', require('./ComplexCommand'));
+router.use('/Users', require('./Users'));
 
 module.exports = router;
 

@@ -32,6 +32,15 @@ module.exports = (communicationLayer, config) => {
                         const result = await requestDispatcher(data)
                         callback(result)
                     });
+                    main_server_socket.on('unpair', async (data, callback) => {
+                        logger.info("Unpairing ...")
+                        main_server_socket.emit('unsubscribeDevice', config.deviceId)
+                        await ConfigController.updateConfig({
+                            isPaired: false
+                        })
+                        callback({ code: 200, data: 'unpairing done' })
+                        pairDevice()
+                    });
                     database_event.on('event', async data => {
                         main_server_socket.emit('hub_event', data)
                         if (data.type === "UPDATE_ENVIRONMENT_VARIABLE_VALUE") {
