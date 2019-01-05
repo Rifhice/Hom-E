@@ -29,7 +29,11 @@ router.delete('/:userId/Restrictions/:restrictionId', userValidator.removeRestri
     entity: "restriction",
     action: "remove"
 }), require('./removeRestrictions'));
-//router.put('/:userId/Rank', require('./updateRank'));
 
+router.put('/:userId/Rank', userValidator.updateRank, checkRequest, checkRight({
+    target: "",
+    entity: "rank",
+    action: "update"
+}), require('./updateRank'));
 
 module.exports = router;

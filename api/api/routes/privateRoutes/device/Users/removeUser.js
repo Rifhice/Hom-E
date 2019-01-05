@@ -4,7 +4,7 @@ const socket = require('../../../../../services/socket')
   * @swagger
   *
   * paths:
-  *   /device/:deviceId/Users:
+  *   /device/:deviceId/Users/:userId:
   *     delete:
   *       tags:
   *         - Users

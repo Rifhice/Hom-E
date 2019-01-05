@@ -149,6 +149,42 @@ const removeRestriction = async (deviceId, userId, restrictionId) => {
     }
 }
 
+const elevateUser = async (deviceId, userId) => {
+    try {
+        const newDevice = await Device.findById({ _id: deviceId })
+        newDevice.users.forEach(user => {
+            if (user.user && user.user.toString() === userId.toString()) {
+                user.rank = 'Admin'
+                user.restrictions = []
+            }
+        })
+        await newDevice.save()
+        return newDevice
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+}
+
+const relegateUser = async (deviceId, userId) => {
+    try {
+        const newDevice = await Device.findById({ _id: deviceId })
+        newDevice.users.forEach(user => {
+            if (user.user && user.user.toString() === userId.toString()) {
+                user.rank = 'Member'
+                user.restrictions = memberRestrictions
+            }
+        })
+        await newDevice.save()
+        return newDevice
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+}
+
 module.exports = {
     getDevices,
     getDeviceById,
@@ -158,5 +194,7 @@ module.exports = {
     removeUser,
     deleteDevice,
     addRestriction,
-    removeRestriction
+    removeRestriction,
+    elevateUser,
+    relegateUser
 };

@@ -3,7 +3,7 @@ const DeviceController = require('../../../../controllers/DeviceController')
   * @swagger
   *
   * paths:
-  *   /device/:deviceId/Restrictions:
+  *   /device/:deviceId/Users/:userId/Restrictions:
   *     delete:
   *       tags:
   *         - Users
