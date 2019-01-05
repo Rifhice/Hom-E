@@ -7,15 +7,18 @@ module.exports = ({ action, entity, target }) => {
         if (device.masterUser.toString() === user._id.toString())
             return next()
         else {
-            const userInfo = device.users.filter(current => current._id.toString() === user._id.toString())
+            const userInfo = device.users.filter(current => current.user && current.user.toString() === user._id.toString())
             if (userInfo.length === 0)
                 return res.status(403).send("Not allowed")
             if (userInfo[0].rank === "Admin")
                 return next()
             let targetId = req.params[target]
-            if (userInfo[0].rights.some(right => right.action === action && right.entity === entity && right.target === targetId))
+            if (userInfo[0].restrictions.length === 0)
                 return next()
-            return res.status(403).send("Not allowed")
+            console.log(userInfo[0].restrictions)
+            if (userInfo[0].restrictions.some(restriction => restriction.action === action && restriction.entity === entity && (restriction.target === targetId || target === "")))
+                return res.status(403).send("Not allowed")
+            return next()
         }
     }
 }

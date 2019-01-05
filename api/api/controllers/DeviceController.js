@@ -1,5 +1,6 @@
 const Device = require("../models").Device;
 const UserController = require('./UserController')
+const memberRestrictions = require('../helper/memberRestrictions')
 
 const getDevices = async () => {
     try {
@@ -27,7 +28,7 @@ const addDevice = async (deviceId, masterId) => {
             device.users.push({
                 user: masterId,
                 rank: "Admin",
-                rights: []
+                restrictions: []
             })
         }
         else {
@@ -37,7 +38,7 @@ const addDevice = async (deviceId, masterId) => {
                 users: [{
                     user: masterId,
                     rank: "Admin",
-                    rights: []
+                    restrictions: []
                 }]
             })
         }
@@ -69,14 +70,15 @@ const getUsers = async (DeviceId) => {
 
 const addUser = async (deviceId, userId) => {
     try {
+        const user = {
+            user: userId,
+            rank: "Member",
+            restrictions: memberRestrictions
+        }
         const newDevice = await Device.findByIdAndUpdate({ _id: deviceId },
             {
                 $push: {
-                    users: {
-                        user: userId,
-                        rank: "Member",
-                        rights: []
-                    }
+                    users: user
                 }
             }, { "new": true })
         await UserController.addDevice(userId, deviceId)
@@ -110,6 +112,43 @@ const deleteDevice = async (deviceId) => {
     }
 }
 
+const addRestriction = async (deviceId, userId, restriction) => {
+    try {
+        const newDevice = await Device.findById({ _id: deviceId })
+        for (const user of newDevice.users) {
+            if (user.user && user.user.toString() === userId.toString() && user.rank !== 'Admin') {
+                user.restrictions.push(restriction)
+            }
+        }
+        await newDevice.save()
+        return newDevice
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+}
+
+const removeRestriction = async (deviceId, userId, restrictionId) => {
+    try {
+        const newDevice = await Device.findById({ _id: deviceId })
+        newDevice.users.forEach(user => {
+            if (user.user && user.user.toString() === userId.toString()) {
+                user.restrictions.forEach((restriction, i) => {
+                    if (restriction._id.toString() === restrictionId.toString())
+                        user.restrictions.splice(i, 1)
+                })
+            }
+        })
+        await newDevice.save()
+        return newDevice
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+}
+
 module.exports = {
     getDevices,
     getDeviceById,
@@ -117,5 +156,7 @@ module.exports = {
     getUsers,
     addUser,
     removeUser,
-    deleteDevice
+    deleteDevice,
+    addRestriction,
+    removeRestriction
 };

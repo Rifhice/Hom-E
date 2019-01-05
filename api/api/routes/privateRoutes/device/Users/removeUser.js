@@ -21,7 +21,7 @@ const socket = require('../../../../../services/socket')
   *           description: Unauthorized
   */
 module.exports = async (req, res, next) => {
-    const device = await DeviceController.removeUser(req.params.deviceId, req.body.userId)
+    const device = await DeviceController.removeUser(req.params.deviceId, req.params.userId)
     if (device.users.length === 0) {
         await DeviceController.deleteDevice(req.params.deviceId)
         logger.info(`Unpairing device ${req.params.deviceId}`)

@@ -5,10 +5,10 @@ const DeviceSchema = new mongoose.Schema({
     users: [{
         user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
         rank: String,
-        rights: [{
+        restrictions: [{
             action: String,
             entity: String,
-            target: mongoose.Schema.Types.ObjectId
+            target: String
         }]
     }],
 }, { timestamps: true });

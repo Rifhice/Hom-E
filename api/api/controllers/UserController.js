@@ -114,6 +114,9 @@ const removeDevice = async (userId, data) => {
     try {
         const user = await User.findByIdAndUpdate({ _id: userId },
             { $pull: { devices: data } }, { "new": true })
+        if (user.currentDevice === data && user.devices.length !== 0)
+            await User.findByIdAndUpdate({ _id: userId },
+                { $set: { currentDevice: user.devices[Math.floor(Math.random() * user.devices.length)] } }, { "new": true })
         return user.devices.length === 0 ? await User.findByIdAndUpdate({ _id: userId },
             { $set: { currentDevice: undefined } }, { "new": true }) : user
     }
