@@ -1,6 +1,7 @@
 import io from 'socket.io-client';
+import conf from './config'
 
-const socket = io("http://192.168.1.81:5000")
+const socket = io(conf.SOCKET_URL)
 
 socket.on("error", (error) => {
     console.log(error)

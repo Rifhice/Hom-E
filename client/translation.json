@@ -5,7 +5,16 @@
             "objects": "Objects",
             "favourites": "Favourites",
             "automations": "Automations",
-            "settings": "Settings"
+            "settings": "Settings",
+            "Language": "Language",
+            "Theme": "Theme",
+            "Device": "Device",
+            "Themes": "Themes",
+            "Languages": "Languages",
+            "Devices": "Devices",
+            "Logout": "Logout",
+            "environment_variables": "Environment variables",
+            "Commands": "Commands"
         }
     },
     "fr": {
@@ -14,7 +23,16 @@
             "objects": "Objets",
             "favourites": "Favoris",
             "automations": "Comportements",
-            "settings": "Paramètres"
+            "settings": "Paramètres",
+            "Language": "Langue",
+            "Theme": "Theme",
+            "Device": "Appareil",
+            "Themes": "Themes",
+            "Languages": "Langues",
+            "Devices": "Appareils",
+            "Logout": "Déconnexion",
+            "environment_variables": "Variables d'environnement",
+            "Commands": "Commandes"
         }
     }
 }

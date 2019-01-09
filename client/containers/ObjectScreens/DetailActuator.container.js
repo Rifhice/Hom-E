@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import DetailObject from '../../screens/ObjectScreens/DetailObjectScreen';
+import DetailObject from '../../screens/ObjectScreens/DetailActuatorScreen';
 import { withNamespaces } from 'react-i18next';
 import { withInAppNotification } from 'react-native-in-app-notification';
 import { withTheme, withChangeTheme } from '../../ThemeProvider'

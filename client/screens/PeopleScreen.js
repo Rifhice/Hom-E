@@ -1,8 +1,9 @@
 import React from 'react';
-import { Text, TouchableHighlight } from 'react-native';
+import { TouchableHighlight } from 'react-native';
+import Text from '../components/StyledText'
 import Colors from '../constants/Colors';
 
-export default class SettingsScreen extends React.Component {
+export default class PeopleScreen extends React.Component {
 
     constructor(props) {
         super(props)

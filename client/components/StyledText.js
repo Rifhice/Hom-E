@@ -1,8 +1,7 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text } from 'react-native-elements'
+import { withTheme } from '../ThemeProvider'
 
-export class MonoText extends React.Component {
-  render() {
-    return <Text {...this.props} style={[this.props.style, { fontFamily: 'space-mono' }]} />;
-  }
-}
+export default withTheme((props) => {
+  return <Text {...props} style={[props.style, { color: props.theme.current['textColor'] }]} />;
+})

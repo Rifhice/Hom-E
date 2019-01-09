@@ -1,10 +1,11 @@
 import React from 'react';
 import { ScrollView, View } from 'react-native';
-import { Card, Text, Icon } from 'react-native-elements'
+import { Card, Icon } from 'react-native-elements'
+import Text from '../components/StyledText'
 import Switch from '../components/Switch'
 import Slider from '../components/Slider'
 
-export default class SettingsScreen extends React.Component {
+export default class FastAccessScreen extends React.Component {
 
     constructor(props) {
         super(props)
@@ -29,7 +30,7 @@ export default class SettingsScreen extends React.Component {
     }
 
     render() {
-        return <ScrollView style={{ flex: 1, backgroundColor: '#fff' }}>
+        return <ScrollView style={{ flex: 1, backgroundColor: this.props.theme.current['screenBackground'] }}>
             {
                 this.props.favourites.map(favourite =>
                     <Card title={favourite.name} key={favourite._id}>
@@ -45,13 +46,15 @@ export default class SettingsScreen extends React.Component {
                             <View key={command._id} style={{ flexDirection: "row", flex: 1, alignContent: "center", alignItems: "center" }}>
                                 <View style={{ flex: 3 }}>
                                     <Text h4>{command.name}</Text>
-                                    <Text style={{ color: "grey" }}>{command.description}</Text>
+                                    <Text style={{ color: this.props.theme.current['grey'] }}>{command.description}</Text>
                                 </View>
                                 <View style={{ flex: 1 }}>
                                     <View style={{ alignItems: "center" }}>
                                         {command.type === "switch"
                                             ? <Switch
                                                 style={{ flex: 1 }}
+                                                onSwitchColor={this.props.theme.current["onSwitch"]}
+                                                offSwitchColor={this.props.theme.current["offSwitch"]}
                                                 onChange={(val) => console.log(val)}></Switch>
                                             : command.type === "slider"
                                                 ? <Slider

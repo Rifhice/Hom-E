@@ -1,4 +1,16 @@
 export default icons = {
+    "LIGHTS_CATEGORY": {
+        "name": "lightbulb-outline",
+        "type": "material-community"
+    },
+    "UNKNOWN": {
+        "name": "question",
+        "type": "font-awesome"
+    },
+    "STATUS": {
+        "name": "circle",
+        "type": "font-awesome"
+    },
     "lightbulb_off": {
         "name": "lightbulb-outline",
         "type": "material-community"

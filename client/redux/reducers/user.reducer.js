@@ -28,6 +28,8 @@ export default (state = defaultState, action = { type: null, payload: null }) =>
                 ...state,
                 ...action.payload
             }
+        case actions.LOGOUT:
+            return defaultState
         default:
             return state
     }

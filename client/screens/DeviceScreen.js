@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import Text from '../components/StyledText'
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import { createSwitchNavigator } from 'react-navigation';
 import { withNamespaces } from 'react-i18next'
@@ -10,11 +11,12 @@ import FastAccessScreen from '../containers/FastAccessScreen.container';
 import AutomationScreen from '../containers/AutomationScreen.container';
 import ObjectScreen from '../containers/ObjectScreens/ObjectScreen.container';
 import SettingsScreen from '../containers/SettingsScreen.container';
-import DetailObjectScreen from '../containers/ObjectScreens/DetailObjectScreen.container'
+import DetailActuator from '../containers/ObjectScreens/DetailActuator.container'
+import DetailSensor from '../containers/ObjectScreens/DetailSensor.container'
 import SocketService from '../SocketService'
 import Icons from '../constants/Icons'
 
-export default class Component extends React.Component {
+export default class DeviceScreen extends React.Component {
 
   constructor(props) {
     super(props)
@@ -65,7 +67,8 @@ export default class Component extends React.Component {
 
       const ObjectStack = createStackNavigator({
         Object: ObjectScreen,
-        DetailObject: DetailObjectScreen
+        DetailActuator: DetailActuator,
+        DetailSensor: DetailSensor
       });
 
       ObjectStack.navigationOptions = {

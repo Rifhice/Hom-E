@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import signin from '../screens/SignInScreen';
+import signin from '../screens/SignInOrRegisterScreen';
 import { withNamespaces } from 'react-i18next';
 import { withInAppNotification } from 'react-native-in-app-notification';
 import { withTheme, withChangeTheme } from '../ThemeProvider'

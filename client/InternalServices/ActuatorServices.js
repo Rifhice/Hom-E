@@ -8,7 +8,7 @@ export default {
             dispatch({ type: actions.FETCHED_ACTUATORS, payload: result })
         }
         catch (error) {
-            console.log(error)
+            console.log(error.response)
         }
     },
     async executeOrder(deviceId, key, argument, actuatorId, commandId, dispatch) {

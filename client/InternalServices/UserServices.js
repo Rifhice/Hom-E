@@ -7,9 +7,10 @@ export default {
         try {
             const token = await UserWebServices.register(data)
             dispatch({ type: actions.SAVE_TOKEN, payload: { token } })
+            return false
         }
         catch (error) {
-            console.log(error)
+            return error.response.data
         }
     },
     async login(data, dispatch) {
@@ -47,11 +48,10 @@ export default {
             return false
         }
     },
-    async updateLanguage(language, changeLanguage, dispatch) {
+    async updateLanguage(language, dispatch) {
         try {
             const information = await UserWebServices.updateLanguage(language)
             dispatch({ type: actions.USER_INFORMATION, payload: information })
-            changeLanguage(information.language)
             return information
         }
         catch (error) {
@@ -59,15 +59,14 @@ export default {
             return false
         }
     },
-    async updateTheme(theme, changeTheme, dispatch) {
+    async updateTheme(theme, dispatch) {
         try {
             const information = await UserWebServices.updateTheme(theme)
             dispatch({ type: actions.USER_INFORMATION, payload: information })
-            changeTheme(information.language)
             return information
         }
         catch (error) {
-            console.log(error)
+            console.log(error.response)
             return false
         }
     }

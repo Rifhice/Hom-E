@@ -1,34 +1,25 @@
 import { connect } from 'react-redux';
-import object from '../../screens/ObjectScreens/ObjectScreen';
+import DetailObject from '../../screens/ObjectScreens/DetailSensorScreen';
 import { withNamespaces } from 'react-i18next';
 import { withInAppNotification } from 'react-native-in-app-notification';
 import { withTheme, withChangeTheme } from '../../ThemeProvider'
-import ActuatorServices from '../../InternalServices/ActuatorServices'
-import SensorServices from '../../InternalServices/SensorServices'
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        currentDevice: state.user.currentDevice,
-        actuators: state.actuators.all,
         sensors: state.sensors.all
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        async fetchActuators(deviceId) {
-            ActuatorServices.getActuators(deviceId, dispatch)
-        },
-        async fetchSensors(deviceId) {
-            SensorServices.getSensors(deviceId, dispatch)
-        }
+
     }
 }
 
 const component = withChangeTheme(withTheme(withNamespaces()(withInAppNotification(connect(
     mapStateToProps,
     mapDispatchToProps
-)(object)))))
+)(DetailObject)))))
 
 component.navigationOptions = ({ navigation }) => {
     return {

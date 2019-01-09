@@ -1,11 +1,7 @@
 import React from 'react';
-import { Platform } from 'react-native';
-import { View, ScrollView, StyleSheet, RefreshControl } from 'react-native';
-import { ExpoLinksView } from '@expo/samples';
-import { Divider, Text, Icon } from 'react-native-elements'
-import Switch from '../../components/Switch'
-import Slider from '../../components/Slider'
-import ObjectOverview from '../../components/ObjectsOverview';
+import { ScrollView, StyleSheet, RefreshControl } from 'react-native';
+import ActuatorOverview from '../../components/ActuatorOverview';
+import SensorOverview from '../../components/SensorOverview';
 
 export default class LinksScreen extends React.Component {
 
@@ -45,27 +41,30 @@ export default class LinksScreen extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <ScrollView style={styles.container}>
+      <ScrollView style={{ flex: 1, backgroundColor: this.props.theme.current['screenBackground'] }}>
         <RefreshControl
           refreshing={this.state.refreshing}
           onRefresh={this._onRefresh}
         />
+
         {this.props.actuators.map(actuator =>
-          <ObjectOverview
+          <ActuatorOverview
             key={actuator._id}
+            theme={this.props.theme}
             deviceId={this.props.currentDevice}
-            object={actuator}
-            onPress={() => navigate('DetailObject', { object: actuator })}
-          ></ObjectOverview>
+            actuator={actuator}
+            onPress={() => navigate('DetailActuator', { actuator: actuator._id, deviceId: this.props.currentDevice })}
+          ></ActuatorOverview>
         )}
-        {this.props.sensors.map(sensor => {
-          return sensor.environment_variables.map(env =>
-            <Text
-              style={{ backgroundColor: sensor.isConnected ? "green" : "red" }}
-            >{env.value.current}</Text>)
+        {this.props.sensors.map(sensor =>
+          <SensorOverview
+            key={sensor._id}
+            theme={this.props.theme}
+            deviceId={this.props.currentDevice}
+            sensor={sensor}
+            onPress={() => navigate('DetailSensor', { sensor: sensor._id, deviceId: this.props.currentDevice })}
+          />)
         }
-        )}
-        <ExpoLinksView />
       </ScrollView>
     );
   }

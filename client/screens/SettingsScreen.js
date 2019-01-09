@@ -2,13 +2,15 @@ import React from 'react';
 import {
   TouchableHighlight,
   View,
-  Text,
   SectionList,
   StyleSheet,
-  Image
+  Image,
+  Dimensions,
+  ScrollView
 } from 'react-native';
 import { Constants } from 'expo';
-import Dialog, { DialogContent, DialogButton, DialogTitle } from 'react-native-popup-dialog';
+import { Overlay, Button } from 'react-native-elements'
+import Text from '../components/StyledText'
 
 export default class SettingsScreen extends React.Component {
 
@@ -39,11 +41,11 @@ export default class SettingsScreen extends React.Component {
     const { t, i18n, theme, changeTheme } = this.props;
     const availableLanguages = Object.keys(i18n.store.data)
     const sections = [
-      { data: [{ value: "en", onPress: () => { this.setState({ languageModal: true }) } }], title: 'Language' },
-      { data: [{ value: "regular", onPress: () => { this.setState({ themeModal: true }) } }], title: 'Theme' },
-      { data: [{ value: "device 1", onPress: () => { this.setState({ deviceModal: true }) } }], title: 'Devices' }
+      { data: [{ value: i18n.language, onPress: () => { this.setState({ languageModal: true }) } }], title: t('Language') },
+      { data: [{ value: theme.selected, onPress: () => { this.setState({ themeModal: true }) } }], title: t('Theme') },
+      { data: [{ value: "device 1", onPress: () => { this.setState({ deviceModal: true }) } }], title: t('Device') }
     ];
-    return <View style={styles.container}>
+    return <View style={{ flex: 1, backgroundColor: this.props.theme.current['screenBackground'] }}>
       <SectionList
         style={{ flex: 1 }}
         renderItem={this._renderItem}
@@ -54,87 +56,114 @@ export default class SettingsScreen extends React.Component {
         sections={sections}
       >
       </SectionList>
-      <Text onPress={this.props.removeToken}>Logout</Text>
-      <Dialog
-        visible={this.state.themeModal}
-        dialogTitle={<DialogTitle title="Dialog Title" />}
-        onTouchOutside={() => {
-          this.setState({ themeModal: false });
+      <Button
+        buttonStyle={{
+          backgroundColor: theme.current['red']
         }}
-        actions={[
-          <DialogButton
-            text="CANCEL"
-            onPress={() => { this.setState({ themeModal: false }) }}
-          />,
-          <DialogButton
-            text="OK"
-            onPress={() => { }}
-          />,
+        title={t("Logout")}
+        onPress={this.props.removeToken} />
+      <Overlay
+        isVisible={this.state.themeModal}
+        height={Dimensions.get('screen').height / 2}
+        windowBackgroundColor={theme.current['windowBackgroundColor']}
+        overlayBackgroundColor={theme.current['overlayBackgroundColor']}
+        transform={[
+          { translateY: - Dimensions.get('screen').height * 0.125 },
         ]}
-      >
-        <DialogContent>
-          {theme.availableTheme.map(current => <Text style={{ backgroundColor: current === theme.selected ? "green" : "" }}>{current}</Text>)}
-        </DialogContent>
-      </Dialog>
-      <Dialog
-        visible={this.state.languageModal}
-        dialogTitle={<DialogTitle title="Dialog Title" />}
-        onTouchOutside={() => {
-          this.setState({ languageModal: false });
+        overlayStyle={{
+          borderWidth: .5,
+          borderColor: "black"
         }}
-        actions={[
-          <DialogButton
-            text="CANCEL"
-            onPress={() => { this.setState({ languageModal: false }) }}
-          />,
-          <DialogButton
-            text="OK"
-            onPress={() => { }}
-          />,
-        ]}
+        onBackdropPress={() => this.setState({ themeModal: false })}
       >
-        <DialogContent>
-          {availableLanguages.map(current => <Text style={{ backgroundColor: current === i18n.language ? "green" : "" }}>{current}</Text>)}
-        </DialogContent>
-      </Dialog>
-      <Dialog
-        visible={this.state.deviceModal}
-        dialogTitle={<DialogTitle title="Dialog Title" />}
-        onTouchOutside={() => {
-          this.setState({ deviceModal: false });
+        <Text h2 style={{ alignSelf: "center", marginBottom: 5 }}>{t('Themes')}</Text>
+        <ScrollView>
+          {theme.availableTheme.map(current => <Button
+            key={current}
+            onPress={async () => {
+              if (current !== theme.selected) {
+                const information = await this.props.updateTheme(current, changeTheme)
+                changeTheme(information.theme)
+              }
+              else {
+                this.setState({ themeModal: false })
+              }
+            }}
+            buttonStyle={{
+              backgroundColor: current === theme.selected ? theme.current["green"] : theme.current["grey"],
+              marginBottom: 5
+            }}
+            title={current} />)}
+        </ScrollView>
+      </Overlay>
+      <Overlay
+        isVisible={this.state.languageModal}
+        height={Dimensions.get('screen').height / 2}
+        windowBackgroundColor={theme.current['windowBackgroundColor']}
+        overlayBackgroundColor={theme.current['overlayBackgroundColor']}
+        transform={[
+          { translateY: - Dimensions.get('screen').height * 0.125 },
+        ]}
+        overlayStyle={{
+          borderWidth: .5,
+          borderColor: "black"
         }}
-        actions={[
-          <DialogButton
-            text="CANCEL"
-            onPress={() => { this.setState({ deviceModal: false }) }}
-          />,
-          <DialogButton
-            text="OK"
-            onPress={() => { }}
-          />,
-        ]}
+        onBackdropPress={() => this.setState({ languageModal: false })}
       >
-        <DialogContent>
-          {theme.availableTheme.map(current => <Text style={{ backgroundColor: current === theme.selected ? "green" : "" }}>{current}</Text>)}
-        </DialogContent>
-      </Dialog>
+        <Text h2 style={{ alignSelf: "center", marginBottom: 5 }}>{t('Languages')}</Text>
+        <ScrollView>
+          {availableLanguages.map(current => <Button
+            key={current}
+            onPress={async () => {
+              if (current !== i18n.language) {
+                const information = await this.props.updateLanguage(current)
+                i18n.changeLanguage(information.language)
+              }
+              else {
+                this.setState({ languageModal: false })
+              }
+            }}
+            buttonStyle={{
+              backgroundColor: current === i18n.language ? theme.current["green"] : theme.current["grey"],
+              marginBottom: 5
+            }}
+            title={current} />)}
+        </ScrollView>
+      </Overlay>
+      <Overlay
+        isVisible={this.state.deviceModal}
+        height={Dimensions.get('screen').height / 2}
+        windowBackgroundColor={theme.current['windowBackgroundColor']}
+        overlayBackgroundColor={theme.current['overlayBackgroundColor']}
+        transform={[
+          { translateY: - Dimensions.get('screen').height * 0.125 },
+        ]}
+        overlayStyle={{
+          borderWidth: .5,
+          borderColor: "black"
+        }}
+        onBackdropPress={() => this.setState({ deviceModal: false })}
+      >
+        <Text h2 style={{ alignSelf: "center", marginBottom: 5 }}>{t('Devices')}</Text>
+        <ScrollView>
+          {this.props.user.devices.map(current => <Button
+            key={current}
+            onPress={async () => {
+              if (current !== this.props.user.currentDevice) {
+                await this.props.updateCurrentDevice(this.props.user.currentDevice, current)
+              }
+              else {
+                this.setState({ deviceModal: false })
+              }
+            }}
+            buttonStyle={{
+              backgroundColor: current === this.props.user.currentDevice ? theme.current["green"] : theme.current["grey"],
+              marginBottom: 5
+            }}
+            title={current} />)}
+        </ScrollView>
+      </Overlay>
     </View>
-    /* 
-    <View>
-      <TouchableHighlight
-        onPress={() => {
-          this.props.showNotification({
-            title: 'You pressed it!',
-            message: 'The notification has been triggered',
-            onPress: () => console.log("che")
-          })
-          i18n.changeLanguage('fr')
-        }}
-      >
-        <Text>{'yo'}</Text>
-      </TouchableHighlight>
-      <ExpoConfigView />
-    </View>)*/
   }
 
   _renderSectionHeader = ({ section }) => {

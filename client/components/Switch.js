@@ -14,7 +14,7 @@ export default class MySwitch extends React.Component {
                 name='power'
                 type='feather'
                 onPress={() => this.props.onChange(!this.props.isActive)}
-                color={this.props.isActive ? "yellow" : "red"}
+                color={this.props.isActive ? this.props.onSwitchColor : this.props.offSwitchColor}
             />
         </View>
     }

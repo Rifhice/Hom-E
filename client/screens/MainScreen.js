@@ -1,9 +1,10 @@
 import React from 'react';
 import { View, AsyncStorage } from 'react-native';
-import SignIn from '../containers/SignIn.container'
-import AppNavigator from '../containers/AppNavigator.container'
+import SignIn from '../containers/SignInOrRegister.container'
+import App from '../containers/App.container'
+import Text from '../components/StyledText'
 
-export default class SignInScreen extends React.Component {
+export default class MainScreen extends React.Component {
 
     constructor(props) {
         super(props)
@@ -23,7 +24,7 @@ export default class SignInScreen extends React.Component {
             ? <View style={{ flex: 1 }}>
                 {
                     this.props.user.token
-                        ? <AppNavigator></AppNavigator>
+                        ? <App></App>
                         : <SignIn></SignIn>
                 }
             </View>

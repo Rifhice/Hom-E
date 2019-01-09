@@ -1,8 +1,9 @@
 import React from 'react';
 import { Slider } from 'react-native-elements'
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import Text from './StyledText'
 
-export default class MySwitch extends React.Component {
+export default class MySlider extends React.Component {
 
     constructor(props) {
         super(props);

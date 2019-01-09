@@ -4,10 +4,11 @@ import { withNamespaces } from 'react-i18next';
 import { withInAppNotification } from 'react-native-in-app-notification';
 import { withTheme, withChangeTheme } from '../ThemeProvider'
 import actions from '../redux/actions/user.actions'
+import UserService from '../InternalServices/UserServices'
 
 const mapStateToProps = (state, ownProps) => {
     return {
-
+        user: state.user
     }
 }
 
@@ -15,6 +16,16 @@ const mapDispatchToProps = dispatch => {
     return {
         removeToken() {
             dispatch({ type: actions.REMOVE_TOKEN, payload: {} })
+            dispatch({ type: actions.LOGOUT, payload: {} })
+        },
+        async updateTheme(theme) {
+            return await UserService.updateTheme(theme, dispatch)
+        },
+        async updateLanguage(language) {
+            return await UserService.updateLanguage(language, dispatch)
+        },
+        async updateCurrentDevice(oldDeviceId, newDeviceId) {
+            return await UserService.updateCurrentDevice(oldDeviceId, newDeviceId, dispatch)
         }
     }
 }
