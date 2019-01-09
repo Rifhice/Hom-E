@@ -31,7 +31,7 @@ export default class SignInScreen extends React.Component {
                 />
                 <View style={{ marginBottom: 5 }}>
                     <TextInput
-                        style={{ height: 40, width: 200, borderColor: 'gray', borderWidth: 1, marginBottom: 5, borderColor: this.state.invalid ? "red" : "black" }}
+                        style={{ height: 40, width: 200, borderWidth: 1, marginBottom: 5, borderColor: this.state.invalid ? "red" : "black" }}
                         onFocus={() => this.setState({ invalid: false })}
                         placeholder="Username"
                         onChangeText={(text) => this.setState({ usernameOrMail: text })}
@@ -39,7 +39,7 @@ export default class SignInScreen extends React.Component {
                     />
                     <TextInput
                         secureTextEntry
-                        style={{ height: 40, width: 200, borderColor: 'gray', borderWidth: 1, borderColor: this.state.invalid ? "red" : "black" }}
+                        style={{ height: 40, width: 200, borderWidth: 1, borderColor: this.state.invalid ? "red" : "black" }}
                         onFocus={() => this.setState({ invalid: false })}
                         placeholder="Password"
                         onChangeText={(text) => this.setState({ password: text })}
@@ -93,7 +93,7 @@ export default class SignInScreen extends React.Component {
                 <View style={{ marginBottom: 5 }}>
                     <TextInput
                         onFocus={() => this.setState({ registrationEmailError: "" })}
-                        style={{ height: 40, width: 200, borderColor: 'gray', borderWidth: 1, borderColor: this.state.registrationEmailError ? "red" : "black" }}
+                        style={{ height: 40, width: 200, borderWidth: 1, borderColor: this.state.registrationEmailError ? "red" : "black" }}
                         placeholder="Email"
                         onChangeText={(text) => this.setState({ registrationEmail: text })}
                         value={this.state.registrationEmail}
@@ -101,7 +101,7 @@ export default class SignInScreen extends React.Component {
                     <Text style={{ color: "red" }} >{this.state.registrationEmailError}</Text>
                     <TextInput
                         onFocus={() => this.setState({ registrationUsernameError: "" })}
-                        style={{ height: 40, width: 200, borderColor: 'gray', borderWidth: 1, borderColor: this.state.registrationUsernameError ? "red" : "black" }}
+                        style={{ height: 40, width: 200, borderWidth: 1, borderColor: this.state.registrationUsernameError ? "red" : "black" }}
                         placeholder="Username"
                         onChangeText={(text) => this.setState({ registrationUsername: text })}
                         value={this.state.registrationUsername}
@@ -110,7 +110,7 @@ export default class SignInScreen extends React.Component {
                     <TextInput
                         onFocus={() => this.setState({ registrationPasswordError: "" })}
                         secureTextEntry
-                        style={{ height: 40, width: 200, borderColor: 'gray', borderWidth: 1, borderColor: this.state.registrationPasswordError ? "red" : "black" }}
+                        style={{ height: 40, width: 200, borderWidth: 1, borderColor: this.state.registrationPasswordError ? "red" : "black" }}
                         placeholder="Password"
                         onChangeText={(text) => this.setState({ registrationPassword: text })}
                         value={this.state.registrationPassword}
@@ -118,7 +118,7 @@ export default class SignInScreen extends React.Component {
                     <TextInput
                         onFocus={() => this.setState({ registrationPasswordError: "" })}
                         secureTextEntry
-                        style={{ height: 40, width: 200, borderColor: 'gray', borderWidth: 1, borderColor: this.state.registrationPasswordError ? "red" : "black" }}
+                        style={{ height: 40, width: 200, borderWidth: 1, borderColor: this.state.registrationPasswordError ? "red" : "black" }}
                         placeholder="Confirm password"
                         onChangeText={(text) => this.setState({ registrationConfirmPassword: text })}
                         value={this.state.registrationConfirmPassword}
