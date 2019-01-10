@@ -17,10 +17,10 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
     return {
         async fetchActuators(deviceId) {
-            ActuatorServices.getActuators(deviceId, dispatch)
+            return ActuatorServices.getActuators(deviceId, dispatch)
         },
         async fetchSensors(deviceId) {
-            SensorServices.getSensors(deviceId, dispatch)
+            return SensorServices.getSensors(deviceId, dispatch)
         }
     }
 }

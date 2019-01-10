@@ -7,11 +7,11 @@ const DeviceController = require('../../../../controllers/DeviceController')
   *     get:
   *       tags:
   *         - Users
-  *       description: Fetches all the users able to see or control the specific device
-  *       summary: Fetches all the users
+  *       description: Fetches all the users of this device
+  *       summary: Fetches all the users of this device
   *       responses:
   *         200:
-  *           description: The list of users
+  *           description: The devices users
   *           content:
   *             application/json:
   *               schema:

@@ -23,5 +23,10 @@ module.exports = [
         target: "",
         entity: "rank",
         action: "update"
+    },
+    {
+        target: "",
+        entity: "restriction",
+        action: "get"
     }
 ]

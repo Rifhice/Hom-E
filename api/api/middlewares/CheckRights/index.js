@@ -15,7 +15,6 @@ module.exports = ({ action, entity, target }) => {
             let targetId = req.params[target]
             if (userInfo[0].restrictions.length === 0)
                 return next()
-            console.log(userInfo[0].restrictions)
             if (userInfo[0].restrictions.some(restriction => restriction.action === action && restriction.entity === entity && (restriction.target === targetId || target === "")))
                 return res.status(403).send("Not allowed")
             return next()

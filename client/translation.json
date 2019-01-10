@@ -14,7 +14,14 @@
             "Devices": "Devices",
             "Logout": "Logout",
             "environment_variables": "Environment variables",
-            "Commands": "Commands"
+            "Commands": "Commands",
+            "dataFetching": "Grabbing data!/Working hard for your data!",
+            "MainUser": "Main user",
+            "Admins": "Admins",
+            "NoAdmins": "The only admin is the main user",
+            "Members": "Members",
+            "NoMembers": "There is no member",
+            "AddUser": "Add user"
         }
     },
     "fr": {
@@ -32,7 +39,14 @@
             "Devices": "Appareils",
             "Logout": "Déconnexion",
             "environment_variables": "Variables d'environnement",
-            "Commands": "Commandes"
+            "Commands": "Commandes",
+            "dataFetching": "Récupération des données !/Je fais ce que je peux !",
+            "MainUser": "Utilisateur pricipal",
+            "Admins": "Administrateurs",
+            "NoAdmins": "Le seul administrateur est l'utilisateur principal.",
+            "Members": "Membres",
+            "NoMembers": "Il n'y as aucun membres",
+            "AddUser": "Ajouter un utilisateur"
         }
     }
 }

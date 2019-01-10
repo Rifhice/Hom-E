@@ -2,6 +2,7 @@ import React from 'react';
 import { ScrollView, StyleSheet, RefreshControl } from 'react-native';
 import ActuatorOverview from '../../components/ActuatorOverview';
 import SensorOverview from '../../components/SensorOverview';
+import Loader from '../../components/Loader'
 
 export default class LinksScreen extends React.Component {
 
@@ -11,12 +12,15 @@ export default class LinksScreen extends React.Component {
       theme: {
         current: {}
       },
+      fetched: false,
       refreshing: false
     }
   }
 
   async componentDidMount() {
-    this._onRefresh()
+    await this.props.fetchActuators(this.props.currentDevice)
+    await this.props.fetchSensors(this.props.currentDevice)
+    this.setState({ fetched: true })
   }
 
   _onRefresh = () => {
@@ -40,8 +44,8 @@ export default class LinksScreen extends React.Component {
 
   render() {
     const { navigate } = this.props.navigation;
-    return (
-      <ScrollView style={{ flex: 1, backgroundColor: this.props.theme.current['screenBackground'] }}>
+    return this.state.fetched
+      ? <ScrollView style={{ flex: 1, backgroundColor: this.props.theme.current['screenBackground'] }}>
         <RefreshControl
           refreshing={this.state.refreshing}
           onRefresh={this._onRefresh}
@@ -66,7 +70,7 @@ export default class LinksScreen extends React.Component {
           />)
         }
       </ScrollView>
-    );
+      : <Loader></Loader>
   }
 }
 

@@ -33,5 +33,17 @@ export default icons = {
     "settings": {
         "name": "settings",
         "type": "octicon"
+    },
+    "arrowUp": {
+        "name": "arrow-up",
+        "type": "evilicon"
+    },
+    "arrowDown": {
+        "name": "arrow-down",
+        "type": "evilicon"
+    },
+    "removeUser": {
+        "name": "minus",
+        "type": "evilicon"
     }
 }

@@ -3,5 +3,6 @@ module.exports = {
     removeUser: require('./removeUser'),
     addRestriction: require('./addRestriction'),
     removeRestriction: require('./removeRestriction'),
-    updateRank: require('./updateRank')
+    updateRank: require('./updateRank'),
+    getRestrictions: require('./getRestrictions')
 };

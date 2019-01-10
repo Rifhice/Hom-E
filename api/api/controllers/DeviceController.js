@@ -58,9 +58,33 @@ const getUsers = async (DeviceId) => {
             {
                 path: 'users.user',
                 select: ['email', 'username']
+            },
+            {
+                path: 'masterUser',
+                select: ['email', 'username']
             }
         ])
-        return device.users
+        return { masterUser: device.masterUser, users: device.users }
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+}
+const getRestrictions = async (DeviceId, userId) => {
+    try {
+        const device = await Device.findOne({ _id: DeviceId })
+        const user = device.users.find(user => console.log(user, userId) || user.user.toString() === userId.toString())
+        return user.restrictions
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+}
+const getAllRestrictions = async (DeviceId, userId) => {
+    try {
+        return "lol"
     }
     catch (error) {
         logger.error(error.message)
@@ -196,5 +220,7 @@ module.exports = {
     addRestriction,
     removeRestriction,
     elevateUser,
-    relegateUser
+    relegateUser,
+    getRestrictions,
+    getAllRestrictions
 };

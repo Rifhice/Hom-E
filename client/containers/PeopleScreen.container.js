@@ -3,15 +3,20 @@ import peoples from '../screens/PeopleScreen';
 import { withNamespaces } from 'react-i18next';
 import { withInAppNotification } from 'react-native-in-app-notification';
 import { withTheme, withChangeTheme } from '../ThemeProvider'
+import DeviceService from '../InternalServices/DeviceServices'
 
 const mapStateToProps = (state, ownProps) => {
     return {
-
+        currentDevice: state.user.currentDevice,
+        deviceUsers: state.device
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
+        async getDeviceUsers(deviceId) {
+            return await DeviceService.getDeviceUsers(deviceId, dispatch)
+        }
     }
 }
 
