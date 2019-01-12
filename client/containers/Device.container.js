@@ -22,8 +22,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
                 return ownProps.showNotification(NotificationBuilder(error))
             }
         },
-        removeToken() {
-            return dispatch({ type: actions.REMOVE_TOKEN, payload: {} })
+        async removeToken(userId) {
+            try {
+                return await UserServices.logout(userId, dispatch)
+            } catch (error) {
+                return ownProps.showNotification(NotificationBuilder(error))
+            }
         }
     }
 }

@@ -15,7 +15,7 @@ export default class NewDevice extends React.Component {
                     headerRight: (
                         <Icon
                             style={{}}
-                            onPress={this.props.removeToken}
+                            onPress={() => this.props.removeToken(this.props.userId)}
                             name='logout'
                             color='red'
                             type='material-community' />
@@ -29,7 +29,7 @@ export default class NewDevice extends React.Component {
                     headerRight: (
                         <Icon
                             style={{}}
-                            onPress={this.props.removeToken}
+                            onPress={() => this.props.removeToken(this.props.userId)}
                             name='logout'
                             color='red'
                             type='material-community' />

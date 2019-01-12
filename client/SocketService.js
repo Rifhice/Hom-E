@@ -18,8 +18,15 @@ export default {
     unsubscribe(deviceId) {
         socket.emit("unsubscribeClientFromDevice", deviceId)
     },
+    connectToSocket(userId) {
+        console.log("Connecting user to socket!")
+        socket.emit("userConnecting", userId)
+    },
+    disconnectToSocket(userId) {
+        console.log("Connecting user to socket!")
+        socket.emit("userDisconnecting", userId)
+    },
     init(store) {
-        console.log("Init")
         socket.on("event", event => {
             console.log(event)
             store.dispatch(event)

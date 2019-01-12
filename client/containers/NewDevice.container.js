@@ -1,16 +1,22 @@
 import { connect } from 'react-redux';
 import newDevice from '../screens/NewDevice';
 import actions from '../redux/actions/user.actions'
+import UserService from '../InternalServices/UserServices'
 
 const mapStateToProps = (state, ownProps) => {
-    return {}
+    return {
+        userId: state.user._id
+    }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        removeToken() {
-            dispatch({ type: actions.REMOVE_TOKEN, payload: {} })
-            dispatch({ type: actions.LOGOUT, payload: {} })
+        async removeToken(userId) {
+            try {
+                return await UserService.logout(userId, dispatch)
+            } catch (error) {
+                return ownProps.showNotification(NotificationBuilder(error))
+            }
         }
     }
 }

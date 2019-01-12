@@ -61,7 +61,7 @@ export default class SettingsScreen extends React.Component {
           backgroundColor: theme.current['red']
         }}
         title={t("Logout")}
-        onPress={this.props.removeToken} />
+        onPress={() => this.props.removeToken(this.props.userId)} />
       <Overlay
         isVisible={this.state.themeModal}
         height={Dimensions.get('screen').height / 2}

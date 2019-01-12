@@ -1,7 +1,9 @@
 import React from 'react';
-import { View, AsyncStorage } from 'react-native';
+import { View, AsyncStorage, ActivityIndicator } from 'react-native';
 import SignIn from '../containers/SignInOrRegister.container'
 import App from '../containers/App.container'
+import UserServices from '../WebServices/UserWebServices'
+import SocketService from '../SocketService'
 import Text from '../components/StyledText'
 
 export default class MainScreen extends React.Component {
@@ -13,8 +15,10 @@ export default class MainScreen extends React.Component {
         }
         //AsyncStorage.clear()
         AsyncStorage.getItem('userToken').then((tokenStored) => {
-            if (tokenStored)
+            if (tokenStored) {
                 this.props.saveToken(tokenStored)
+                UserServices.getInformation().then(information => SocketService.connectToSocket(information._id))
+            }
             this.setState({ fetched: true })
         })
     }
@@ -29,7 +33,7 @@ export default class MainScreen extends React.Component {
                 }
             </View>
             : <View style={{ flex: 1 }}>
-
+                <ActivityIndicator></ActivityIndicator>
             </View>
 
     }

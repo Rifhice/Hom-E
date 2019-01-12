@@ -34,35 +34,6 @@ export default class InitialScreen extends React.Component {
                         }}
                     ></Button>
                 </View>
-                <View style={{ flex: 2 }}>
-                    <Text h2 style={{ alignSelf: "center" }}>Awaiting requests</Text>
-                    <ScrollView>
-                        <RefreshControl
-                            refreshing={this.state.refreshing}
-                            onRefresh={this._onRefresh}
-                        />
-                        {[{ device: "lol", master: "mdr" }, { device: "ménoon", master: "lala" }].map(device => {
-                            return <View key={device.device} style={{ backgroundColor: "white", flex: 1, flexDirection: "row", justifyContent: "space-between", marginBottom: 5 }} >
-                                <View style={{ flex: 4 }}>
-                                    <Text>Device : {device.device}</Text>
-                                    <Text>Admin : {device.master}</Text>
-                                </View>
-                                <View style={{ flex: 1, flexDirection: "row", alignItems: "center" }}>
-                                    <Icon
-                                        name='check-circle'
-                                        color='green'
-                                        type='fontawesome'
-                                    />
-                                    <Icon
-                                        name='cancel'
-                                        color='red'
-                                    />
-
-                                </View>
-                            </View>
-                        })}
-                    </ScrollView>
-                </View>
             </View>)
     }
 }

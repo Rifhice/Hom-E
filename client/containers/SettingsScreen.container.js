@@ -9,15 +9,19 @@ import NotificationBuilder from '../helper/NotificationBuilder'
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        user: state.user
+        user: state.user,
+        userId: state.user._id
     }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        removeToken() {
-            dispatch({ type: actions.REMOVE_TOKEN, payload: {} })
-            dispatch({ type: actions.LOGOUT, payload: {} })
+        async removeToken(userId) {
+            try {
+                return await UserService.logout(userId, dispatch)
+            } catch (error) {
+                return ownProps.showNotification(NotificationBuilder(error))
+            }
         },
         async updateTheme(theme) {
             try {

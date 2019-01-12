@@ -2,5 +2,6 @@ export default actions = {
     "SAVE_TOKEN": "SAVE_TOKEN",
     "REMOVE_TOKEN": "REMOVE_TOKEN",
     "USER_INFORMATION": "USER_INFORMATION",
-    "LOGOUT": "LOGOUT"
+    "LOGOUT": "LOGOUT",
+    "NEW_DEVICE_PAIRED": "NEW_DEVICE_PAIRED"
 }

@@ -6,12 +6,21 @@ export default {
     async register(data, dispatch) {
         const token = await UserWebServices.register(data)
         dispatch({ type: actions.SAVE_TOKEN, payload: { token } })
+        const information = await UserWebServices.getInformation()
+        SocketService.connectToSocket(information._id)
         return false
     },
     async login(data, dispatch) {
         const token = await UserWebServices.login(data)
         dispatch({ type: actions.SAVE_TOKEN, payload: { token } })
+        const information = await UserWebServices.getInformation()
+        SocketService.connectToSocket(information._id)
         return token
+    },
+    async logout(userId, dispatch) {
+        SocketService.disconnectToSocket(userId)
+        dispatch({ type: actions.REMOVE_TOKEN, payload: {} })
+        dispatch({ type: actions.LOGOUT, payload: {} })
     },
     async getInformation(dispatch) {
         const information = await UserWebServices.getInformation()

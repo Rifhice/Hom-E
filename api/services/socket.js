@@ -8,6 +8,7 @@ const WaitingForPairingController = require('../api/controllers/WaitingForPairin
 redisAdapter.pubClient.on('error', (error) => logger.info(error));
 redisAdapter.pubClient.on('connect', () => logger.info("Connected to Redis"));
 let io = null
+let userConnected = []
 
 module.exports = {
     listen: (server) => {
@@ -41,6 +42,11 @@ module.exports = {
                     }
                     else {
                         const realPair = await DeviceController.addDevice(pair.deviceId, pair.masterId)
+                        userConnected.forEach(socket => {
+                            if (socket.userId.toString() === pair.masterId.toString()) {
+                                socket.emit('event', { type: 'NEW_DEVICE_PAIRED', payload: { deviceId: pair.deviceId } })
+                            }
+                        })
                         if (realPair) {
                             await WaitingForPairingController.removeWithDeviceId(deviceId)
                             callback({
@@ -49,6 +55,15 @@ module.exports = {
                             })
                         }
                     }
+                })
+                socket.on('userConnecting', async (userId) => {
+                    logger.info(`The user ${userId} is now registered to personnal socket!`)
+                    socket.userId = userId
+                    userConnected.push(socket)
+                })
+                socket.on('userDisconnecting', async (userId) => {
+                    logger.info(`The user ${userId} is now unregistered to personnal socket!`)
+                    userConnected.splice(userConnected.indexOf(socket), 1)
                 })
                 socket.on('subscribeDevice', async (deviceId, callback) => {
                     const device = await DeviceController.getDeviceById(deviceId)

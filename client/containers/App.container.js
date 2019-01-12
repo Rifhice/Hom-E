@@ -8,7 +8,8 @@ import NotificationBuilder from '../helper/NotificationBuilder'
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        currentDevice: state.user.currentDevice
+        currentDevice: state.user.currentDevice,
+        userId: state.user._id
     }
 }
 

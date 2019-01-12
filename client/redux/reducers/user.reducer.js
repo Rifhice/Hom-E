@@ -29,6 +29,12 @@ export default (state = defaultState, action = { type: null, payload: null }) =>
                 ...state,
                 ...action.payload
             }
+        case actions.NEW_DEVICE_PAIRED:
+            return {
+                ...state,
+                devices: [...state.devices, action.payload.deviceId],
+                currentDevice: state.currentDevice === null ? action.payload.deviceId : state.currentDevice
+            }
         case actions.LOGOUT:
             return defaultState
         default:
