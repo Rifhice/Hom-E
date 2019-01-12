@@ -3,20 +3,11 @@ import actions from '../redux/actions/actuator.actions'
 
 export default {
     async getActuators(deviceId, dispatch) {
-        try {
-            const result = await ActuatorWebServices.getActuators(deviceId)
-            dispatch({ type: actions.FETCHED_ACTUATORS, payload: result })
-        }
-        catch (error) {
-            console.log(error.response)
-        }
+        const result = await ActuatorWebServices.getActuators(deviceId)
+        dispatch({ type: actions.FETCHED_ACTUATORS, payload: result })
+        return result
     },
     async executeOrder(deviceId, key, argument, actuatorId, commandId, dispatch) {
-        try {
-            const result = await ActuatorWebServices.executeOrder(deviceId, key, argument, actuatorId, commandId)
-        }
-        catch (error) {
-            console.log(error)
-        }
+        return await ActuatorWebServices.executeOrder(deviceId, key, argument, actuatorId, commandId)
     }
 }

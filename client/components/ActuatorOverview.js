@@ -42,14 +42,14 @@ export default class ActuatorOverview extends React.Component {
                                             style={{ flex: 1 }}
                                             onSwitchColor={this.props.theme.current["onSwitch"]}
                                             offSwitchColor={this.props.theme.current["offSwitch"]}
-                                            onChange={(val) => this.props.actuator.isConnected ? ActuatorServices.executeOrder(this.props.deviceId, this.props.actuator.quick_command.key, val, this.props.actuator._id, this.props.actuator.quick_command._id) : 0}
+                                            onChange={(val) => this.props.actuator.isConnected ? this.props.executeOrder(this.props.deviceId, this.props.actuator.quick_command.key, val, this.props.actuator._id, this.props.actuator.quick_command._id) : 0}
                                             isActive={this.props.actuator.quick_command.command_argument.current}
                                         ></Switch>
                                         : this.props.actuator.quick_command.type === "slider"
                                             ? <Slider
                                                 style={{ flex: 1, width: "90%", height: "90%" }}
                                                 theme={this.props.theme}
-                                                onChange={(val) => this.props.actuator.isConnected ? ActuatorServices.executeOrder(this.props.deviceId, this.props.actuator.quick_command.key, val, this.props.actuator._id, this.props.actuator.quick_command._id) : 0}
+                                                onChange={(val) => this.props.actuator.isConnected ? this.props.executeOrder(this.props.deviceId, this.props.actuator.quick_command.key, val, this.props.actuator._id, this.props.actuator.quick_command._id) : 0}
                                                 originalValue={this.props.actuator.quick_command.command_argument.current}
                                                 minimumValue={this.props.actuator.quick_command.command_argument.min}
                                                 maximumValue={this.props.actuator.quick_command.command_argument.max}

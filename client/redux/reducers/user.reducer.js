@@ -2,6 +2,7 @@ import actions from '../actions/user.actions'
 import { AsyncStorage } from 'react-native';
 
 const defaultState = {
+    _id: null,
     token: null,
     language: null,
     theme: null,

@@ -3,6 +3,8 @@ import DetailObject from '../../screens/ObjectScreens/DetailActuatorScreen';
 import { withNamespaces } from 'react-i18next';
 import { withInAppNotification } from 'react-native-in-app-notification';
 import { withTheme, withChangeTheme } from '../../ThemeProvider'
+import ActuatorServices from '../../InternalServices/ActuatorServices'
+import NotificationBuilder from '../../helper/NotificationBuilder'
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -10,9 +12,15 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-
+        async executeOrder(deviceId, key, argument, actuatorId, commandId) {
+            try {
+                return await ActuatorServices.executeOrder(deviceId, key, argument, actuatorId, commandId)
+            } catch (error) {
+                return ownProps.showNotification(NotificationBuilder(error))
+            }
+        },
     }
 }
 

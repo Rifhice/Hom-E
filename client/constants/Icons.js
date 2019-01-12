@@ -45,5 +45,9 @@ export default icons = {
     "removeUser": {
         "name": "minus",
         "type": "evilicon"
+    },
+    "add": {
+        "name": "plus",
+        "type": "evilicon"
     }
 }

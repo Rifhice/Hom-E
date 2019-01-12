@@ -5,6 +5,7 @@ import { withInAppNotification } from 'react-native-in-app-notification';
 import { withTheme, withChangeTheme } from '../ThemeProvider'
 import UserServices from '../InternalServices/UserServices'
 import actions from '../redux/actions/user.actions'
+import NotificationBuilder from '../helper/NotificationBuilder'
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -12,10 +13,14 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         async getInformation() {
-            return await UserServices.getInformation(dispatch)
+            try {
+                return await UserServices.getInformation(dispatch)
+            } catch (error) {
+                return ownProps.showNotification(NotificationBuilder(error))
+            }
         },
         removeToken() {
             return dispatch({ type: actions.REMOVE_TOKEN, payload: {} })

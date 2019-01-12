@@ -1,4 +1,5 @@
 const DeviceController = require('../../../../controllers/DeviceController')
+const SocketService = require('../../../../../services/socket')
 /**
   * @swagger
   *
@@ -27,18 +28,19 @@ module.exports = async (req, res, next) => {
         }
 
         if (req.body.newRank === "Admin") {
-            device = await DeviceController.elevateUser(req.params.deviceId, req.params.userId)
+            user = await DeviceController.elevateUser(req.params.deviceId, req.params.userId)
         }
         else if (req.body.newRank === "Member") {
             if (device.masterUser.toString() === req.params.userId.toString()) {
                 return res.status(400).send("Cannot relegate owner of device")
             }
-            device = await DeviceController.relegateUser(req.params.deviceId, req.params.userId)
+            user = await DeviceController.relegateUser(req.params.deviceId, req.params.userId)
         }
         else {
             return res.status(400).send("Rank unknown")
         }
-        return res.status(200).send(device)
+        SocketService.broadcastToClients('event', req.params.deviceId, { type: "UPDATE_USER_RANK", payload: user })
+        return res.status(200).send(user)
     }
     catch (error) {
         return res.status(500).send("Internal error !")

@@ -80,14 +80,14 @@ export default class DetailActuatorScreen extends React.Component {
                                                 style={{ flex: 1 }}
                                                 onSwitchColor={this.props.theme.current["onSwitch"]}
                                                 offSwitchColor={this.props.theme.current["offSwitch"]}
-                                                onChange={(val) => actuator.isConnected ? ActuatorServices.executeOrder(this.props.navigation.state.params.deviceId, command.key, val, actuator._id, command._id) : 0}
+                                                onChange={(val) => actuator.isConnected ? this.props.executeOrder(this.props.navigation.state.params.deviceId, command.key, val, actuator._id, command._id) : 0}
                                                 isActive={command.command_argument.current}
                                             ></Switch>
                                             : command.type === "slider"
                                                 ? <Slider
                                                     style={{ flex: 1, width: "90%", height: "90%" }}
                                                     theme={this.props.theme}
-                                                    onChange={(val) => actuator.isConnected ? ActuatorServices.executeOrder(this.props.navigation.state.params.deviceId, command.key, val, actuator._id, command._id) : 0}
+                                                    onChange={(val) => actuator.isConnected ? this.props.executeOrder(this.props.navigation.state.params.deviceId, command.key, val, actuator._id, command._id) : 0}
                                                     originalValue={command.command_argument.current}
                                                     minimumValue={command.command_argument.min}
                                                     maximumValue={command.command_argument.max}

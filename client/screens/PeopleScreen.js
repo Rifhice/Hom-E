@@ -1,6 +1,6 @@
 import React from 'react';
-import { ScrollView, RefreshControl, View } from 'react-native';
-import { Divider, Icon, Button } from 'react-native-elements'
+import { ScrollView, RefreshControl, View, Dimensions, TouchableHighlight } from 'react-native';
+import { Divider, Icon, Button, Overlay, Input, CheckBox } from 'react-native-elements'
 import Text from '../components/StyledText'
 import Loader from '../components/Loader'
 import Icons from '../constants/Icons.js'
@@ -14,7 +14,12 @@ export default class PeopleScreen extends React.Component {
                 current: {}
             },
             fetched: false,
-            refreshing: false
+            refreshing: false,
+            addUser: false,
+            updateRestrictions: false,
+            resultFromSearch: [],
+            selectedUser: {},
+            possibleRestrictions: {}
         }
     }
 
@@ -43,6 +48,7 @@ export default class PeopleScreen extends React.Component {
 
     render() {
         const { t, i18n, theme, changeTheme } = this.props;
+        const currentUser = this.props.deviceUsers.users.find(user => user.user._id === this.props.userId)
         return this.state.fetched
             ? <View style={{ flex: 1, backgroundColor: this.props.theme.current['screenBackground'] }}>
                 <View style={{ marginTop: 10, justifyContent: "center", alignItems: "center" }}>
@@ -63,22 +69,48 @@ export default class PeopleScreen extends React.Component {
                             this.props.deviceUsers.users.some(current => current.user._id !== this.props.deviceUsers.masterUser._id && current.rank === "Admin")
                                 ? this.props.deviceUsers.users.map(current => {
                                     if (current.user._id !== this.props.deviceUsers.masterUser._id && current.rank === "Admin") {
-                                        return <View key={current.user._id} style={{ flexDirection: "row", justifyContent: "space-between" }}>
-                                            <Text h4>{current.user.username}</Text>
-                                            <View style={{ flexDirection: 'row' }}>
-                                                <Icon
-                                                    size={40}
-                                                    name={Icons.arrowDown.name}
-                                                    type={Icons.arrowDown.type}
-                                                    color={this.props.theme.current['red']} />
-                                                <Icon
-                                                    size={40}
-                                                    name={Icons.removeUser.name}
-                                                    type={Icons.removeUser.type}
-                                                    color={this.props.theme.current['red']} />
+                                        return <TouchableHighlight
+                                            key={current.user._id}
+                                            onPress={async () => {
+                                                if (!currentUser.restrictions.some(restriction => restriction.action === "update" &&
+                                                    restriction.entity === "restriction" &&
+                                                    restriction.target === "")) {
+                                                    const restrictions = await this.props.getAllPossibleRestrictions(this.props.currentDevice);
+                                                    this.setState({ updateRestrictions: true, possibleRestrictions: restrictions, selectedUser: current })
+                                                }
+                                            }
+                                            }>
+                                            <View
+                                                style={{ flex: 1 }}>
+                                                <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 5 }}>
+                                                    <Text h4 style={{ alignSelf: "center" }}>{current.user.username}</Text>
+                                                    <View style={{ flexDirection: 'row' }}>
+                                                        {currentUser.restrictions.some(restriction => restriction.action === "update" &&
+                                                            restriction.entity === "rank" &&
+                                                            restriction.target === "")
+                                                            ? null
+                                                            : <Icon
+                                                                onPress={() => this.props.updateUserRank(this.props.currentDevice, current.user._id, "Member")}
+                                                                size={40}
+                                                                name={Icons.arrowDown.name}
+                                                                type={Icons.arrowDown.type}
+                                                                color={this.props.theme.current['red']} />}
+                                                        {currentUser.restrictions.some(restriction => restriction.action === "remove" &&
+                                                            restriction.entity === "user" &&
+                                                            restriction.target === "")
+                                                            ? null
+                                                            :
+                                                            <Icon
+                                                                onPress={() => this.props.removeUser(this.props.currentDevice, current.user._id)}
+                                                                size={40}
+                                                                name={Icons.removeUser.name}
+                                                                type={Icons.removeUser.type}
+                                                                color={this.props.theme.current['red']} />}
+                                                    </View>
+                                                </View>
+                                                <Divider style={{ backgroundColor: 'lightgrey', width: "75%", alignSelf: "center" }}></Divider>
                                             </View>
-                                            <Divider style={{ backgroundColor: 'lightgrey', width: "75%" }}></Divider>
-                                        </View>
+                                        </TouchableHighlight>
                                     }
                                 })
                                 : <View style={{ alignItems: "center" }}>
@@ -93,24 +125,45 @@ export default class PeopleScreen extends React.Component {
                         {this.props.deviceUsers.users.some(current => current.user._id !== this.props.deviceUsers.masterUser._id && current.rank === "Member")
                             ? this.props.deviceUsers.users.map(current => {
                                 if (current.user._id !== this.props.deviceUsers.masterUser._id && current.rank === "Member") {
-                                    return <View key={current.user._id} style={{ flex: 1 }}>
-                                        <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 5 }}>
-                                            <Text h4>{current.user.username}</Text>
-                                            <View style={{ flexDirection: 'row' }}>
-                                                <Icon
-                                                    size={40}
-                                                    name={Icons.arrowUp.name}
-                                                    type={Icons.arrowUp.type}
-                                                    color={this.props.theme.current['green']} />
-                                                <Icon
-                                                    size={40}
-                                                    name={Icons.removeUser.name}
-                                                    type={Icons.removeUser.type}
-                                                    color={this.props.theme.current['red']} />
+                                    return <TouchableHighlight key={current.user._id}
+                                        onPress={async () => {
+                                            if (!currentUser.restrictions.some(restriction => restriction.action === "update" &&
+                                                restriction.entity === "restriction" &&
+                                                restriction.target === "")) {
+                                                const restrictions = await this.props.getAllPossibleRestrictions(this.props.currentDevice);
+                                                this.setState({ updateRestrictions: true, possibleRestrictions: restrictions, selectedUser: current })
+                                            }
+                                        }}>
+                                        <View style={{ flex: 1 }}>
+                                            <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 5 }}>
+                                                <Text h4 style={{ alignSelf: "center" }}>{current.user.username}</Text>
+                                                <View style={{ flexDirection: 'row' }}>
+                                                    {currentUser.restrictions.some(restriction => restriction.action === "update" &&
+                                                        restriction.entity === "rank" &&
+                                                        restriction.target === "")
+                                                        ? null
+                                                        : <Icon
+                                                            onPress={() => this.props.updateUserRank(this.props.currentDevice, current.user._id, "Admin")}
+                                                            size={40}
+                                                            name={Icons.arrowUp.name}
+                                                            type={Icons.arrowUp.type}
+                                                            color={this.props.theme.current['green']} />}
+                                                    {currentUser.restrictions.some(restriction => restriction.action === "remove" &&
+                                                        restriction.entity === "user" &&
+                                                        restriction.target === "")
+                                                        ? null
+                                                        :
+                                                        <Icon
+                                                            onPress={() => this.props.removeUser(this.props.currentDevice, current.user._id)}
+                                                            size={40}
+                                                            name={Icons.removeUser.name}
+                                                            type={Icons.removeUser.type}
+                                                            color={this.props.theme.current['red']} />}
+                                                </View>
                                             </View>
+                                            <Divider style={{ backgroundColor: 'lightgrey', width: "75%", alignSelf: "center" }}></Divider>
                                         </View>
-                                        <Divider style={{ backgroundColor: 'lightgrey', width: "75%", alignSelf: "center" }}></Divider>
-                                    </View>
+                                    </TouchableHighlight>
                                 }
                             })
                             : <View style={{ alignItems: "center" }}>
@@ -119,14 +172,177 @@ export default class PeopleScreen extends React.Component {
                         }
                     </View>
                 </ScrollView>
-                <Button
-                    title={t('AddUser')}
-                    onPress={async () => {
+                {currentUser.restrictions.some(restriction => restriction.action === "add" &&
+                    restriction.entity === "user" &&
+                    restriction.target === "")
+                    ? null
+                    :
+                    <Button
+                        title={t('AddUser')}
+                        onPress={() => {
+                            this.setState({ addUser: true })
+                        }}
+                        buttonStyle={{
+                            backgroundColor: theme.current["green"]
+                        }}
+                    />}
+                <Overlay
+                    isVisible={this.state.updateRestrictions}
+                    height={Dimensions.get('screen').height / 2}
+                    windowBackgroundColor={theme.current['windowBackgroundColor']}
+                    overlayBackgroundColor={theme.current['overlayBackgroundColor']}
+                    transform={[
+                        { translateY: - Dimensions.get('screen').height * 0.125 },
+                    ]}
+                    overlayStyle={{
+                        borderWidth: .5,
+                        borderColor: "black",
+                        alignItems: "stretch"
                     }}
-                    buttonStyle={{
-                        backgroundColor: theme.current["green"]
+                    onBackdropPress={() => this.setState({ updateRestrictions: false })}
+                >
+                    <View style={{ alignItems: "stretch", flex: 1 }}>
+                        <Text h2 style={{ alignSelf: "center" }}>Restrictions</Text>
+                        <ScrollView style={{ marginTop: 10 }}>
+                            <View>
+                                <Text h3 style={{ alignSelf: "center" }}>General</Text>
+                                {this.state.possibleRestrictions && this.state.possibleRestrictions.general && this.state.possibleRestrictions.general.map((restriction, i) =>
+                                    <View key={restriction.target + restriction.entity + i} style={{ marginBottom: 10, flexDirection: "row", justifyContent: "space-between" }}>
+                                        <View style={{ justifyContent: "center" }}>
+                                            <Text>{restriction.action}</Text>
+                                            <Text>{restriction.entity}</Text>
+                                        </View>
+                                        <View>
+                                            <CheckBox
+                                                center
+                                                onPress={async () => {
+                                                    const us = this.props.deviceUsers.users.find(user => user.user._id === this.state.selectedUser.user._id)
+                                                    us.restrictions.some(rest => restriction.target === rest.target
+                                                        && restriction.action === rest.action
+                                                        && restriction.entity === rest.entity)
+                                                        ? await this.props.removeRestriction(this.props.currentDevice, us.user._id, us.restrictions.find(rest => restriction.target === rest.target
+                                                            && restriction.action === rest.action
+                                                            && restriction.entity === rest.entity)._id)
+                                                        : await this.props.addRestriction(this.props.currentDevice, us.user._id, restriction)
+                                                }}
+                                                checkedIcon='dot-circle-o'
+                                                uncheckedIcon='circle-o'
+                                                checked={this.props.deviceUsers.users.find(user => user.user._id === this.state.selectedUser.user._id).restrictions.some(rest => restriction.target === rest.target
+                                                    && restriction.action === rest.action
+                                                    && restriction.entity === rest.entity)}
+                                            />
+                                        </View>
+                                    </View>
+                                )}
+                            </View>
+                            <View>
+                                <Text h3 style={{ alignSelf: "center" }}>Actuators</Text>
+                                {this.state.possibleRestrictions && this.state.possibleRestrictions.actuators && this.state.possibleRestrictions.actuators.map((current, i) =>
+                                    <View key={current.restriction.target + current.restriction.entity + i} style={{ marginBottom: 10, flexDirection: "row", justifyContent: "space-between" }}>
+                                        <View style={{ justifyContent: "center" }}>
+                                            <Text>{current.name}</Text>
+                                        </View>
+                                        <View>
+                                            <CheckBox
+                                                center
+                                                onPress={async () => {
+                                                    const us = this.props.deviceUsers.users.find(user => user.user._id === this.state.selectedUser.user._id)
+                                                    us.restrictions.some(rest => current.restriction.target === rest.target
+                                                        && current.restriction.action === rest.action
+                                                        && current.restriction.entity === rest.entity)
+                                                        ? await this.props.removeRestriction(this.props.currentDevice, us.user._id, us.restrictions.find(rest => current.restriction.target === rest.target
+                                                            && current.restriction.action === rest.action
+                                                            && current.restriction.entity === rest.entity)._id)
+                                                        : await this.props.addRestriction(this.props.currentDevice, us.user._id, current.restriction)
+                                                }}
+                                                checkedIcon='dot-circle-o'
+                                                uncheckedIcon='circle-o'
+                                                checked={this.props.deviceUsers.users.find(user => user.user._id === this.state.selectedUser.user._id).restrictions.some(rest => current.restriction.target === rest.target
+                                                    && current.restriction.action === rest.action
+                                                    && current.restriction.entity === rest.entity)}
+                                            />
+                                        </View>
+                                    </View>
+                                )}
+                            </View>
+                            <View>
+                                <Text h3 style={{ alignSelf: "center" }}>Sensors</Text>
+                                {this.state.possibleRestrictions && this.state.possibleRestrictions.sensors && this.state.possibleRestrictions.sensors.map((current, i) =>
+                                    <View key={current.restriction.target + current.restriction.entity + i} style={{ marginBottom: 10, flexDirection: "row", justifyContent: "space-between" }}>
+                                        <View style={{ justifyContent: "center" }}>
+                                            <Text>{current.name}</Text>
+                                        </View>
+                                        <View>
+                                            <CheckBox
+                                                center
+                                                onPress={async () => {
+                                                    const us = this.props.deviceUsers.users.find(user => user.user._id === this.state.selectedUser.user._id)
+                                                    us.restrictions.some(rest => current.restriction.target === rest.target
+                                                        && current.restriction.action === rest.action
+                                                        && current.restriction.entity === rest.entity)
+                                                        ? await this.props.removeRestriction(this.props.currentDevice, us.user._id, us.restrictions.find(rest => current.restriction.target === rest.target
+                                                            && current.restriction.action === rest.action
+                                                            && current.restriction.entity === rest.entity)._id)
+                                                        : await this.props.addRestriction(this.props.currentDevice, us.user._id, current.restriction)
+                                                }}
+                                                checkedIcon='dot-circle-o'
+                                                uncheckedIcon='circle-o'
+                                                checked={this.props.deviceUsers.users.find(user => user.user._id === this.state.selectedUser.user._id).restrictions.some(rest => current.restriction.target === rest.target
+                                                    && current.restriction.action === rest.action
+                                                    && current.restriction.entity === rest.entity)}
+                                            />
+                                        </View>
+                                    </View>
+                                )}
+                            </View>
+                        </ScrollView>
+                    </View>
+                </Overlay>
+                <Overlay
+                    isVisible={this.state.addUser}
+                    height={Dimensions.get('screen').height / 2}
+                    windowBackgroundColor={theme.current['windowBackgroundColor']}
+                    overlayBackgroundColor={theme.current['overlayBackgroundColor']}
+                    transform={[
+                        { translateY: - Dimensions.get('screen').height * 0.125 },
+                    ]}
+                    overlayStyle={{
+                        borderWidth: .5,
+                        borderColor: "black",
+                        alignItems: "stretch"
                     }}
-                />
+                    onBackdropPress={() => this.setState({ addUser: false, resultFromSearch: [] })}
+                >
+                    <Input
+                        onChangeText={async query => {
+                            const result = await this.props.getUserByUsername(query)
+                            this.setState({ resultFromSearch: result })
+                        }}
+                        placeholder='Username'
+                        leftIcon={{ type: Icons.peoples.type, name: Icons.peoples.name }}
+                    />
+                    <ScrollView style={{ marginTop: 10 }}>
+                        {this.state.resultFromSearch.map(user =>
+                            <View key={user._id} style={{ marginBottom: 10, flexDirection: "row", justifyContent: "space-between" }}>
+                                <View style={{ flex: 5 }}>
+                                    <Text>{user.username}</Text>
+                                    <Text>{user.email}</Text>
+                                </View>
+                                <View style={{ flex: 1 }}>
+                                    <Icon
+                                        onPress={() => this.props.addUser(this.props.currentDevice, user._id)}
+                                        size={40}
+                                        name={Icons.add.name}
+                                        type={Icons.add.type}
+                                        color={this.props.theme.current['green']} />
+                                </View>
+                                <View style={{ alignItems: "center" }} >
+                                    <Divider style={{ backgroundColor: 'lightgrey', width: "75%" }}></Divider>
+                                </View>
+                            </View>
+                        )}
+                    </ScrollView>
+                </Overlay>
             </View>
             : <Loader></Loader>
     }

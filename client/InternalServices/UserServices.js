@@ -4,70 +4,35 @@ import actions from '../redux/actions/user.actions'
 
 export default {
     async register(data, dispatch) {
-        try {
-            const token = await UserWebServices.register(data)
-            dispatch({ type: actions.SAVE_TOKEN, payload: { token } })
-            return false
-        }
-        catch (error) {
-            return error.response.data
-        }
+        const token = await UserWebServices.register(data)
+        dispatch({ type: actions.SAVE_TOKEN, payload: { token } })
+        return false
     },
     async login(data, dispatch) {
-        try {
-            const token = await UserWebServices.login(data)
-            dispatch({ type: actions.SAVE_TOKEN, payload: { token } })
-            return token
-        }
-        catch (error) {
-            console.log(error)
-            return false
-        }
+        const token = await UserWebServices.login(data)
+        dispatch({ type: actions.SAVE_TOKEN, payload: { token } })
+        return token
     },
     async getInformation(dispatch) {
-        try {
-            const information = await UserWebServices.getInformation()
-            dispatch({ type: actions.USER_INFORMATION, payload: information })
-            return information
-        }
-        catch (error) {
-            console.log(error)
-            return false
-        }
+        const information = await UserWebServices.getInformation()
+        dispatch({ type: actions.USER_INFORMATION, payload: information })
+        return information
     },
     async updateCurrentDevice(oldDeviceId, newDeviceId, dispatch) {
-        try {
-            SocketService.unsubscribe(oldDeviceId)
-            const information = await UserWebServices.updateCurrentDevice(newDeviceId)
-            dispatch({ type: actions.USER_INFORMATION, payload: information })
-            SocketService.subscribe(information.currentDevice)
-            return information
-        }
-        catch (error) {
-            console.log(error)
-            return false
-        }
+        SocketService.unsubscribe(oldDeviceId)
+        const information = await UserWebServices.updateCurrentDevice(newDeviceId)
+        dispatch({ type: actions.USER_INFORMATION, payload: information })
+        SocketService.subscribe(information.currentDevice)
+        return information
     },
     async updateLanguage(language, dispatch) {
-        try {
-            const information = await UserWebServices.updateLanguage(language)
-            dispatch({ type: actions.USER_INFORMATION, payload: information })
-            return information
-        }
-        catch (error) {
-            console.log(error)
-            return false
-        }
+        const information = await UserWebServices.updateLanguage(language)
+        dispatch({ type: actions.USER_INFORMATION, payload: information })
+        return information
     },
     async updateTheme(theme, dispatch) {
-        try {
-            const information = await UserWebServices.updateTheme(theme)
-            dispatch({ type: actions.USER_INFORMATION, payload: information })
-            return information
-        }
-        catch (error) {
-            console.log(error.response)
-            return false
-        }
+        const information = await UserWebServices.updateTheme(theme)
+        dispatch({ type: actions.USER_INFORMATION, payload: information })
+        return information
     }
 }

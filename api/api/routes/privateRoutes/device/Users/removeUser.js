@@ -27,5 +27,6 @@ module.exports = async (req, res, next) => {
         logger.info(`Unpairing device ${req.params.deviceId}`)
         socket.emitToDevice('unpair', req.params.deviceId, {}, () => logger.info(`Device ${req.params.deviceId} unpaired`))
     }
+    socket.broadcastToClients('event', req.params.deviceId, { type: "REMOVE_USER_TO_DEVICE", payload: { _id: req.params.userId } })
     return res.status(200).send(device)
 }

@@ -18,28 +18,22 @@ router.delete('/:userId', userValidator.removeUser, checkRequest, checkRight({
     action: "remove"
 }), require('./removeUser'));
 
-router.get('/Restrictions', checkRight({
-    target: "",
-    entity: "restriction",
-    action: "getAll"
-}), require('./getAllRestrictions'));
-
 router.get('/:userId/Restrictions', userValidator.getRestrictions, checkRequest, checkRight({
     target: "",
     entity: "restriction",
-    action: "get"
+    action: "update"
 }), require('./getRestrictions'));
 
 router.post('/:userId/Restrictions', userValidator.addRestriction, checkRequest, checkRight({
     target: "",
     entity: "restriction",
-    action: "add"
+    action: "update"
 }), require('./addRestrictions'));
 
 router.delete('/:userId/Restrictions/:restrictionId', userValidator.removeRestriction, checkRequest, checkRight({
     target: "",
     entity: "restriction",
-    action: "remove"
+    action: "update"
 }), require('./removeRestrictions'));
 
 router.put('/:userId/Rank', userValidator.updateRank, checkRequest, checkRight({

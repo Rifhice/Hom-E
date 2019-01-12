@@ -6,7 +6,7 @@ const mapStateToProps = (state, ownProps) => {
     return {}
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         removeToken() {
             dispatch({ type: actions.REMOVE_TOKEN, payload: {} })

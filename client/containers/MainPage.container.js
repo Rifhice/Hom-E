@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         saveToken(token) {
             return dispatch({ type: actions.SAVE_TOKEN, payload: { token } })

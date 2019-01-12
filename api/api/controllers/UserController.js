@@ -1,8 +1,8 @@
 const User = require("../models").User;
 
-const getUsers = async () => {
+const getUsers = async (name) => {
     try {
-        return await User.find({})
+        return await User.find({ username: new RegExp(`${name}.*`, "i") })
     }
     catch (error) {
         logger.error(error.message)

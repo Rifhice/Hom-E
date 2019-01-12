@@ -1,4 +1,5 @@
 const DeviceController = require('../../../../controllers/DeviceController')
+const SocketService = require('../../../../../services/socket')
 /**
   * @swagger
   *
@@ -26,6 +27,7 @@ module.exports = async (req, res, next) => {
             return res.status(400).send("User not in device")
         }
         device = await DeviceController.removeRestriction(req.params.deviceId, req.params.userId, req.params.restrictionId)
+        SocketService.broadcastToClients('event', req.params.deviceId, { type: "REMOVE_RESTRICTION_TO_USER", payload: { userId: req.params.userId, restrictionId: req.params.restrictionId } })
         return res.status(200).send(device)
     }
     catch (error) {

@@ -57,6 +57,7 @@ export default class LinksScreen extends React.Component {
             theme={this.props.theme}
             deviceId={this.props.currentDevice}
             actuator={actuator}
+            executeOrder={this.props.executeOrder}
             onPress={() => navigate('DetailActuator', { actuator: actuator._id, deviceId: this.props.currentDevice })}
           ></ActuatorOverview>
         )}

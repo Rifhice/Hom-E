@@ -1,4 +1,5 @@
 const DeviceController = require('../../../../controllers/DeviceController')
+const SocketService = require('../../../../../services/socket')
 /**
   * @swagger
   *
@@ -25,8 +26,9 @@ module.exports = async (req, res, next) => {
         if (device.users.some(user => user.user.toString() === req.body.userId.toString())) {
             return res.status(400).send("User already in device")
         }
-        device = await DeviceController.addUser(req.params.deviceId, req.body.userId)
-        return res.status(200).send(device)
+        user = await DeviceController.addUser(req.params.deviceId, req.body.userId)
+        SocketService.broadcastToClients('event', req.params.deviceId, { type: "ADD_USER_TO_DEVICE", payload: user })
+        return res.status(200).send(user)
     }
     catch (error) {
         return res.status(500).send('Internal error !')

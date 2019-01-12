@@ -1,6 +1,9 @@
 const Device = require("../models").Device;
+const mongoose = require('mongoose');
 const UserController = require('./UserController')
 const memberRestrictions = require('../helper/memberRestrictions')
+const ActuatorController = require('./ActuatorController')
+const SensorController = require('./SensorController')
 
 const getDevices = async () => {
     try {
@@ -60,6 +63,9 @@ const getUsers = async (DeviceId) => {
                 select: ['email', 'username']
             },
             {
+                path: 'users.restrictions'
+            },
+            {
                 path: 'masterUser',
                 select: ['email', 'username']
             }
@@ -71,20 +77,11 @@ const getUsers = async (DeviceId) => {
         throw error
     }
 }
-const getRestrictions = async (DeviceId, userId) => {
+const getRestrictions = async (actuators, sensors) => {
     try {
         const device = await Device.findOne({ _id: DeviceId })
-        const user = device.users.find(user => console.log(user, userId) || user.user.toString() === userId.toString())
+        const user = device.users.find(user => user.user.toString() === userId.toString())
         return user.restrictions
-    }
-    catch (error) {
-        logger.error(error.message)
-        throw error
-    }
-}
-const getAllRestrictions = async (DeviceId, userId) => {
-    try {
-        return "lol"
     }
     catch (error) {
         logger.error(error.message)
@@ -99,14 +96,15 @@ const addUser = async (deviceId, userId) => {
             rank: "Member",
             restrictions: memberRestrictions
         }
-        const newDevice = await Device.findByIdAndUpdate({ _id: deviceId },
+        const userData = await UserController.getUserById(userId)
+        await Device.findByIdAndUpdate({ _id: deviceId },
             {
                 $push: {
                     users: user
                 }
             }, { "new": true })
         await UserController.addDevice(userId, deviceId)
-        return newDevice
+        return { ...user, user: userData }
     }
     catch (error) {
         logger.error(error.message)
@@ -138,6 +136,7 @@ const deleteDevice = async (deviceId) => {
 
 const addRestriction = async (deviceId, userId, restriction) => {
     try {
+        restriction._id = mongoose.Types.ObjectId()
         const newDevice = await Device.findById({ _id: deviceId })
         for (const user of newDevice.users) {
             if (user.user && user.user.toString() === userId.toString() && user.rank !== 'Admin') {
@@ -145,7 +144,7 @@ const addRestriction = async (deviceId, userId, restriction) => {
             }
         }
         await newDevice.save()
-        return newDevice
+        return restriction
     }
     catch (error) {
         logger.error(error.message)
@@ -175,15 +174,22 @@ const removeRestriction = async (deviceId, userId, restrictionId) => {
 
 const elevateUser = async (deviceId, userId) => {
     try {
-        const newDevice = await Device.findById({ _id: deviceId })
+        const newDevice = await Device.findById({ _id: deviceId }).populate([
+            {
+                path: 'users.user',
+                select: ['email', 'username']
+            }
+        ])
+        let newUser;
         newDevice.users.forEach(user => {
-            if (user.user && user.user.toString() === userId.toString()) {
+            if (user.user && user.user._id.toString() === userId.toString()) {
                 user.rank = 'Admin'
                 user.restrictions = []
+                newUser = user
             }
         })
         await newDevice.save()
-        return newDevice
+        return newUser
     }
     catch (error) {
         logger.error(error.message)
@@ -193,15 +199,22 @@ const elevateUser = async (deviceId, userId) => {
 
 const relegateUser = async (deviceId, userId) => {
     try {
-        const newDevice = await Device.findById({ _id: deviceId })
+        const newDevice = await Device.findById({ _id: deviceId }).populate([
+            {
+                path: 'users.user',
+                select: ['email', 'username']
+            }
+        ])
+        let newUser;
         newDevice.users.forEach(user => {
-            if (user.user && user.user.toString() === userId.toString()) {
+            if (user.user && user.user._id.toString() === userId.toString()) {
                 user.rank = 'Member'
                 user.restrictions = memberRestrictions
+                newUser = user
             }
         })
         await newDevice.save()
-        return newDevice
+        return newUser
     }
     catch (error) {
         logger.error(error.message)
@@ -221,6 +234,5 @@ module.exports = {
     removeRestriction,
     elevateUser,
     relegateUser,
-    getRestrictions,
-    getAllRestrictions
+    getRestrictions
 };

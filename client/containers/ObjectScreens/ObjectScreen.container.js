@@ -5,6 +5,7 @@ import { withInAppNotification } from 'react-native-in-app-notification';
 import { withTheme, withChangeTheme } from '../../ThemeProvider'
 import ActuatorServices from '../../InternalServices/ActuatorServices'
 import SensorServices from '../../InternalServices/SensorServices'
+import NotificationBuilder from '../../helper/NotificationBuilder'
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -14,13 +15,28 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         async fetchActuators(deviceId) {
-            return ActuatorServices.getActuators(deviceId, dispatch)
+            try {
+                return await ActuatorServices.getActuators(deviceId, dispatch)
+            } catch (error) {
+                return ownProps.showNotification(NotificationBuilder(error))
+            }
         },
         async fetchSensors(deviceId) {
-            return SensorServices.getSensors(deviceId, dispatch)
+            try {
+                return await SensorServices.getSensors(deviceId, dispatch)
+            } catch (error) {
+                return ownProps.showNotification(NotificationBuilder(error))
+            }
+        },
+        async executeOrder(deviceId, key, argument, actuatorId, commandId) {
+            try {
+                return await ActuatorServices.executeOrder(deviceId, key, argument, actuatorId, commandId)
+            } catch (error) {
+                return ownProps.showNotification(NotificationBuilder(error))
+            }
         }
     }
 }

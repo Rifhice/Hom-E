@@ -5,6 +5,7 @@ import { withInAppNotification } from 'react-native-in-app-notification';
 import { withTheme, withChangeTheme } from '../ThemeProvider'
 import actions from '../redux/actions/user.actions'
 import UserService from '../InternalServices/UserServices'
+import NotificationBuilder from '../helper/NotificationBuilder'
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -12,20 +13,32 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         removeToken() {
             dispatch({ type: actions.REMOVE_TOKEN, payload: {} })
             dispatch({ type: actions.LOGOUT, payload: {} })
         },
         async updateTheme(theme) {
-            return await UserService.updateTheme(theme, dispatch)
+            try {
+                return await UserService.updateTheme(theme, dispatch)
+            } catch (error) {
+                return ownProps.showNotification(NotificationBuilder(error))
+            }
         },
         async updateLanguage(language) {
-            return await UserService.updateLanguage(language, dispatch)
+            try {
+                return await UserService.updateLanguage(language, dispatch)
+            } catch (error) {
+                return ownProps.showNotification(NotificationBuilder(error))
+            }
         },
         async updateCurrentDevice(oldDeviceId, newDeviceId) {
-            return await UserService.updateCurrentDevice(oldDeviceId, newDeviceId, dispatch)
+            try {
+                return await UserService.updateCurrentDevice(oldDeviceId, newDeviceId, dispatch)
+            } catch (error) {
+                return ownProps.showNotification(NotificationBuilder(error))
+            }
         }
     }
 }

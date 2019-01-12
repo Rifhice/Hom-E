@@ -113,7 +113,6 @@ module.exports = {
                     }
                 });
                 socket.on("hub_event", event => {
-                    console.log(event)
                     io.to(`${socket.deviceId}/Client`).emit('event', event)
                 })
                 socket.on("disconnect", () => {

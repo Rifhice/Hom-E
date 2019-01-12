@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         async register(data) {
             return await UserServices.register(data, dispatch)

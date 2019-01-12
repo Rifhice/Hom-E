@@ -12,21 +12,11 @@ module.exports = [
     {
         target: "",
         entity: "restriction",
-        action: "add"
-    },
-    {
-        target: "",
-        entity: "restriction",
-        action: "remove"
+        action: "update"
     },
     {
         target: "",
         entity: "rank",
         action: "update"
-    },
-    {
-        target: "",
-        entity: "restriction",
-        action: "get"
     }
 ]
