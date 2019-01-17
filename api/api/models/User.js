@@ -6,8 +6,20 @@ const UserSchema = new mongoose.Schema({
     hash: String,
     language: String,
     theme: { type: String, default: 'regular' },
-    devices: [{ type: mongoose.Schema.Types.ObjectId, ref: "Device" }],
-    currentDevice: { type: mongoose.Schema.Types.ObjectId, ref: "Device" }
+    devices: [{
+        _id: { type: mongoose.Schema.Types.ObjectId, ref: "Device" },
+        favourites: {
+            actuators: [],
+            sensors: []
+        }
+    }],
+    currentDevice: {
+        _id: { type: mongoose.Schema.Types.ObjectId, ref: "Device" },
+        favourites: {
+            actuators: [],
+            sensors: []
+        }
+    }
 }, { timestamps: true });
 
 const User = mongoose.model("User", UserSchema);

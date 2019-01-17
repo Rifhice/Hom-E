@@ -21,12 +21,17 @@ const socket = require('../../../../../services/socket')
   *           description: Unauthorized
   */
 module.exports = async (req, res, next) => {
-    const device = await DeviceController.removeUser(req.params.deviceId, req.params.userId)
-    if (device.users.length === 0) {
-        await DeviceController.deleteDevice(req.params.deviceId)
-        logger.info(`Unpairing device ${req.params.deviceId}`)
-        socket.emitToDevice('unpair', req.params.deviceId, {}, () => logger.info(`Device ${req.params.deviceId} unpaired`))
+    try {
+        const device = await DeviceController.removeUser(req.params.deviceId, req.params.userId)
+        if (device.users.length === 0) {
+            await DeviceController.deleteDevice(req.params.deviceId)
+            logger.info(`Unpairing device ${req.params.deviceId}`)
+            socket.emitToDevice('unpair', req.params.deviceId, {}, () => logger.info(`Device ${req.params.deviceId} unpaired`))
+        }
+        socket.broadcastToClients('event', req.params.deviceId, { type: "REMOVE_USER_TO_DEVICE", payload: { _id: req.params.userId } })
+        return res.status(200).send(device)
     }
-    socket.broadcastToClients('event', req.params.deviceId, { type: "REMOVE_USER_TO_DEVICE", payload: { _id: req.params.userId } })
-    return res.status(200).send(device)
+    catch (error) {
+        logger.error(error.lineNumber)
+    }
 }

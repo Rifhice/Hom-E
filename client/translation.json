@@ -21,7 +21,9 @@
             "NoAdmins": "The only admin is the main user",
             "Members": "Members",
             "NoMembers": "There is no member",
-            "AddUser": "Add user"
+            "AddUser": "Add user",
+            "Actuators": "Actuators",
+            "Sensors": "Sensors"
         }
     },
     "fr": {
@@ -46,7 +48,9 @@
             "NoAdmins": "Le seul administrateur est l'utilisateur principal.",
             "Members": "Membres",
             "NoMembers": "Il n'y as aucun membres",
-            "AddUser": "Ajouter un utilisateur"
+            "AddUser": "Ajouter un utilisateur",
+            "Actuators": "Actuateurs",
+            "Sensors": "Capteurs"
         }
     }
 }

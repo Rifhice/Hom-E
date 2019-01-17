@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, RefreshControl, View, Dimensions, TouchableHighlight } from 'react-native';
-import { Divider, Icon, Button, Overlay, Input, CheckBox } from 'react-native-elements'
+import { Divider, Icon, Button, Overlay, Input, CheckBox, SearchBar } from 'react-native-elements'
 import Text from '../components/StyledText'
 import Loader from '../components/Loader'
 import Icons from '../constants/Icons.js'
@@ -24,13 +24,13 @@ export default class PeopleScreen extends React.Component {
     }
 
     async componentDidMount() {
-        await this.props.getDeviceUsers(this.props.currentDevice)
+        await this.props.getDeviceUsers(this.props.currentDevice._id)
         this.setState({ fetched: true })
     }
 
     _onRefresh = () => {
         this.setState({ refreshing: true }, async () => {
-            await this.props.getDeviceUsers(this.props.currentDevice)
+            await this.props.getDeviceUsers(this.props.currentDevice._id)
             this.setState({ refreshing: false })
         })
     }
@@ -75,7 +75,7 @@ export default class PeopleScreen extends React.Component {
                                                 if (!currentUser.restrictions.some(restriction => restriction.action === "update" &&
                                                     restriction.entity === "restriction" &&
                                                     restriction.target === "")) {
-                                                    const restrictions = await this.props.getAllPossibleRestrictions(this.props.currentDevice);
+                                                    const restrictions = await this.props.getAllPossibleRestrictions(this.props.currentDevice._id);
                                                     this.setState({ updateRestrictions: true, possibleRestrictions: restrictions, selectedUser: current })
                                                 }
                                             }
@@ -90,7 +90,7 @@ export default class PeopleScreen extends React.Component {
                                                             restriction.target === "")
                                                             ? null
                                                             : <Icon
-                                                                onPress={() => this.props.updateUserRank(this.props.currentDevice, current.user._id, "Member")}
+                                                                onPress={() => this.props.updateUserRank(this.props.currentDevice._id, current.user._id, "Member")}
                                                                 size={40}
                                                                 name={Icons.arrowDown.name}
                                                                 type={Icons.arrowDown.type}
@@ -101,7 +101,7 @@ export default class PeopleScreen extends React.Component {
                                                             ? null
                                                             :
                                                             <Icon
-                                                                onPress={() => this.props.removeUser(this.props.currentDevice, current.user._id)}
+                                                                onPress={() => this.props.removeUser(this.props.currentDevice._id, current.user._id)}
                                                                 size={40}
                                                                 name={Icons.removeUser.name}
                                                                 type={Icons.removeUser.type}
@@ -130,7 +130,7 @@ export default class PeopleScreen extends React.Component {
                                             if (!currentUser.restrictions.some(restriction => restriction.action === "update" &&
                                                 restriction.entity === "restriction" &&
                                                 restriction.target === "")) {
-                                                const restrictions = await this.props.getAllPossibleRestrictions(this.props.currentDevice);
+                                                const restrictions = await this.props.getAllPossibleRestrictions(this.props.currentDevice._id);
                                                 this.setState({ updateRestrictions: true, possibleRestrictions: restrictions, selectedUser: current })
                                             }
                                         }}>
@@ -143,7 +143,7 @@ export default class PeopleScreen extends React.Component {
                                                         restriction.target === "")
                                                         ? null
                                                         : <Icon
-                                                            onPress={() => this.props.updateUserRank(this.props.currentDevice, current.user._id, "Admin")}
+                                                            onPress={() => this.props.updateUserRank(this.props.currentDevice._id, current.user._id, "Admin")}
                                                             size={40}
                                                             name={Icons.arrowUp.name}
                                                             type={Icons.arrowUp.type}
@@ -154,7 +154,7 @@ export default class PeopleScreen extends React.Component {
                                                         ? null
                                                         :
                                                         <Icon
-                                                            onPress={() => this.props.removeUser(this.props.currentDevice, current.user._id)}
+                                                            onPress={() => this.props.removeUser(this.props.currentDevice._id, current.user._id)}
                                                             size={40}
                                                             name={Icons.removeUser.name}
                                                             type={Icons.removeUser.type}
@@ -220,10 +220,10 @@ export default class PeopleScreen extends React.Component {
                                                     us.restrictions.some(rest => restriction.target === rest.target
                                                         && restriction.action === rest.action
                                                         && restriction.entity === rest.entity)
-                                                        ? await this.props.removeRestriction(this.props.currentDevice, us.user._id, us.restrictions.find(rest => restriction.target === rest.target
+                                                        ? await this.props.removeRestriction(this.props.currentDevice._id, us.user._id, us.restrictions.find(rest => restriction.target === rest.target
                                                             && restriction.action === rest.action
                                                             && restriction.entity === rest.entity)._id)
-                                                        : await this.props.addRestriction(this.props.currentDevice, us.user._id, restriction)
+                                                        : await this.props.addRestriction(this.props.currentDevice._id, us.user._id, restriction)
                                                 }}
                                                 checkedIcon='dot-circle-o'
                                                 uncheckedIcon='circle-o'
@@ -250,10 +250,10 @@ export default class PeopleScreen extends React.Component {
                                                     us.restrictions.some(rest => current.restriction.target === rest.target
                                                         && current.restriction.action === rest.action
                                                         && current.restriction.entity === rest.entity)
-                                                        ? await this.props.removeRestriction(this.props.currentDevice, us.user._id, us.restrictions.find(rest => current.restriction.target === rest.target
+                                                        ? await this.props.removeRestriction(this.props.currentDevice._id, us.user._id, us.restrictions.find(rest => current.restriction.target === rest.target
                                                             && current.restriction.action === rest.action
                                                             && current.restriction.entity === rest.entity)._id)
-                                                        : await this.props.addRestriction(this.props.currentDevice, us.user._id, current.restriction)
+                                                        : await this.props.addRestriction(this.props.currentDevice._id, us.user._id, current.restriction)
                                                 }}
                                                 checkedIcon='dot-circle-o'
                                                 uncheckedIcon='circle-o'
@@ -280,10 +280,10 @@ export default class PeopleScreen extends React.Component {
                                                     us.restrictions.some(rest => current.restriction.target === rest.target
                                                         && current.restriction.action === rest.action
                                                         && current.restriction.entity === rest.entity)
-                                                        ? await this.props.removeRestriction(this.props.currentDevice, us.user._id, us.restrictions.find(rest => current.restriction.target === rest.target
+                                                        ? await this.props.removeRestriction(this.props.currentDevice._id, us.user._id, us.restrictions.find(rest => current.restriction.target === rest.target
                                                             && current.restriction.action === rest.action
                                                             && current.restriction.entity === rest.entity)._id)
-                                                        : await this.props.addRestriction(this.props.currentDevice, us.user._id, current.restriction)
+                                                        : await this.props.addRestriction(this.props.currentDevice._id, us.user._id, current.restriction)
                                                 }}
                                                 checkedIcon='dot-circle-o'
                                                 uncheckedIcon='circle-o'
@@ -313,14 +313,20 @@ export default class PeopleScreen extends React.Component {
                     }}
                     onBackdropPress={() => this.setState({ addUser: false, resultFromSearch: [] })}
                 >
-                    <Input
-                        onChangeText={async query => {
-                            const result = await this.props.getUserByUsername(query)
-                            this.setState({ resultFromSearch: result })
-                        }}
-                        placeholder='Username'
-                        leftIcon={{ type: Icons.peoples.type, name: Icons.peoples.name }}
-                    />
+                    <View>
+                        <SearchBar
+                            round
+                            containerStyle={{ backgroundColor: "transparent", borderTopWidth: 0 }}
+                            lightTheme
+                            onChangeText={async query => {
+                                if (query.length !== 0) {
+                                    const result = await this.props.getUserByUsername(query)
+                                    this.setState({ resultFromSearch: result })
+                                }
+                            }}
+                            onClear={() => this.setState({ resultFromSearch: [] })}
+                            placeholder='Username' />
+                    </View>
                     <ScrollView style={{ marginTop: 10 }}>
                         {this.state.resultFromSearch.map(user =>
                             <View key={user._id} style={{ marginBottom: 10, flexDirection: "row", justifyContent: "space-between" }}>
@@ -330,7 +336,7 @@ export default class PeopleScreen extends React.Component {
                                 </View>
                                 <View style={{ flex: 1 }}>
                                     <Icon
-                                        onPress={() => this.props.addUser(this.props.currentDevice, user._id)}
+                                        onPress={() => this.props.addUser(this.props.currentDevice._id, user._id)}
                                         size={40}
                                         name={Icons.add.name}
                                         type={Icons.add.type}

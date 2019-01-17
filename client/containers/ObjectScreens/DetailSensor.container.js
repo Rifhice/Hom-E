@@ -3,16 +3,36 @@ import DetailObject from '../../screens/ObjectScreens/DetailSensorScreen';
 import { withNamespaces } from 'react-i18next';
 import { withInAppNotification } from 'react-native-in-app-notification';
 import { withTheme, withChangeTheme } from '../../ThemeProvider'
+import UserServices from '../../InternalServices/UserServices'
+import NotificationBuilder from '../../helper/NotificationBuilder'
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        sensors: state.sensors.all
+        sensors: state.sensors.all,
+        favourites: state.favourites
     }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-
+        async favouriteSensor(deviceId, sensorId) {
+            try {
+                await UserServices.favouriteSensor(deviceId, sensorId, dispatch)
+                return true
+            } catch (error) {
+                ownProps.showNotification(NotificationBuilder(error))
+                return false
+            }
+        },
+        async unFavourite(deviceId, sensorId) {
+            try {
+                await UserServices.unFavourite(deviceId, sensorId, dispatch)
+                return true
+            } catch (error) {
+                ownProps.showNotification(NotificationBuilder(error))
+                return false
+            }
+        },
     }
 }
 

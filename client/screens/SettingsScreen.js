@@ -149,15 +149,15 @@ export default class SettingsScreen extends React.Component {
           {this.props.user.devices.map(current => <Button
             key={current}
             onPress={async () => {
-              if (current !== this.props.user.currentDevice) {
-                await this.props.updateCurrentDevice(this.props.user.currentDevice, current)
+              if (current !== this.props.user.currentDevice._id) {
+                await this.props.updateCurrentDevice(this.props.user.currentDevice._id, current)
               }
               else {
                 this.setState({ deviceModal: false })
               }
             }}
             buttonStyle={{
-              backgroundColor: current === this.props.user.currentDevice ? theme.current["green"] : theme.current["grey"],
+              backgroundColor: current === this.props.user.currentDevice._id ? theme.current["green"] : theme.current["grey"],
               marginBottom: 5
             }}
             title={current} />)}

@@ -33,14 +33,14 @@ export default class DeviceScreen extends React.Component {
       this.setState({ fetched: true, informations })
       this.props.i18n.changeLanguage(informations.language, () => this.setState({ languageSetup: true }))
       this.props.changeTheme(informations.theme, () => this.setState({ themeSetup: true }))
-      SocketService.subscribe(informations.currentDevice)
+      SocketService.subscribe(informations.currentDevice._id)
     }).catch(err => {
       this.props.removeToken()
     })
   }
 
   componentWillUnmount() {
-    SocketService.unsubscribe(this.props.currentDevice)
+    SocketService.unsubscribe(this.props.currentDevice._id)
   }
 
   render() {

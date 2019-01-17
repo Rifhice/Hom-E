@@ -1,86 +1,52 @@
+import actions from '../actions/user.actions'
+import actuatorAction from '../actions/actuator.actions'
+import sensorAction from '../actions/sensor.actions'
 const defaultState = {
-    all: [
-        {
-            "_id": "00000",
-            "name": "Living room",
-            "description": "Living room's lights",
-            "category": "Lights",
-            "quick_command": {
-                "_id": "000002",
-                "name": "Set light",
-                "type": "slider",
-                "key": "set",
-                "description": "....",
-                "command_arguments": [
-                    { "type": "discrete", "possible_values": ["on", "off"] }
-                ]
-            },
-            "commands": [
-                {
-                    "_id": "000002",
-                    "name": "Set light",
-                    "type": "slider",
-                    "key": "set",
-                    "description": "....",
-                    "command_arguments": [
-                        { "type": "discrete", "possible_values": ["on", "off"] }
-                    ]
-                },
-                {
-                    "_id": "000003",
-                    "name": "Set light",
-                    "type": "switch",
-                    "key": "set",
-                    "description": "....",
-                    "command_arguments": [
-                        { "type": "discrete", "possible_values": ["on", "off"] }
-                    ]
-                }
-            ],
-            "communication": {
-                "protocol": "internet",
-                "ip": "192.168.16.10",
-                "port": "1000"
-            }
-        },
-        {
-            "_id": "00001",
-            "name": "Bedroom",
-            "description": "Bedroom's lights",
-            "quick_command": {
-                "_id": "000002",
-                "name": "Set light",
-                "type": "switch",
-                "key": "set",
-                "description": "....",
-                "command_arguments": [
-                    { "type": "discrete", "possible_values": ["on", "off"] }
-                ]
-            },
-            "commands": [
-                {
-                    "_id": "000003",
-                    "name": "Set light",
-                    "type": "switch",
-                    "key": "set",
-                    "description": "....",
-                    "command_arguments": [
-                        { "type": "discrete", "possible_values": ["on", "off"] }
-                    ]
-                }
-            ],
-            "communication": {
-                "protocol": "internet",
-                "ip": "192.168.16.10",
-                "port": "1000"
-            }
-        }
-    ]
+    actuators: [],
+    sensors: []
 };
 
 export default (state = defaultState, action = { type: null, payload: null }) => {
     console.log(action)
     switch (action.type) {
+        case actions.FETCHED_FAVOURITE:
+            return action.payload
+        case actions.FAVOURITE_ACTUATOR:
+            return {
+                ...state,
+                actuators: [...state.actuators, action.payload]
+            }
+        case actions.FAVOURITE_SENSOR:
+            return {
+                ...state,
+                sensors: [...state.sensors, action.payload]
+            }
+        case actions.UNFAVOURITE:
+            return {
+                ...state,
+                actuators: state.actuators.filter(actuator => actuator._id !== action.payload._id),
+                sensors: state.sensors.filter(sensor => sensor._id !== action.payload._id)
+            }
+        case actuatorAction.UPDATE_COMMAND_VALUE:
+            return {
+                ...state,
+                actuators: state.actuators.map(actuator => ({ ...actuator, quick_command: actuator.quick_command._id === action.payload._id ? { ...actuator.quick_command, command_argument: { ...actuator.quick_command.command_argument, current: action.payload.newValue } } : actuator.quick_command, commands: actuator.commands.map(command => command._id === action.payload._id ? { ...command, command_argument: { ...command.command_argument, current: action.payload.newValue } } : command) }))
+            }
+        case sensorAction.UPDATE_ENVIRONMENT_VARIABLE_VALUE:
+            return {
+                ...state,
+                sensors: state.sensors.map(sensor => ({ ...sensor, environment_variables: sensor.environment_variables.map(env_var => console.log(env_var._id) || env_var._id === action.payload._id ? { ...env_var, value: { ...env_var.value, current: action.payload.newValue } } : env_var) }))
+            }
+        case actuatorAction.UPDATE_ACTUATOR_ISCONNECTED:
+            return {
+                ...state,
+                actuators: state.actuators.map(actuator => actuator._id === action.payload._id ? { ...actuator, isConnected: action.payload.isConnected } : actuator)
+            }
+        case sensorAction.UPDATE_SENSOR_ISCONNECTED:
+            return {
+                ...state,
+                sensors: state.sensors.map(sensor => sensor._id === action.payload._id ? { ...sensor, isConnected: action.payload.isConnected } : sensor)
+            }
         default:
             return state
     }

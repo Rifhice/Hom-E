@@ -110,15 +110,76 @@ const addDevice = async (userId, data) => {
         throw error
     }
 }
-const removeDevice = async (userId, data) => {
+const removeDevice = async (userId, deviceId) => {
     try {
         const user = await User.findByIdAndUpdate({ _id: userId },
-            { $pull: { devices: data } }, { "new": true })
-        if (user.currentDevice === data && user.devices.length !== 0)
+            { $pull: { devices: { _id: deviceId } } }, { "new": true })
+        if (user.currentDevice === deviceId && user.devices.length !== 0)
             await User.findByIdAndUpdate({ _id: userId },
                 { $set: { currentDevice: user.devices[Math.floor(Math.random() * user.devices.length)] } }, { "new": true })
         return user.devices.length === 0 ? await User.findByIdAndUpdate({ _id: userId },
-            { $set: { currentDevice: undefined } }, { "new": true }) : user
+            { $set: { currentDevice: { _id: undefined, favourites: { sensors: [], actuators: [] } } } }, { "new": true }) : user
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+}
+
+const addSensorToFavourite = async (userId, deviceId, sensorId) => {
+    try {
+        const user = await getUserById(userId)
+        if (user.currentDevice._id.toString() === deviceId.toString()) {
+            user.currentDevice.favourites.sensors.push(sensorId)
+        }
+        for (let i = 0; i < user.devices.length; i++) {
+            if (user.devices[i]._id.toString() === deviceId.toString()) {
+                user.devices[i].favourites.sensors = user.devices[i].favourites.sensors.filter(sensor => sensor !== null)
+                user.devices[i].favourites.sensors.push(sensorId)
+            }
+        }
+        return await user.save()
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+}
+
+const addActuatorToFavourite = async (userId, deviceId, actuatorId) => {
+    try {
+        const user = await getUserById(userId)
+        if (user.currentDevice._id.toString() === deviceId.toString()) {
+            user.currentDevice.favourites.actuators.push(actuatorId)
+        }
+        for (let i = 0; i < user.devices.length; i++) {
+            if (user.devices[i]._id.toString() === deviceId.toString()) {
+                user.devices[i].favourites.actuators = user.devices[i].favourites.actuators.filter(actuator => actuator !== null)
+                user.devices[i].favourites.actuators.push(actuatorId)
+            }
+        }
+        return await user.save()
+    }
+    catch (error) {
+        logger.error(error.message)
+        throw error
+    }
+}
+
+const removeFavourite = async (userId, deviceId, favouriteId) => {
+    try {
+        const user = await getUserById(userId)
+        if (user.currentDevice._id.toString() === deviceId.toString()) {
+            user.currentDevice.favourites.actuators = user.currentDevice.favourites.actuators.filter(actuator => actuator.toString() !== favouriteId)
+            user.currentDevice.favourites.sensors = user.currentDevice.favourites.sensors.filter(sensor => sensor.toString() !== favouriteId)
+        }
+        for (let i = 0; i < user.devices.length; i++) {
+            if (user.devices[i]._id.toString() === deviceId.toString()) {
+                user.devices[i].favourites.actuators = user.devices[i].favourites.actuators.filter(actuator => actuator.toString() !== favouriteId)
+                user.devices[i].favourites.sensors = user.devices[i].favourites.sensors.filter(sensor => sensor.toString() !== favouriteId)
+            }
+        }
+        return await user.save()
     }
     catch (error) {
         logger.error(error.message)
@@ -137,5 +198,8 @@ module.exports = {
     updateTheme,
     updateCurrentDevice,
     addDevice,
-    removeDevice
+    removeDevice,
+    addSensorToFavourite,
+    addActuatorToFavourite,
+    removeFavourite
 };

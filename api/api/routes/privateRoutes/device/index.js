@@ -10,6 +10,7 @@ router.use('/EnvironmentVariables', require('./EnvironmentVariable'));
 router.use('/Behaviors', require('./Behavior'));
 router.use('/ComplexCommands', require('./ComplexCommand'));
 router.use('/Users', require('./Users'));
+router.use('/Favourites', require('./Favourite'));
 router.get('/Restrictions', checkRight({
     target: "",
     entity: "restriction",

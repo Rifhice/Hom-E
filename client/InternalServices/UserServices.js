@@ -31,7 +31,7 @@ export default {
         SocketService.unsubscribe(oldDeviceId)
         const information = await UserWebServices.updateCurrentDevice(newDeviceId)
         dispatch({ type: actions.USER_INFORMATION, payload: information })
-        SocketService.subscribe(information.currentDevice)
+        SocketService.subscribe(information.currentDevice._id)
         return information
     },
     async updateLanguage(language, dispatch) {
@@ -42,6 +42,26 @@ export default {
     async updateTheme(theme, dispatch) {
         const information = await UserWebServices.updateTheme(theme)
         dispatch({ type: actions.USER_INFORMATION, payload: information })
+        return information
+    },
+    async fetchFavourites(deviceId, dispatch) {
+        const information = await UserWebServices.fetchFavourites(deviceId)
+        dispatch({ type: actions.FETCHED_FAVOURITE, payload: information })
+        return information
+    },
+    async favouriteActuator(deviceId, actuatorId, dispatch) {
+        const information = await UserWebServices.favouriteActuator(deviceId, actuatorId)
+        dispatch({ type: actions.FAVOURITE_ACTUATOR, payload: information })
+        return information
+    },
+    async favouriteSensor(deviceId, sensorId, dispatch) {
+        const information = await UserWebServices.favouriteSensor(deviceId, sensorId)
+        dispatch({ type: actions.FAVOURITE_SENSOR, payload: information })
+        return information
+    },
+    async unFavourite(deviceId, objectId, dispatch) {
+        const information = await UserWebServices.unFavourite(deviceId, objectId)
+        dispatch({ type: actions.UNFAVOURITE, payload: { _id: objectId, deviceId } })
         return information
     }
 }

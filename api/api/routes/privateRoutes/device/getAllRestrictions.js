@@ -1,5 +1,6 @@
 const SocketService = require('../../../../services/socket')
 const memberRestrictions = require('../../../helper/memberRestrictions')
+const checkDeviceResult = require('../../../helper/formatDeviceAnswer')
 /**
   * @swagger
   *
@@ -21,16 +22,6 @@ const memberRestrictions = require('../../../helper/memberRestrictions')
   *           description: Unauthorized
   */
 module.exports = async (req, res, next) => {
-  const checkDeviceResult = (response) => {
-    if (response.result === "timeout")
-      return { code: 504, message: "The device response has timeout" }
-    else if (response.result === "unreachable")
-      return { code: 502, message: "The device is unreachable" }
-    else if (response.result === "device_error")
-      return { code: response.payload.code, message: response.payload.message }
-    else
-      return { code: 200, data: response.payload }
-  }
   let actuators = await new Promise((resolve, reject) =>
     SocketService.emitToDevice('request', req.params.deviceId, {
       "originalUrl": `/api/Devices/${req.params.deviceId}/Actuators`,

@@ -7,7 +7,13 @@ const defaultState = {
     language: null,
     theme: null,
     devices: null,
-    currentDevice: null
+    currentDevice: {
+        _id: null,
+        favourites: {
+            sensors: [],
+            actuators: []
+        }
+    }
 };
 
 export default (state = defaultState, action = { type: null, payload: null }) => {
@@ -32,8 +38,8 @@ export default (state = defaultState, action = { type: null, payload: null }) =>
         case actions.NEW_DEVICE_PAIRED:
             return {
                 ...state,
-                devices: [...state.devices, action.payload.deviceId],
-                currentDevice: state.currentDevice === null ? action.payload.deviceId : state.currentDevice
+                devices: [...state.devices, action.payload],
+                currentDevice: state.currentDevice._id ? state.currentDevice : action.payload
             }
         case actions.LOGOUT:
             return defaultState

@@ -28,6 +28,7 @@ module.exports = async (req, res, next) => {
         }
         user = await DeviceController.addUser(req.params.deviceId, req.body.userId)
         SocketService.broadcastToClients('event', req.params.deviceId, { type: "ADD_USER_TO_DEVICE", payload: user })
+        SocketService.sendToUserSocket(req.body.userId.toString(), { type: 'NEW_DEVICE_PAIRED', payload: { _id: req.params.deviceId, favourites: { sensors: [], actuator: [] } } })
         return res.status(200).send(user)
     }
     catch (error) {

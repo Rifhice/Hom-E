@@ -44,7 +44,7 @@ module.exports = {
                         const realPair = await DeviceController.addDevice(pair.deviceId, pair.masterId)
                         userConnected.forEach(socket => {
                             if (socket.userId.toString() === pair.masterId.toString()) {
-                                socket.emit('event', { type: 'NEW_DEVICE_PAIRED', payload: { deviceId: pair.deviceId } })
+                                socket.emit('event', { type: 'NEW_DEVICE_PAIRED', payload: { _id: pair.deviceId, favourites: { sensors: [], actuator: [] } } })
                             }
                         })
                         if (realPair) {
@@ -142,6 +142,16 @@ module.exports = {
             logger.error(error)
             return Promise.reject()
         }
+    },
+    sendToUserSocket(userId, data) {
+        let isAvailable = false
+        userConnected.forEach(socket => {
+            if (socket.userId.toString() === userId.toString()) {
+                isAvailable = true
+                socket.emit('event', data)
+            }
+        })
+        return isAvailable
     },
     broadcastToClients: (event, deviceId, data) => {
         io.to(`${deviceId}/Client`).emit(event, data)

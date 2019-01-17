@@ -18,15 +18,15 @@ export default class LinksScreen extends React.Component {
   }
 
   async componentDidMount() {
-    await this.props.fetchActuators(this.props.currentDevice)
-    await this.props.fetchSensors(this.props.currentDevice)
+    await this.props.fetchActuators(this.props.currentDevice._id)
+    await this.props.fetchSensors(this.props.currentDevice._id)
     this.setState({ fetched: true })
   }
 
   _onRefresh = () => {
     this.setState({ refreshing: true }, async () => {
-      await this.props.fetchActuators(this.props.currentDevice)
-      await this.props.fetchSensors(this.props.currentDevice)
+      await this.props.fetchActuators(this.props.currentDevice._id)
+      await this.props.fetchSensors(this.props.currentDevice._id)
       this.setState({ refreshing: false })
     })
   }
@@ -55,19 +55,19 @@ export default class LinksScreen extends React.Component {
           <ActuatorOverview
             key={actuator._id}
             theme={this.props.theme}
-            deviceId={this.props.currentDevice}
+            deviceId={this.props.currentDevice._id}
             actuator={actuator}
             executeOrder={this.props.executeOrder}
-            onPress={() => navigate('DetailActuator', { actuator: actuator._id, deviceId: this.props.currentDevice })}
+            onPress={() => navigate('DetailActuator', { actuator: actuator._id, deviceId: this.props.currentDevice._id })}
           ></ActuatorOverview>
         )}
         {this.props.sensors.map(sensor =>
           <SensorOverview
             key={sensor._id}
             theme={this.props.theme}
-            deviceId={this.props.currentDevice}
+            deviceId={this.props.currentDevice._id}
             sensor={sensor}
-            onPress={() => navigate('DetailSensor', { sensor: sensor._id, deviceId: this.props.currentDevice })}
+            onPress={() => navigate('DetailSensor', { sensor: sensor._id, deviceId: this.props.currentDevice._id })}
           />)
         }
       </ScrollView>

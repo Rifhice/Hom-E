@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
-import { Divider, Icon } from 'react-native-elements'
+import { Divider, Icon, Button } from 'react-native-elements'
 import Text from '../../components/StyledText'
 import Switch from '../../components/Switch'
 import Slider from '../../components/Slider'
@@ -100,6 +100,31 @@ export default class DetailActuatorScreen extends React.Component {
                             </View>)
                         }
                     </ScrollView>
+                    <View style={{ flexDirection: "row", marginBottom: 2 }}>
+                        <View style={{ flex: 1, marginLeft: 5, marginRight: 5 }}>
+                            {!this.props.favourites.actuators.some(actuator => actuator._id === this.props.navigation.state.params.actuator)
+                                ? <Button
+                                    buttonStyle={{ backgroundColor: 'yellow' }}
+                                    title="Favourite"
+                                    onPress={async () => {
+                                        const res = await this.props.favouriteActuator(this.props.navigation.state.params.deviceId, this.props.navigation.state.params.actuator)
+                                        if (res) this.setState({ isFavourite: true })
+                                    }} />
+                                : <Button
+                                    buttonStyle={{ backgroundColor: 'grey' }}
+                                    title="UnFavourite"
+                                    onPress={async () => {
+                                        const res = await this.props.unFavourite(this.props.navigation.state.params.deviceId, this.props.navigation.state.params.actuator)
+                                        if (res) this.setState({ isFavourite: false })
+                                    }} />}
+                        </View>
+                        <View style={{ flex: 1, marginLeft: 5, marginRight: 5 }}>
+                            <Button
+                                buttonStyle={{ backgroundColor: 'red' }}
+                                title="Forget"
+                            />
+                        </View>
+                    </View>
                 </View>
             </View>)
     }

@@ -46,7 +46,7 @@ const addDevice = async (deviceId, masterId) => {
             })
         }
         await device.save()
-        await UserController.addDevice(masterId, deviceId)
+        await UserController.addDevice(masterId, { _id: deviceId, favourites: { actuators: {}, sensors: {} } })
         return device
     }
     catch (error) {
@@ -77,7 +77,7 @@ const getUsers = async (DeviceId) => {
         throw error
     }
 }
-const getRestrictions = async (actuators, sensors) => {
+const getRestrictions = async () => {
     try {
         const device = await Device.findOne({ _id: DeviceId })
         const user = device.users.find(user => user.user.toString() === userId.toString())
@@ -103,7 +103,7 @@ const addUser = async (deviceId, userId) => {
                     users: user
                 }
             }, { "new": true })
-        await UserController.addDevice(userId, deviceId)
+        await UserController.addDevice(userId, { _id: deviceId, favourites: { actuators: {}, sensors: {} } })
         return { ...user, user: userData }
     }
     catch (error) {

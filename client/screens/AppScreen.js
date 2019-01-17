@@ -23,7 +23,7 @@ export default class AppScreen extends React.Component {
         return this.state.fetched
             ? <View style={{ flex: 1 }}>
                 {
-                    !this.props.currentDevice
+                    !this.props.currentDevice._id
                         ? <View style={{ flex: 1 }}>
                             <AppState
                                 personalRegistering={true}
@@ -33,7 +33,7 @@ export default class AppScreen extends React.Component {
                         : <View style={{ flex: 1 }}>
                             <AppState
                                 deviceRegistering={true}
-                                deviceId={this.props.currentDevice} />
+                                deviceId={this.props.currentDevice._id} />
                             <Device />
                         </View>
                 }
