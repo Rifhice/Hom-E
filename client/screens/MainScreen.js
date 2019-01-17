@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, AsyncStorage, ActivityIndicator } from 'react-native';
+import { View, AsyncStorage, ActivityIndicator, StatusBar } from 'react-native';
 import SignIn from '../containers/SignInOrRegister.container'
 import App from '../containers/App.container'
 import UserServices from '../WebServices/UserWebServices'
@@ -26,6 +26,9 @@ export default class MainScreen extends React.Component {
     render() {
         return this.state.fetched
             ? <View style={{ flex: 1 }}>
+                <StatusBar
+                    barStyle="light-content"
+                />
                 {
                     this.props.user.token
                         ? <App></App>

@@ -2,10 +2,9 @@ import React from 'react';
 import { View, ScrollView } from 'react-native';
 import { Divider, Icon, Button } from 'react-native-elements'
 import Text from '../../components/StyledText'
-import Switch from '../../components/Switch'
-import Slider from '../../components/Slider'
 import Icons from '../../constants/Icons.js'
 import ActuatorServices from '../../InternalServices/ActuatorServices'
+import Command from '../../components/Command'
 
 export default class DetailActuatorScreen extends React.Component {
 
@@ -19,7 +18,7 @@ export default class DetailActuatorScreen extends React.Component {
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
-        const actuator = nextProps.actuators.find(actuator => actuator._id === nextProps.navigation.state.params.actuator)
+        const actuator = nextProps.actuators.find(actuator => console.log(actuator._id) || actuator._id === nextProps.navigation.state.params.actuator)
         if (JSON.stringify(nextProps.theme.current) !== JSON.stringify(prevState.theme.current) && nextProps.navigation) {
             nextProps.navigation.setParams({
                 title: actuator.name,
@@ -33,7 +32,7 @@ export default class DetailActuatorScreen extends React.Component {
     render() {
         const actuator = this.props.actuators.find(actuator => actuator._id === this.props.navigation.state.params.actuator)
         return (
-            <View style={{ flex: 1 }}>
+            <View style={{ flex: 1, backgroundColor: this.props.theme.current['screenBackground'] }}>
                 <View style={{ flex: 1 }}>
                     <View style={{ marginTop: 10 }}>
                         <Icon
@@ -75,25 +74,12 @@ export default class DetailActuatorScreen extends React.Component {
                                         <Text style={{ color: this.props.theme.current["grey"] }}>{command.description}</Text>
                                     </View>
                                     <View style={{ flex: 1, alignItems: "center" }}>
-                                        {command.type === "switch"
-                                            ? <Switch
-                                                style={{ flex: 1 }}
-                                                onSwitchColor={this.props.theme.current["onSwitch"]}
-                                                offSwitchColor={this.props.theme.current["offSwitch"]}
-                                                onChange={(val) => actuator.isConnected ? this.props.executeOrder(this.props.navigation.state.params.deviceId, command.key, val, actuator._id, command._id) : 0}
-                                                isActive={command.command_argument.current}
-                                            ></Switch>
-                                            : command.type === "slider"
-                                                ? <Slider
-                                                    style={{ flex: 1, width: "90%", height: "90%" }}
-                                                    theme={this.props.theme}
-                                                    onChange={(val) => actuator.isConnected ? this.props.executeOrder(this.props.navigation.state.params.deviceId, command.key, val, actuator._id, command._id) : 0}
-                                                    originalValue={command.command_argument.current}
-                                                    minimumValue={command.command_argument.min}
-                                                    maximumValue={command.command_argument.max}
-                                                    step={command.command_argument.precision}
-                                                    displayValueUnder={false}></Slider>
-                                                : ""}
+                                        <Command
+                                            command={command}
+                                            actuator={actuator}
+                                            deviceId={this.props.navigation.state.params.deviceId}
+                                            executeOrder={this.props.executeOrder}
+                                        />
                                     </View>
                                 </View>
                                 <Divider style={{ backgroundColor: 'lightgrey', width: "95%" }} />

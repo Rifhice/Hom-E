@@ -41,9 +41,9 @@ export default class SettingsScreen extends React.Component {
     const { t, i18n, theme, changeTheme } = this.props;
     const availableLanguages = Object.keys(i18n.store.data)
     const sections = [
-      { data: [{ value: i18n.language, onPress: () => { this.setState({ languageModal: true }) } }], title: t('Language') },
-      { data: [{ value: theme.selected, onPress: () => { this.setState({ themeModal: true }) } }], title: t('Theme') },
-      { data: [{ value: "device 1", onPress: () => { this.setState({ deviceModal: true }) } }], title: t('Device') }
+      { data: [{ value: i18n.language, onPress: () => { this.setState({ languageModal: true }) } }], title: t('Language'), theme: theme },
+      { data: [{ value: theme.selected, onPress: () => { this.setState({ themeModal: true }) } }], title: t('Theme'), theme: theme },
+      { data: [{ value: "device 1", onPress: () => { this.setState({ deviceModal: true }) } }], title: t('Device'), theme: theme }
     ];
     return <View style={{ flex: 1, backgroundColor: this.props.theme.current['screenBackground'] }}>
       <SectionList
@@ -167,7 +167,7 @@ export default class SettingsScreen extends React.Component {
   }
 
   _renderSectionHeader = ({ section }) => {
-    return <SectionHeader title={section.title} />;
+    return <SectionHeader title={section.title} theme={section.theme} />;
   };
 
   _renderItem = ({ item }) => {
@@ -216,9 +216,9 @@ const ListHeader = () => {
   );
 };
 
-const SectionHeader = ({ title }) => {
+const SectionHeader = ({ title, theme }) => {
   return (
-    <View style={styles.sectionHeaderContainer}>
+    <View style={{ ...styles.sectionHeaderContainer, backgroundColor: theme.current["secondaryScreenBackground"] }}>
       <Text style={styles.sectionHeaderText}>
         {title}
       </Text>

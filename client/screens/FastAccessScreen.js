@@ -1,16 +1,16 @@
 import React from 'react';
-import { ScrollView, View, RefreshControl } from 'react-native';
-import { Card, Icon } from 'react-native-elements'
+import { ScrollView, View, RefreshControl, TouchableHighlight } from 'react-native';
+import { Card, Divider } from 'react-native-elements'
 import Text from '../components/StyledText'
-import Switch from '../components/Switch'
-import Slider from '../components/Slider'
 import Loader from '../components/Loader'
+import Command from '../components/Command'
+import EnvironmenVariable from '../components/EnvironmenVariable'
+import Icons from '../constants/Icons'
 
 export default class FastAccessScreen extends React.Component {
 
     constructor(props) {
         super(props)
-        console.log(props.favourites)
         this.state = {
             theme: {
                 current: {}
@@ -22,12 +22,16 @@ export default class FastAccessScreen extends React.Component {
 
     async componentDidMount() {
         await this.props.getFavourites(this.props.currentDevice._id)
+        await this.props.fetchActuators(this.props.currentDevice._id)
+        await this.props.fetchSensors(this.props.currentDevice._id)
         this.setState({ fetched: true })
     }
 
     _onRefresh = () => {
         this.setState({ refreshing: true }, async () => {
             await this.props.getFavourites(this.props.currentDevice._id)
+            await this.props.fetchActuators(this.props.currentDevice._id)
+            await this.props.fetchSensors(this.props.currentDevice._id)
             this.setState({ refreshing: false })
         })
     }
@@ -51,52 +55,94 @@ export default class FastAccessScreen extends React.Component {
                     refreshing={this.state.refreshing}
                     onRefresh={this._onRefresh}
                 />
-                <View>
+                <View style={{ marginBottom: 5 }}>
                     <Text h2 style={{ alignSelf: "center" }}>{t('Actuators')}</Text>
                     {
                         this.props.favourites.actuators.map(actuator =>
-                            <Card title={actuator.name} key={actuator._id} containerStyle={{ borderColor: actuator.isConnected ? this.props.theme.current["green"] : this.props.theme.current["red"] }}>
-                                {actuator.commands.map(command =>
-                                    <View key={command._id} style={{ flexDirection: "row", flex: 1, alignContent: "center", alignItems: "center" }}>
-                                        <View style={{ flex: 3 }}>
-                                            <Text h4>{command.name}</Text>
-                                            <Text style={{ color: this.props.theme.current['grey'] }}>{command.description}</Text>
-                                        </View>
-                                        <View style={{ flex: 1 }}>
-                                            <View style={{ alignItems: "center" }}>
-                                                {command.type === "switch"
-                                                    ? <Switch
-                                                        style={{ flex: 1 }}
-                                                        onSwitchColor={this.props.theme.current["onSwitch"]}
-                                                        offSwitchColor={this.props.theme.current["offSwitch"]}
-                                                        onChange={(val) => actuator.isConnected ? this.props.executeOrder(this.props.currentDevice._id, command.key, val, actuator._id, command._id) : 0}
-                                                        isActive={command.command_argument.current}
-                                                    ></Switch>
-                                                    : command.type === "slider"
-                                                        ? <Slider
-                                                            style={{ flex: 1, width: "90%", height: "90%" }}
-                                                            onChange={(val) => console.log(val)}
-                                                            originalValue={0}
-                                                            minimumValue={0}
-                                                            maximumValue={100}
-                                                            step={1}
-                                                            displayValueUnder={false}></Slider>
-                                                        : ""
-                                                }
+                            <TouchableHighlight
+                                onPress={() => this.props.navigation.navigate('DetailActuator', { actuator: actuator._id, deviceId: this.props.currentDevice._id })}
+                                key={actuator._id}
+                                style={{
+                                    borderWidth: 1,
+                                    borderColor: actuator.isConnected ? this.props.theme.current["green"] : this.props.theme.current["red"],
+                                    alignItems: "center",
+                                    flex: 1,
+                                    width: '90%',
+                                    alignSelf: "center",
+                                    backgroundColor: this.props.theme.current["secondaryScreenBackground"],
+                                    shadowColor: actuator.isConnected ? this.props.theme.current["green"] : this.props.theme.current["red"],
+                                    shadowOffset: { width: 0, height: 1 },
+                                    shadowOpacity: 0.5,
+                                    shadowRadius: 2,
+                                }}>
+                                <View style={{ flex: 1 }}>
+                                    <View style={{ marginTop: 7, marginBottom: 7, justifyContent: "center", alignItems: "center" }}>
+                                        <Text style={{ fontWeight: "bold" }}>{actuator.name}</Text>
+                                    </View>
+                                    <View style={{ marginTop: 7, marginBottom: 7, justifyContent: "center", alignItems: "center" }}>
+                                        <Divider style={{ backgroundColor: 'lightgrey', width: "95%" }} />
+                                    </View>
+                                    {actuator.commands.map(command =>
+                                        <View key={command._id} style={{ flexDirection: "row", flex: 1, alignContent: "center", alignItems: "center", width: "90%", marginBottom: 5 }}>
+                                            <View style={{ flex: 3 }}>
+                                                <Text h4>{command.name}</Text>
+                                                <Text style={{ color: this.props.theme.current['grey'] }}>{command.description}</Text>
+                                            </View>
+                                            <View style={{ flex: 1 }}>
+                                                <View style={{ alignItems: "center" }}>
+                                                    <Command
+                                                        command={command}
+                                                        actuator={actuator}
+                                                        deviceId={this.props.currentDevice._id}
+                                                        executeOrder={this.props.executeOrder}
+                                                    />
+                                                </View>
                                             </View>
                                         </View>
-                                    </View>
-                                )}
-                            </Card>)
+                                    )}
+                                </View>
+                            </TouchableHighlight>)
                     }
                 </View>
                 <View>
                     <Text h2 style={{ alignSelf: "center" }}>{t('Sensors')}</Text>
                     {
                         this.props.favourites.sensors.map(sensor =>
-                            <Card title={sensor.name} key={sensor._id} containerStyle={{ borderColor: sensor.isConnected ? this.props.theme.current["green"] : this.props.theme.current["red"] }} >
-
-                            </Card>
+                            <TouchableHighlight
+                                onPress={() => this.props.navigation.navigate('DetailSensor', { sensor: sensor._id, deviceId: this.props.currentDevice._id })}
+                                key={sensor._id}
+                                style={{
+                                    borderWidth: 1,
+                                    borderColor: sensor.isConnected ? this.props.theme.current["green"] : this.props.theme.current["red"],
+                                    alignItems: "center",
+                                    flex: 1,
+                                    width: '90%',
+                                    alignSelf: "center",
+                                    backgroundColor: this.props.theme.current["secondaryScreenBackground"],
+                                    shadowColor: sensor.isConnected ? this.props.theme.current["green"] : this.props.theme.current["red"],
+                                    shadowOffset: { width: 0, height: 1 },
+                                    shadowOpacity: 0.5,
+                                    shadowRadius: 2,
+                                }}>
+                                <View style={{ flex: 1 }}>
+                                    <View style={{ marginTop: 7, marginBottom: 7, justifyContent: "center", alignItems: "center" }}>
+                                        <Text style={{ fontWeight: "bold" }}>{sensor.name}</Text>
+                                    </View>
+                                    <View style={{ marginTop: 7, marginBottom: 7, justifyContent: "center", alignItems: "center" }}>
+                                        <Divider style={{ backgroundColor: 'lightgrey', width: "95%" }} />
+                                    </View>
+                                    {sensor.environment_variables.map(env_var =>
+                                        <View
+                                            key={env_var._id}
+                                            style={{ marginBottom: 5, alignItems: "center", width: "90%" }} >
+                                            <EnvironmenVariable
+                                                env_var={env_var}
+                                            />
+                                            <Divider style={{ backgroundColor: 'lightgrey', width: "95%" }} />
+                                        </View>)
+                                    }
+                                </View>
+                            </TouchableHighlight>
                         )
                     }
                 </View>

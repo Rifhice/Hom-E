@@ -3,6 +3,7 @@ import { View, ScrollView } from 'react-native';
 import { Divider, Icon, Button } from 'react-native-elements'
 import Text from '../../components/StyledText'
 import Icons from '../../constants/Icons.js'
+import EnvironmenVariable from '../../components/EnvironmenVariable';
 
 export default class DetailSensorScreen extends React.Component {
 
@@ -30,7 +31,7 @@ export default class DetailSensorScreen extends React.Component {
     render() {
         const sensor = this.props.sensors.find(sensor => sensor._id === this.props.navigation.state.params.sensor)
         return (
-            <View style={{ flex: 1 }}>
+            <View style={{ flex: 1, backgroundColor: this.props.theme.current['screenBackground'] }}>
                 <View style={{ flex: 1 }}>
                     <View style={{ marginTop: 10 }}>
                         <Icon
@@ -65,16 +66,12 @@ export default class DetailSensorScreen extends React.Component {
                     </View>
                     <ScrollView>
                         {sensor.environment_variables.map(env_var =>
-                            <View key={env_var._id} style={{ marginBottom: 5, alignItems: "center" }}>
-                                <View style={{ flexDirection: "row", marginBottom: 5, marginLeft: 5 }}>
-                                    <View style={{ flex: 2 }}>
-                                        <Text h4>{env_var.name}</Text>
-                                        <Text style={{ color: this.props.theme.current["grey"] }}>{env_var.description}</Text>
-                                    </View>
-                                    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-                                        <Text>{env_var.value.current}</Text>
-                                    </View>
-                                </View>
+                            <View
+                                key={env_var._id}
+                                style={{ marginBottom: 5, alignItems: "center" }} >
+                                <EnvironmenVariable
+                                    env_var={env_var}
+                                />
                                 <Divider style={{ backgroundColor: 'lightgrey', width: "95%" }} />
                             </View>)
                         }

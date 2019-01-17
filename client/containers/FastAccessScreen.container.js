@@ -6,6 +6,7 @@ import { withTheme, withChangeTheme } from '../ThemeProvider'
 import UserServices from '../InternalServices/UserServices'
 import NotificationBuilder from '../helper/NotificationBuilder'
 import ActuatorServices from '../InternalServices/ActuatorServices'
+import SensorServices from '../InternalServices/SensorServices'
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -17,6 +18,20 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
+        async fetchActuators(deviceId) {
+            try {
+                return await ActuatorServices.getActuators(deviceId, dispatch)
+            } catch (error) {
+                return ownProps.showNotification(NotificationBuilder(error))
+            }
+        },
+        async fetchSensors(deviceId) {
+            try {
+                return await SensorServices.getSensors(deviceId, dispatch)
+            } catch (error) {
+                return ownProps.showNotification(NotificationBuilder(error))
+            }
+        },
         async executeOrder(deviceId, key, argument, actuatorId, commandId) {
             try {
                 return await ActuatorServices.executeOrder(deviceId, key, argument, actuatorId, commandId)

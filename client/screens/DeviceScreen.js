@@ -88,6 +88,8 @@ export default class DeviceScreen extends React.Component {
 
       const FastAccessStack = createStackNavigator({
         FastAcess: FastAccessScreen,
+        DetailActuator: DetailActuator,
+        DetailSensor: DetailSensor
       });
 
       FastAccessStack.navigationOptions = {
@@ -151,7 +153,7 @@ export default class DeviceScreen extends React.Component {
         SettingsStack
       },
         {
-          initialRouteName: 'FastAccessStack',
+          initialRouteName: 'FastAccessStack'
         })
       return <Navigator></Navigator>
     }

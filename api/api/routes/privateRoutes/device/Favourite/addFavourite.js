@@ -1,6 +1,5 @@
 const UserController = require('../../../../controllers/UserController')
-const SocketService = require('../../../../../services/socket')
-const checkDeviceResult = require('../../../../helper/formatDeviceAnswer')
+const { getSensors, getActuators } = require('../../../../helper/deviceDataFetcher')
 /**
   * @swagger
   *
@@ -28,35 +27,22 @@ const checkDeviceResult = require('../../../../helper/formatDeviceAnswer')
   *           description: The device response has timeout
   */
 module.exports = async (req, res, next) => {
-  if (req.body.type === "sensor") {
-    const user = await UserController.addSensorToFavourite(req.user._id, req.params.deviceId, req.body.objectId)
-    let sensors = await new Promise((resolve, reject) =>
-      SocketService.emitToDevice('request', req.params.deviceId, {
-        "originalUrl": `/api/Devices/${req.params.deviceId}/Sensors`,
-        "method": "GET",
-        "body": {},
-        "params": { "deviceId": req.params.deviceId }
-      }, response => resolve(response)))
-    sensors = checkDeviceResult(sensors)
-    if (sensors.code !== 200)
-      return res.status(sensors.code).send(sensors.message)
-    return res.status(200).send(sensors.data.find(sensor => sensor._id === req.body.objectId))
+  try {
+    if (req.body.type === "sensor") {
+      await UserController.addSensorToFavourite(req.user._id, req.params.deviceId, req.body.objectId)
+      const sensors = await getSensors(req.params.deviceId)
+      return res.status(200).send(sensors.data.find(sensor => sensor._id === req.body.objectId))
+    }
+    else if (req.body.type === "actuator") {
+      await UserController.addActuatorToFavourite(req.user._id, req.params.deviceId, req.body.objectId)
+      const actuators = await getActuators(req.params.deviceId)
+      return res.status(200).send(actuators.data.find(actuator => actuator._id === req.body.objectId))
+    }
+    else {
+      return res.status(400).send("Type of device unknown")
+    }
   }
-  else if (req.body.type === "actuator") {
-    await UserController.addActuatorToFavourite(req.user._id, req.params.deviceId, req.body.objectId)
-    let actuators = await new Promise((resolve, reject) =>
-      SocketService.emitToDevice('request', req.params.deviceId, {
-        "originalUrl": `/api/Devices/${req.params.deviceId}/Actuators`,
-        "method": "GET",
-        "body": {},
-        "params": { "deviceId": req.params.deviceId }
-      }, response => resolve(response)))
-    actuators = checkDeviceResult(actuators)
-    if (actuators.code !== 200)
-      return res.status(actuators.code).send(actuators.message)
-    return res.status(200).send(actuators.data.find(actuator => actuator._id === req.body.objectId))
-  }
-  else {
-    return res.status(400).send("Type of device unknown")
+  catch (error) {
+    return res.status(error.code).send(error.message)
   }
 }
