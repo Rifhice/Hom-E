@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import automation from '../screens/AutomationScreen';
+import automation from '../../screens/AutomationScreens/AutomationScreen';
 import { withNamespaces } from 'react-i18next';
 import { withInAppNotification } from 'react-native-in-app-notification';
-import { withTheme, withChangeTheme } from '../ThemeProvider'
-import BehaviorServices from "../InternalServices/BehaviorServices"
-import NotificationBuilder from '../helper/NotificationBuilder'
+import { withTheme, withChangeTheme } from '../../ThemeProvider'
+import BehaviorServices from "../../InternalServices/BehaviorServices"
+import NotificationBuilder from '../../helper/NotificationBuilder'
 
 const mapStateToProps = (state, ownProps) => {
     return {

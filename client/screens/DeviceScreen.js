@@ -4,7 +4,8 @@ import { createBottomTabNavigator, createStackNavigator } from 'react-navigation
 import Text from '../components/StyledText';
 import TabBarIcon from '../components/TabBarIcon';
 import Icons from '../constants/Icons';
-import AutomationScreen from '../containers/AutomationScreen.container';
+import AutomationScreen from '../containers/AutomationScreens/AutomationScreen.container';
+import NewAutomationScreen from '../containers/AutomationScreens/NewAutomationScreen.container';
 import FastAccessScreen from '../containers/FastAccessScreen.container';
 import DetailActuator from '../containers/ObjectScreens/DetailActuator.container';
 import DetailSensor from '../containers/ObjectScreens/DetailSensor.container';
@@ -106,6 +107,7 @@ export default class DeviceScreen extends React.Component {
 
       const AutomationStack = createStackNavigator({
         Automation: AutomationScreen,
+        NewAutomationScreen: NewAutomationScreen,
       });
 
       AutomationStack.navigationOptions = {
