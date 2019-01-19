@@ -1,5 +1,6 @@
 const Behavior = require("../models").Behavior;
 const Environment_variableController = require('./EnvironmentVariableController')
+const ActuatorController = require('./ActuatorController')
 
 const addBehavior = async (behavior) => {
     try {
@@ -28,7 +29,24 @@ const addBehavior = async (behavior) => {
 
 const getBehaviors = async () => {
     try {
-        return await Behavior.find({})
+        const behaviors = await Behavior.find({})
+        const populateVariables = async (evaluable) => {
+            if (evaluable.type === "expression") {
+                evaluable.evaluable[0] = await populateVariables(evaluable.evaluable[0])
+                evaluable.evaluable[1] = await populateVariables(evaluable.evaluable[1])
+            } else if (evaluable.type === "block") {
+                res = await Environment_variableController.getEnvironmentVariableById(evaluable.variable)
+                res.behaviors = undefined
+                evaluable.variable = res
+            }
+            console.log(evaluable);
+            return evaluable
+        }
+        for (let i = 0; i < behaviors.length; i++) {
+            behaviors[i].command.actuator = await ActuatorController.getActuatorById(behaviors[i].command.actuatorId)
+            behaviors[i].evaluable = await populateVariables(behaviors[i].evaluable)
+        }
+        return behaviors
     }
     catch (error) {
         logger.error(error.message)
@@ -49,8 +67,8 @@ const getGetTriggeredBehavior = async (env_var) => {
             const resultFirst = await checkEval(expression.evaluable[0])
             const resultSecond = await checkEval(expression.evaluable[1])
             return expression.operator == "&&"
-                ? resolve(resultFirst && resultSecond)
-                : resolve(resultFirst || resultSecond)
+                ? resultFirst && resultSecond
+                : resultFirst || resultSecond
 
         }
         const checkBlock = async (block) => {

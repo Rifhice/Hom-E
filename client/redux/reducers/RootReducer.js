@@ -3,6 +3,7 @@ import favourites from './favourites.reducer'
 import sensors from './sensor.reducer'
 import user from './user.reducer'
 import device from './device.reducer'
+import behavior from './behavior.reducer'
 import { combineReducers } from 'redux';
 
 export default combineReducers({
@@ -10,5 +11,6 @@ export default combineReducers({
     favourites,
     sensors,
     user,
-    device
+    device,
+    behavior
 });

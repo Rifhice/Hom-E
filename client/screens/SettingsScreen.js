@@ -147,20 +147,20 @@ export default class SettingsScreen extends React.Component {
         <Text h2 style={{ alignSelf: "center", marginBottom: 5 }}>{t('Devices')}</Text>
         <ScrollView>
           {this.props.user.devices.map(current => <Button
-            key={current}
+            key={current._id}
             onPress={async () => {
-              if (current !== this.props.user.currentDevice._id) {
-                await this.props.updateCurrentDevice(this.props.user.currentDevice._id, current)
+              if (current._id !== this.props.user.currentDevice._id) {
+                await this.props.updateCurrentDevice(this.props.user.currentDevice._id, current._id)
               }
               else {
                 this.setState({ deviceModal: false })
               }
             }}
             buttonStyle={{
-              backgroundColor: current === this.props.user.currentDevice._id ? theme.current["green"] : theme.current["grey"],
+              backgroundColor: current._id === this.props.user.currentDevice._id ? theme.current["green"] : theme.current["grey"],
               marginBottom: 5
             }}
-            title={current} />)}
+            title={current._id} />)}
         </ScrollView>
       </Overlay>
     </View>
