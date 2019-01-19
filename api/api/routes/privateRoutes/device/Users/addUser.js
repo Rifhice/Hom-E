@@ -26,7 +26,7 @@ module.exports = async (req, res, next) => {
         if (device.users.some(user => user.user.toString() === req.body.userId.toString())) {
             return res.status(400).send("User already in device")
         }
-        user = await DeviceController.addUser(req.params.deviceId, req.body.userId)
+        const user = await DeviceController.addUser(req.params.deviceId, req.body.userId)
         SocketService.broadcastToClients('event', req.params.deviceId, { type: "ADD_USER_TO_DEVICE", payload: user })
         SocketService.sendToUserSocket(req.body.userId.toString(), { type: 'NEW_DEVICE_PAIRED', payload: { _id: req.params.deviceId, favourites: { sensors: [], actuator: [] } } })
         return res.status(200).send(user)

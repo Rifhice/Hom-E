@@ -29,7 +29,7 @@ module.exports = async (req, res, next) => {
         if (device.users.find(user => user.user.toString() === req.params.userId.toString()).rank === "Admin") {
             return res.status(400).send("User is admin can't be restrained!")
         }
-        restriction = await DeviceController.addRestriction(req.params.deviceId, req.params.userId, req.body.restriction)
+        const restriction = await DeviceController.addRestriction(req.params.deviceId, req.params.userId, req.body.restriction)
         SocketService.broadcastToClients('event', req.params.deviceId, { type: "ADD_RESTRICTION_TO_USER", payload: { userId: req.params.userId, restriction: restriction } })
         return res.status(200).send(restriction)
     }

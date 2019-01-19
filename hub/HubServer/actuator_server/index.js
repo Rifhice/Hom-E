@@ -76,7 +76,6 @@ logger.info(`Actuator server is listening on port ${process.env.ACTUATOR_SERVER_
 
 module.exports = {
     emitOrderToActuator: async (key, argument, actuatorId, commandId) => {
-        let pending = []
         let socketActuator
         actuatorConnected.forEach(actuator => {
             if (actuator.actuatorId === actuatorId) {

@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
     jwt.verify(req.token, process.env.SECRET, async (err, decoded) => {
         if (err)
             return res.status(400).send('Token is not valid');
-        userId = decoded.userId;
+        const userId = decoded.userId;
         const user = await UserController.getUserById(userId)
         if (!user)
             return res.status(400).send("User doesn't exist");

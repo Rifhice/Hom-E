@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { AppState, View } from 'react-native'
-import SocketServices from './SocketService'
+import { Component } from 'react';
+import { AppState } from 'react-native';
+import SocketServices from './SocketService';
 
 export default class AppStateExample extends Component {
 

@@ -1,20 +1,17 @@
 import React from 'react';
 import { View } from 'react-native';
-import Text from '../components/StyledText'
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
-import { createSwitchNavigator } from 'react-navigation';
-import { withNamespaces } from 'react-i18next'
-import { withTheme, withChangeTheme } from '../ThemeProvider'
-import TabBarIcon from '../components/TabBarIcon'
-import PeopleScreen from '../containers/PeopleScreen.container';
-import FastAccessScreen from '../containers/FastAccessScreen.container';
+import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
+import Text from '../components/StyledText';
+import TabBarIcon from '../components/TabBarIcon';
+import Icons from '../constants/Icons';
 import AutomationScreen from '../containers/AutomationScreen.container';
+import FastAccessScreen from '../containers/FastAccessScreen.container';
+import DetailActuator from '../containers/ObjectScreens/DetailActuator.container';
+import DetailSensor from '../containers/ObjectScreens/DetailSensor.container';
 import ObjectScreen from '../containers/ObjectScreens/ObjectScreen.container';
+import PeopleScreen from '../containers/PeopleScreen.container';
 import SettingsScreen from '../containers/SettingsScreen.container';
-import DetailActuator from '../containers/ObjectScreens/DetailActuator.container'
-import DetailSensor from '../containers/ObjectScreens/DetailSensor.container'
-import SocketService from '../SocketService'
-import Icons from '../constants/Icons'
+import SocketService from '../SocketService';
 
 export default class DeviceScreen extends React.Component {
 

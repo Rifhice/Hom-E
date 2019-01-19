@@ -8,5 +8,5 @@ class Router {
     }
 }
 
-router = new Router()
+let router = new Router()
 module.exports = router

@@ -1,9 +1,9 @@
 import React from 'react';
-import { ScrollView, RefreshControl, View, Dimensions, TouchableHighlight } from 'react-native';
-import { Divider, Icon, Button, Overlay, Input, CheckBox, SearchBar } from 'react-native-elements'
-import Text from '../components/StyledText'
-import Loader from '../components/Loader'
-import Icons from '../constants/Icons.js'
+import { Dimensions, RefreshControl, ScrollView, TouchableHighlight, View } from 'react-native';
+import { Button, CheckBox, Divider, Icon, Overlay, SearchBar } from 'react-native-elements';
+import Loader from '../components/Loader';
+import Text from '../components/StyledText';
+import Icons from '../constants/Icons.js';
 
 export default class PeopleScreen extends React.Component {
 

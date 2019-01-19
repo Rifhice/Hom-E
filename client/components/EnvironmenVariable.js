@@ -1,7 +1,7 @@
 import React from 'react';
-import { ActivityIndicator, View } from 'react-native';
-import Text from './StyledText'
-import { withTheme } from '../ThemeProvider'
+import { View } from 'react-native';
+import { withTheme } from '../ThemeProvider';
+import Text from './StyledText';
 
 export default withTheme((props) => {
     return <View style={{ alignItems: "center" }}>

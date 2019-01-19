@@ -1,9 +1,8 @@
 import React from 'react';
-import { View, ActivityIndicator } from 'react-native';
-import Text from '../components/StyledText'
-import NewDevice from '../containers/NewDevice.container'
-import Device from '../containers/Device.container'
-import AppState from '../AppState'
+import { ActivityIndicator, View } from 'react-native';
+import AppState from '../AppState';
+import Device from '../containers/Device.container';
+import NewDevice from '../containers/NewDevice.container';
 
 export default class AppScreen extends React.Component {
 

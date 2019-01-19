@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
+import UserService from '../InternalServices/UserServices';
 import newDevice from '../screens/NewDevice';
-import actions from '../redux/actions/user.actions'
-import UserService from '../InternalServices/UserServices'
 
 const mapStateToProps = (state, ownProps) => {
     return {

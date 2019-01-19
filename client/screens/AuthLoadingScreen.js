@@ -14,7 +14,7 @@ export default class AuthLoadingScreen extends React.Component {
 
     _bootstrapAsync = async () => {
         const userToken = await AsyncStorage.getItem('userToken');
-        this.props.navigation.navigate(false ? 'App' : 'Auth');
+        this.props.navigation.navigate(userToken ? 'App' : 'Auth');
     };
 
     render() {

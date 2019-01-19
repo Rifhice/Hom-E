@@ -26,7 +26,7 @@ module.exports = async (req, res, next) => {
         if (!device.users.some(user => user.user.toString() === req.params.userId.toString())) {
             return res.status(400).send("User not in device")
         }
-
+        let user;
         if (req.body.newRank === "Admin") {
             user = await DeviceController.elevateUser(req.params.deviceId, req.params.userId)
         }

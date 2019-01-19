@@ -1,10 +1,9 @@
 import React from 'react';
-import { View, ScrollView } from 'react-native';
-import { Divider, Icon, Button } from 'react-native-elements'
-import Text from '../../components/StyledText'
-import Icons from '../../constants/Icons.js'
-import ActuatorServices from '../../InternalServices/ActuatorServices'
-import Command from '../../components/Command'
+import { ScrollView, View } from 'react-native';
+import { Button, Divider, Icon } from 'react-native-elements';
+import Command from '../../components/Command';
+import Text from '../../components/StyledText';
+import Icons from '../../constants/Icons.js';
 
 export default class DetailActuatorScreen extends React.Component {
 

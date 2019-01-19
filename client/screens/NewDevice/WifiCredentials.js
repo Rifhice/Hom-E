@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, ScrollView, RefreshControl } from 'react-native';
-import { Text, Icon, Button } from 'react-native-elements'
+import { View } from 'react-native';
+import { Icon, Text } from 'react-native-elements';
 
 export default class WifiCredentials extends React.Component {
 

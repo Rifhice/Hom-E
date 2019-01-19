@@ -1,11 +1,10 @@
-import { connect } from 'react-redux';
-import device from '../screens/DeviceScreen';
 import { withNamespaces } from 'react-i18next';
 import { withInAppNotification } from 'react-native-in-app-notification';
-import { withTheme, withChangeTheme } from '../ThemeProvider'
-import UserServices from '../InternalServices/UserServices'
-import actions from '../redux/actions/user.actions'
-import NotificationBuilder from '../helper/NotificationBuilder'
+import { connect } from 'react-redux';
+import NotificationBuilder from '../helper/NotificationBuilder';
+import UserServices from '../InternalServices/UserServices';
+import device from '../screens/DeviceScreen';
+import { withChangeTheme, withTheme } from '../ThemeProvider';
 
 const mapStateToProps = (state, ownProps) => {
     return {

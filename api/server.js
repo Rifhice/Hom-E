@@ -13,7 +13,7 @@ global.logger = require('./logger')
 
 let startSocketServer = async (http, port) => {
     try {
-        var io = await require('./services/socket').listen(http)
+        await require('./services/socket').listen(http)
         logger.info(`Socket server is now listening on port ${port} !`)
     }
     catch (error) {

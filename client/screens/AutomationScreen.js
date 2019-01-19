@@ -1,13 +1,8 @@
 import React from 'react';
-import {
-  ScrollView,
-  RefreshControl,
-  View,
-  TouchableHighlight
-} from 'react-native';
-import Loader from '../components/Loader'
-import Text from '../components/StyledText'
-import { Divider, Button } from 'react-native-elements';
+import { RefreshControl, ScrollView, TouchableHighlight, View } from 'react-native';
+import { Button, Divider } from 'react-native-elements';
+import Loader from '../components/Loader';
+import Text from '../components/StyledText';
 
 export default class AutomationScreen extends React.Component {
 

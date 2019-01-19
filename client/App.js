@@ -1,12 +1,12 @@
-import React from 'react';
-import { Platform, StatusBar, StyleSheet, View, TouchableHighlight, Text } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
-import MainPage from './containers/MainPage.container';
+import React from 'react';
+import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { InAppNotificationProvider } from 'react-native-in-app-notification';
-import { Provider } from 'react-redux'
-import { ThemeProvider } from './ThemeProvider'
-import configureStore from "./redux/configureStore"
+import { Provider } from 'react-redux';
+import MainPage from './containers/MainPage.container';
 import './i18n';
+import configureStore from "./redux/configureStore";
+import { ThemeProvider } from './ThemeProvider';
 
 export default class App extends React.Component {
   state = {

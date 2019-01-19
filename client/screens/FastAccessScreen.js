@@ -1,11 +1,10 @@
 import React from 'react';
-import { ScrollView, View, RefreshControl, TouchableHighlight } from 'react-native';
-import { Card, Divider } from 'react-native-elements'
-import Text from '../components/StyledText'
-import Loader from '../components/Loader'
-import Command from '../components/Command'
-import EnvironmenVariable from '../components/EnvironmenVariable'
-import Icons from '../constants/Icons'
+import { RefreshControl, ScrollView, TouchableHighlight, View } from 'react-native';
+import { Divider } from 'react-native-elements';
+import Command from '../components/Command';
+import EnvironmenVariable from '../components/EnvironmenVariable';
+import Loader from '../components/Loader';
+import Text from '../components/StyledText';
 
 export default class FastAccessScreen extends React.Component {
 

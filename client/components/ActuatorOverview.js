@@ -1,11 +1,10 @@
 import React from 'react';
-import { View, TouchableOpacity } from 'react-native';
-import { Divider, Icon } from 'react-native-elements'
-import Text from './StyledText'
-import Switch from './Switch'
-import Slider from './Slider'
-import Icons from '../constants/Icons.js'
-import ActuatorServices from '../InternalServices/ActuatorServices'
+import { TouchableOpacity, View } from 'react-native';
+import { Divider, Icon } from 'react-native-elements';
+import Icons from '../constants/Icons.js';
+import Slider from './Slider';
+import Text from './StyledText';
+import Switch from './Switch';
 
 export default class ActuatorOverview extends React.Component {
 

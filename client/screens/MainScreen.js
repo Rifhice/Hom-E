@@ -1,10 +1,9 @@
 import React from 'react';
-import { View, AsyncStorage, ActivityIndicator, StatusBar } from 'react-native';
-import SignIn from '../containers/SignInOrRegister.container'
-import App from '../containers/App.container'
-import UserServices from '../WebServices/UserWebServices'
-import SocketService from '../SocketService'
-import Text from '../components/StyledText'
+import { ActivityIndicator, AsyncStorage, StatusBar, View } from 'react-native';
+import App from '../containers/App.container';
+import SignIn from '../containers/SignInOrRegister.container';
+import SocketService from '../SocketService';
+import UserServices from '../WebServices/UserWebServices';
 
 export default class MainScreen extends React.Component {
 

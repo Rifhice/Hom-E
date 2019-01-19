@@ -1,10 +1,9 @@
-import { connect } from 'react-redux';
-import signin from '../screens/SignInOrRegisterScreen';
 import { withNamespaces } from 'react-i18next';
 import { withInAppNotification } from 'react-native-in-app-notification';
-import { withTheme, withChangeTheme } from '../ThemeProvider'
-import UserServices from '../InternalServices/UserServices'
-import actions from '../redux/actions/user.actions'
+import { connect } from 'react-redux';
+import UserServices from '../InternalServices/UserServices';
+import signin from '../screens/SignInOrRegisterScreen';
+import { withChangeTheme, withTheme } from '../ThemeProvider';
 
 const mapStateToProps = (state, ownProps) => {
     return {

@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
-import mainpage from '../screens/MainScreen';
-import UserServices from '../InternalServices/UserServices'
 import actions from '../redux/actions/user.actions';
+import mainpage from '../screens/MainScreen';
 
 const mapStateToProps = (state, ownProps) => {
     return {

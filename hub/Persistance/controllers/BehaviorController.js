@@ -35,11 +35,10 @@ const getBehaviors = async () => {
                 evaluable.evaluable[0] = await populateVariables(evaluable.evaluable[0])
                 evaluable.evaluable[1] = await populateVariables(evaluable.evaluable[1])
             } else if (evaluable.type === "block") {
-                res = await Environment_variableController.getEnvironmentVariableById(evaluable.variable)
+                let res = await Environment_variableController.getEnvironmentVariableById(evaluable.variable)
                 res.behaviors = undefined
                 evaluable.variable = res
             }
-            console.log(evaluable);
             return evaluable
         }
         for (let i = 0; i < behaviors.length; i++) {
@@ -56,11 +55,11 @@ const getBehaviors = async () => {
 
 const getGetTriggeredBehavior = async (env_var) => {
     try {
-        const checkEval = async (eval) => {
-            if (eval.type === "expression") {
-                return await checkExpression(eval);
-            } else if (eval.type === "block") {
-                return await checkBlock(eval);
+        const checkEval = async (evaluable) => {
+            if (evaluable.type === "expression") {
+                return await checkExpression(evaluable);
+            } else if (evaluable.type === "block") {
+                return await checkBlock(evaluable);
             }
         }
         const checkExpression = async (expression) => {

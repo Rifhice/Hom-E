@@ -1,8 +1,8 @@
 import React from 'react';
+import { Icon } from 'react-native-elements';
 import { createStackNavigator } from 'react-navigation';
-import InitialScreen from './Home'
-import WifiCredentials from './WifiCredentials'
-import { Text, Icon, Button } from 'react-native-elements'
+import InitialScreen from './Home';
+import WifiCredentials from './WifiCredentials';
 
 export default class NewDevice extends React.Component {
 

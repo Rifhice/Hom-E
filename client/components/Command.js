@@ -1,8 +1,7 @@
 import React from 'react';
-import { ActivityIndicator, View } from 'react-native';
-import Switch from './Switch'
-import Slider from './Slider'
-import { withTheme } from '../ThemeProvider'
+import { withTheme } from '../ThemeProvider';
+import Slider from './Slider';
+import Switch from './Switch';
 
 export default withTheme((props) => {
     return props.command.type === "switch"
