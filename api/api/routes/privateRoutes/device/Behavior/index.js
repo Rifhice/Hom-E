@@ -6,5 +6,7 @@ const requestTransferer = require('../../../../middlewares/transferRequestToDevi
 const filterAndSendResponse = require('../../../../middlewares/FilterAndSendResults')
 
 router.get('/', behaviorValidator.getBehaviors, checkRequest, requestTransferer, require('./getBehaviors'), filterAndSendResponse('actuator'));
+router.post('/', behaviorValidator.addBehavior, checkRequest, requestTransferer, require('./addBehavior'));
+router.delete('/:behaviorId', behaviorValidator.deleteBehavior, checkRequest, requestTransferer, require('./deleteBehavior'));
 
 module.exports = router;

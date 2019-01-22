@@ -43,8 +43,8 @@ const updateIsConnected = async (actuatorId, isConnected) => {
 
 const registerActuator = async (actuator, quick_command, commands) => {
     try {
-        delete actuator._id
-        let newCommands = commands.map(current => { delete current._id; return new Command(current) })
+        actuator._id = undefined
+        let newCommands = commands.map(current => { current._id = undefined; return new Command(current) })
         let newQuick_command = new Command(quick_command)
         actuator.commands = [newQuick_command, ...newCommands]
         actuator.quick_command = newQuick_command

@@ -72,7 +72,7 @@ const main = async () => {
 
     socket.on('err', async data => {
         console.log(data)
-        if (data.type === "NOT_REGISTERED") {
+        if (data.type === "NOT_REGISTERED" || data.type === "FORGOTTEN") {
             isRegistered = false
             await storage.clear()
             process.exit(0)

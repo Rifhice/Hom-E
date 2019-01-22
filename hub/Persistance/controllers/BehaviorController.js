@@ -2,28 +2,35 @@ const Behavior = require("../models").Behavior;
 const Environment_variableController = require('./EnvironmentVariableController')
 const ActuatorController = require('./ActuatorController')
 
+const extractEnvironmentVariableFromEvaluableBis = (evaluable, state) => {
+    if (evaluable.type === "expression") {
+        state = extractEnvironmentVariableFromEvaluableBis(
+            evaluable.evaluable[0],
+            extractEnvironmentVariableFromEvaluableBis(evaluable.evaluable[1], state)
+        );
+    } else if (evaluable.type === "block") {
+        state.push(evaluable.variable);
+    }
+    return state;
+}
+
 const addBehavior = async (behavior) => {
     try {
         const behaviorToAdd = new Behavior(behavior)
-        const extractEnvironmentVariableFromEvaluableBis = (evaluable, state) => {
-            if (evaluable.type === "expression") {
-                state = extractEnvironmentVariableFromEvaluableBis(
-                    evaluable.evaluable[0],
-                    extractEnvironmentVariableFromEvaluableBis(evaluable.evaluable[1], state)
-                );
-            } else if (evaluable.type === "block") {
-                state.push(evaluable.variable);
+        let alreadyAdded = []
+        Array.from(new Set(extractEnvironmentVariableFromEvaluableBis(behaviorToAdd.evaluable, []))).map(async (env_var) => {
+            if (!alreadyAdded.includes(env_var)) {
+                await Environment_variableController.addBehavior(env_var, behaviorToAdd._id)
+                alreadyAdded.push(env_var)
             }
-            return state;
-        }
-        extractEnvironmentVariableFromEvaluableBis(behaviorToAdd.evaluable, []).map(async (env_var) => {
-            await Environment_variableController.addBehavior(env_var, behaviorToAdd._id)
         })
         await behaviorToAdd.save()
+        database_event.emit('event', { type: "ADD_BEHAVIOR", payload: { behavior: behaviorToAdd } })
         return behaviorToAdd
     }
     catch (error) {
         logger.error(error)
+        throw error
     }
 }
 
@@ -116,8 +123,26 @@ const getGetTriggeredBehavior = async (env_var) => {
     }
 };
 
+
+const removeBehavior = async (behaviorId) => {
+    try {
+        const behavior = await Behavior.findOne({ _id: behaviorId })
+        await Behavior.findByIdAndRemove({ _id: behaviorId })
+        extractEnvironmentVariableFromEvaluableBis(behavior.evaluable, []).map(async (env_var) => {
+            await Environment_variableController.removeBehavior(env_var, behaviorId)
+        })
+        database_event.emit('event', { type: "REMOVE_BEHAVIOR", payload: { _id: behaviorId } })
+        return behavior
+    }
+    catch (error) {
+        console.log(error)
+        throw error
+    }
+}
+
 module.exports = {
     getBehaviors,
     addBehavior,
-    getGetTriggeredBehavior
+    getGetTriggeredBehavior,
+    removeBehavior
 };
