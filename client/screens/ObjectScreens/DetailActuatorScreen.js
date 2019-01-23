@@ -17,7 +17,7 @@ export default class DetailActuatorScreen extends React.Component {
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
-        const actuator = nextProps.actuators.find(actuator => console.log(actuator._id) || actuator._id === nextProps.navigation.state.params.actuator)
+        const actuator = nextProps.actuators.find(actuator => actuator ? actuator._id === nextProps.navigation.state.params.actuator : false)
         if (JSON.stringify(nextProps.theme.current) !== JSON.stringify(prevState.theme.current) && nextProps.navigation) {
             nextProps.navigation.setParams({
                 title: actuator.name,
@@ -29,7 +29,7 @@ export default class DetailActuatorScreen extends React.Component {
     }
 
     render() {
-        const actuator = this.props.actuators.find(actuator => actuator._id === this.props.navigation.state.params.actuator)
+        const actuator = this.props.actuators.find(actuator => actuator ? actuator._id === this.props.navigation.state.params.actuator : false)
         return (
             <View style={{ flex: 1, backgroundColor: this.props.theme.current['screenBackground'] }}>
                 <View style={{ flex: 1 }}>
@@ -87,7 +87,7 @@ export default class DetailActuatorScreen extends React.Component {
                     </ScrollView>
                     <View style={{ flexDirection: "row", marginBottom: 2 }}>
                         <View style={{ flex: 1, marginLeft: 5, marginRight: 5 }}>
-                            {!this.props.favourites.actuators.some(actuator => actuator._id === this.props.navigation.state.params.actuator)
+                            {!this.props.favourites.actuators.some(actuator => actuator ? actuator._id === this.props.navigation.state.params.actuator : false)
                                 ? <Button
                                     buttonStyle={{ backgroundColor: 'yellow' }}
                                     title="Favourite"

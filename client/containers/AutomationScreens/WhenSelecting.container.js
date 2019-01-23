@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import automation from '../../screens/AutomationScreens/AutomationScreen';
+import whenSelecting from '../../screens/AutomationScreens/WhenSelectingScreen';
 import { withNamespaces } from 'react-i18next';
 import { withInAppNotification } from 'react-native-in-app-notification';
 import { withTheme, withChangeTheme } from '../../ThemeProvider'
@@ -8,43 +8,19 @@ import NotificationBuilder from '../../helper/NotificationBuilder'
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        currentDevice: state.user.currentDevice,
-        behaviors: state.behavior.all,
-        actuators: state.actuators.all,
-        sensors: state.sensors.all
+
     }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        async getBehaviors(deviceId) {
-            try {
-                return await BehaviorServices.getBehaviors(deviceId, dispatch)
-            } catch (error) {
-                return ownProps.showNotification(NotificationBuilder(error))
-            }
-        },
-        async addBehavior(deviceId, behavior) {
-            try {
-                return await BehaviorServices.addBehavior(deviceId, behavior, dispatch)
-            } catch (error) {
-                return ownProps.showNotification(NotificationBuilder(error))
-            }
-        },
-        async deleteBehavior(deviceId, behaviorId) {
-            try {
-                return await BehaviorServices.deleteBehavior(deviceId, behaviorId, dispatch)
-            } catch (error) {
-                return ownProps.showNotification(NotificationBuilder(error))
-            }
-        }
     }
 }
 
 const component = withChangeTheme(withTheme(withNamespaces()(withInAppNotification(connect(
     mapStateToProps,
     mapDispatchToProps
-)(automation)))))
+)(whenSelecting)))))
 
 component.navigationOptions = ({ navigation }) => {
     return {

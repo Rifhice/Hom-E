@@ -22,8 +22,8 @@ const getSensors = async () => {
 
 const registerSensor = async (sensor, env_var) => {
     try {
-        delete sensor._id
-        let variables = env_var.map(current => { delete current._id; return new EnvironmentVariable(current) })
+        sensor._id = undefined
+        let variables = env_var.map(current => { current._id = undefined; return new EnvironmentVariable(current) })
         sensor.environment_variables = variables
         if (sensor.category) {
             const category = await CategoryController.getCategoryById(sensor.category._id)

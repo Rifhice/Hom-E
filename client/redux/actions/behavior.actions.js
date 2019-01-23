@@ -1,3 +1,5 @@
 export default actions = {
     "FETCHED_BEHAVIORS": "FETCHED_BEHAVIORS",
-}
+    "REMOVE_BEHAVIOR": "REMOVE_BEHAVIOR",
+    "ADD_BEHAVIOR": "ADD_BEHAVIOR"
+} 

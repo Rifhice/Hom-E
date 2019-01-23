@@ -7,7 +7,10 @@ const EnvironmentVariableSchema = new mongoose.Schema({
     behaviors: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Behavior' }],
     value: {
         value_type: String,
-        current: mongoose.Schema.Types.Mixed
+        current: mongoose.Schema.Types.Mixed,
+        min: Number,
+        max: Number,
+        step: Number
     }
 }, { timestamps: true });
 

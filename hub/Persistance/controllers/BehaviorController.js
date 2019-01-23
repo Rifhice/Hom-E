@@ -1,5 +1,6 @@
 const Behavior = require("../models").Behavior;
 const Environment_variableController = require('./EnvironmentVariableController')
+const database_event = require('../database_event')
 const ActuatorController = require('./ActuatorController')
 
 const extractEnvironmentVariableFromEvaluableBis = (evaluable, state) => {

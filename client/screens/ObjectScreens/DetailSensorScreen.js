@@ -17,7 +17,7 @@ export default class DetailSensorScreen extends React.Component {
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
-        const sensor = nextProps.sensors.find(sensor => sensor._id === nextProps.navigation.state.params.sensor)
+        const sensor = nextProps.sensors.find(sensor => sensor ? sensor._id === nextProps.navigation.state.params.sensor : false)
         if (JSON.stringify(nextProps.theme.current) !== JSON.stringify(prevState.theme.current) && nextProps.navigation) {
             nextProps.navigation.setParams({
                 title: sensor.name,
@@ -29,7 +29,7 @@ export default class DetailSensorScreen extends React.Component {
     }
 
     render() {
-        const sensor = this.props.sensors.find(sensor => sensor._id === this.props.navigation.state.params.sensor)
+        const sensor = this.props.sensors.find(sensor => sensor ? sensor._id === this.props.navigation.state.params.sensor : null)
         return (
             <View style={{ flex: 1, backgroundColor: this.props.theme.current['screenBackground'] }}>
                 <View style={{ flex: 1 }}>
@@ -78,7 +78,7 @@ export default class DetailSensorScreen extends React.Component {
                     </ScrollView>
                     <View style={{ flexDirection: "row", marginBottom: 2 }}>
                         <View style={{ flex: 1, marginLeft: 5, marginRight: 5 }}>
-                            {!this.props.favourites.sensors.some(sensor => sensor._id === this.props.navigation.state.params.sensor)
+                            {!this.props.favourites.sensors.some(sensor => sensor ? sensor._id === this.props.navigation.state.params.sensor : false)
                                 ? <Button
                                     buttonStyle={{ backgroundColor: 'yellow' }}
                                     title="Favourite"

@@ -67,7 +67,7 @@ export default class LinksScreen extends React.Component {
             theme={this.props.theme}
             deviceId={this.props.currentDevice._id}
             sensor={sensor}
-            onPress={() => navigate('DetailSensor', { sensor: sensor._id, deviceId: this.props.currentDevice._id })}
+            onPress={() => console.log("yooo") || navigate('DetailSensor', { sensor: sensor._id, deviceId: this.props.currentDevice._id })}
           />)
         }
       </ScrollView>
