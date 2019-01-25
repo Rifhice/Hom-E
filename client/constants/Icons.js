@@ -49,5 +49,13 @@ export default icons = {
     "add": {
         "name": "plus",
         "type": "evilicon"
+    },
+    "leftArrow": {
+        "name": "chevron-small-left",
+        "type": "entypo"
+    },
+    "rightArrow": {
+        "name": "chevron-small-right",
+        "type": "entypo"
     }
 }

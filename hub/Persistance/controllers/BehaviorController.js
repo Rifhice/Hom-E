@@ -26,8 +26,9 @@ const addBehavior = async (behavior) => {
             }
         })
         await behaviorToAdd.save()
-        database_event.emit('event', { type: "ADD_BEHAVIOR", payload: { behavior: behaviorToAdd } })
-        return behaviorToAdd
+        const res = await populateBehavior(behaviorToAdd)
+        database_event.emit('event', { type: "ADD_BEHAVIOR", payload: { behavior: res } })
+        return res
     }
     catch (error) {
         logger.error(error)
@@ -35,23 +36,29 @@ const addBehavior = async (behavior) => {
     }
 }
 
+const populateVariables = async (evaluable) => {
+    if (evaluable.type === "expression") {
+        evaluable.evaluable[0] = await populateVariables(evaluable.evaluable[0])
+        evaluable.evaluable[1] = await populateVariables(evaluable.evaluable[1])
+    } else if (evaluable.type === "block") {
+        let res = await Environment_variableController.getEnvironmentVariableById(evaluable.variable)
+        res.behaviors = undefined
+        evaluable.variable = res
+    }
+    return evaluable
+}
+
+const populateBehavior = async behavior => {
+    behavior.command.actuator = await ActuatorController.getActuatorById(behavior.command.actuatorId)
+    behavior.evaluable = await populateVariables(behavior.evaluable)
+    return behavior
+}
+
 const getBehaviors = async () => {
     try {
         const behaviors = await Behavior.find({})
-        const populateVariables = async (evaluable) => {
-            if (evaluable.type === "expression") {
-                evaluable.evaluable[0] = await populateVariables(evaluable.evaluable[0])
-                evaluable.evaluable[1] = await populateVariables(evaluable.evaluable[1])
-            } else if (evaluable.type === "block") {
-                let res = await Environment_variableController.getEnvironmentVariableById(evaluable.variable)
-                res.behaviors = undefined
-                evaluable.variable = res
-            }
-            return evaluable
-        }
         for (let i = 0; i < behaviors.length; i++) {
-            behaviors[i].command.actuator = await ActuatorController.getActuatorById(behaviors[i].command.actuatorId)
-            behaviors[i].evaluable = await populateVariables(behaviors[i].evaluable)
+            behaviors[i] = await populateBehavior(behaviors[i])
         }
         return behaviors
     }

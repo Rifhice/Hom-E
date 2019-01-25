@@ -58,7 +58,7 @@ export default class NewAutomationScreen extends React.Component {
                                         commandId: command._id,
                                         iscomplex: false,
                                         key: command.key,
-                                        argument: command.type === "switch" ? "on" : Math.floor((command.command_argument.min + command.command_argument.max) / 2)
+                                        argument: command.type === "switch" ? true : Math.floor((command.command_argument.min + command.command_argument.max) / 2)
                                     }
                                 })
                             }}>
@@ -73,11 +73,11 @@ export default class NewAutomationScreen extends React.Component {
                                 if (command.type === "switch") {
                                     return <View>
                                         <Button
-                                            title={this.state.finalOrder.argument === "on" ? t('On') : t('Off')}
+                                            title={this.state.finalOrder.argument ? t('On') : t('Off')}
                                             onPress={() => this.setState({
                                                 finalOrder: {
                                                     ...this.state.finalOrder,
-                                                    argument: this.state.finalOrder.argument !== "on" ? "on" : "off"
+                                                    argument: !this.state.finalOrder.argument
                                                 }
                                             })}
                                         />

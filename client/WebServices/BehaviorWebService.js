@@ -7,6 +7,7 @@ export default {
         return res.data
     },
     async addBehavior(deviceId, behavior) {
+        console.log(behavior)
         const res = await axios.post(`${config.API_URL}/Devices/${deviceId}/Behaviors`, { behavior }, await tokenHeader())
         return res.data
     },

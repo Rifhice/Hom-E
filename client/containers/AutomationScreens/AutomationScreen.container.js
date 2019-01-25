@@ -24,13 +24,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
                 return ownProps.showNotification(NotificationBuilder(error))
             }
         },
-        async addBehavior(deviceId, behavior) {
-            try {
-                return await BehaviorServices.addBehavior(deviceId, behavior, dispatch)
-            } catch (error) {
-                return ownProps.showNotification(NotificationBuilder(error))
-            }
-        },
         async deleteBehavior(deviceId, behaviorId) {
             try {
                 return await BehaviorServices.deleteBehavior(deviceId, behaviorId, dispatch)

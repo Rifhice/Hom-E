@@ -8,12 +8,19 @@ import NotificationBuilder from '../../helper/NotificationBuilder'
 
 const mapStateToProps = (state, ownProps) => {
     return {
-
+        currentDevice: state.user.currentDevice,
     }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
+        async addBehavior(deviceId, behavior) {
+            try {
+                return await BehaviorServices.addBehavior(deviceId, behavior, dispatch)
+            } catch (error) {
+                return ownProps.showNotification(NotificationBuilder(error))
+            }
+        }
     }
 }
 

@@ -16,7 +16,7 @@ export default (state = defaultState, action = { type: null, payload: null }) =>
             }
         case actions.REMOVE_BEHAVIOR:
             return {
-                all: state.all.filter(behavior => behavior._id === action.payload._id)
+                all: state.all.filter(behavior => behavior._id !== action.payload._id)
             }
         default:
             return state

@@ -50,6 +50,7 @@
     "react-native-in-app-notification": "^3.0.0",
     "react-native-network-info": "^4.0.0",
     "react-native-popup-dialog": "^0.16.6",
+    "react-native-swipe-gestures": "^1.0.3",
     "react-native-switch": "^1.5.0",
     "react-native-wifi": "^1.0.1",
     "react-navigation": "^2.18.2",
