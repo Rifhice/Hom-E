@@ -29,7 +29,7 @@ const registerSensor = async (sensor, env_var) => {
             const category = await CategoryController.getCategoryById(sensor.category._id)
             if (category) {
                 logger.info("CATEGORY ALREADY EXISTED " + sensor.category._id)
-                sensor.category = sensor.category._idg
+                sensor.category = sensor.category._id
             }
             else {
                 const newCategory = await Category.insertMany([new Category(sensor.category)])
@@ -40,6 +40,7 @@ const registerSensor = async (sensor, env_var) => {
         const sensor_to_add = new Sensor(sensor)
         await Promise.all([EnvironmentVariable.insertMany(variables), Sensor.insertMany([sensor_to_add])])
         database_event.emit('event', { type: "REGISTERED_SENSOR", payload: { sensor: sensor_to_add } })
+        console.log(sensor_to_add)
         return sensor_to_add
     }
     catch (error) {

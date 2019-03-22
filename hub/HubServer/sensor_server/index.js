@@ -17,7 +17,7 @@ io.on('connection', socket => {
                 try {
                     if (data.result === "success") {
                         const sensor = await SensorController.registerSensor(data.payload.sensor, data.payload.environment_variables)
-                        /*tmp code*/
+                        /*
                         await BehaviorController.addBehavior({
                             "evaluable": {
                                 "type": "block",
@@ -34,7 +34,7 @@ io.on('connection', socket => {
                                 commandId: "5c2199a90789dd5d8fbb0789"
                             },
                         })
-                        /**/
+                        */
                         if (sensor) {
                             logger.info("A new sensor has been registered to the hub !");
                             socket.emit('registered', {
@@ -79,6 +79,7 @@ io.on('connection', socket => {
     });
 
     socket.on('update', async data => {
+        //NEEDS MORE VERIFICATION
         logger.info(`The sensor ${socket.sensorId} is updating a variable !`)
         await EnvironmentVariableController.updateEnvironmentValue(data._id, data.newValue)
     });

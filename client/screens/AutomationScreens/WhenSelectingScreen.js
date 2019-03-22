@@ -134,6 +134,7 @@ export default class WhenSelectingScreen extends React.Component {
     }
 
     conditionsToExpression(conditions, operator) {
+        console.log(conditions)
         if (conditions.length === 0) {
             return undefined
         }
@@ -338,18 +339,25 @@ export default class WhenSelectingScreen extends React.Component {
                             const command = this.order
                             command.actuator = undefined
                             const sanityzeEvaluable = (evaluable) => {
+                                console.log(evaluable)
                                 if (evaluable.type === "block") {
                                     evaluable.variable = evaluable.variable._id
                                     return evaluable
                                 }
                                 else {
-                                    return sanityzeEvaluable(evaluable[0], evaluable[1])
+                                    evaluable.evaluable[0] = sanityzeEvaluable(evaluable.evaluable[0])
+                                    evaluable.evaluable[1] = sanityzeEvaluable(evaluable.evaluable[1])
+                                    return evaluable
                                 }
                             }
-                            const evaluable = sanityzeEvaluable(this.createFinalEvaluable())
-                            if (evaluable) {
-                                await this.props.addBehavior(this.props.currentDevice._id, { evaluable, command })
-                                this.props.navigation.navigate('Automation')
+                            const finalEvaluable = this.createFinalEvaluable()
+                            if (finalEvaluable) {
+                                console.log("lol", finalEvaluable)
+                                const evaluable = sanityzeEvaluable(finalEvaluable)
+                                if (evaluable) {
+                                    await this.props.addBehavior(this.props.currentDevice._id, { evaluable, command })
+                                    this.props.navigation.navigate('Automation')
+                                }
                             }
                         }}
                     /></View>

@@ -22,7 +22,7 @@ export default class NewAutomationScreen extends React.Component {
                 commandId: this.commands[0]._id,
                 iscomplex: false,
                 key: this.commands[0].key,
-                argument: this.commands[0].type === "switch" ? "on" : Math.floor((this.commands[0].command_argument.min + this.commands[0].command_argument.max) / 2)
+                argument: this.commands[0].type === "switch" ? true : Math.floor((this.commands[0].command_argument.min + this.commands[0].command_argument.max) / 2)
             }
         }
     }

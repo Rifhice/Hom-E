@@ -32,7 +32,9 @@ export default {
         return res.data
     },
     async favouriteActuator(deviceId, actuatorId) {
-        const res = await axios.post(`${config.API_URL}/Devices/${deviceId}/Favourites`, { type: "actuator", objectId: actuatorId }, await tokenHeader())
+        const res = await axios.post(`${config.API_URL}/Devices/${deviceId}/Favourites`,
+            { type: "actuator", objectId: actuatorId },
+            await tokenHeader())
         return res.data
     },
     async favouriteSensor(deviceId, sensorId) {
