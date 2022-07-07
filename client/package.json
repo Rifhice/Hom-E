@@ -41,7 +41,7 @@
     "i18next": "^12.1.0",
     "i18next-xhr-backend": "^1.5.1",
     "jest": "^23.6.0",
-    "moment": "^2.22.2",
+    "moment": "^2.29.4",
     "react": "16.5.0",
     "react-i18next": "^8.3.8",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
