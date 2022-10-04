@@ -36,7 +36,7 @@
     "axios": "^0.18.0",
     "connected-react-router": "^5.0.1",
     "dotenv": "^6.2.0",
-    "expo": "^31.0.2",
+    "expo": "^46.0.14",
     "history": "^4.7.2",
     "i18next": "^12.1.0",
     "i18next-xhr-backend": "^1.5.1",
